@@ -1,0 +1,24 @@
+{
+  "name": "intercom-sync",
+  "version": "1.0.0",
+  "description": "Syncs Twenty website user guide content to Intercom Help Center.",
+  "main": "sync-to-intercom-enhanced.js",
+  "scripts": {
+    "start": "node sync-to-intercom-enhanced.js",
+    "sync": "node sync-to-intercom-enhanced.js",
+    "sync:simple": "node sync-to-intercom.js",
+    "sync:dry-run": "DRY_RUN=true node sync-to-intercom-enhanced.js"
+  },
+  "dependencies": {
+    "gray-matter": "^4.0.3",
+    "node-fetch": "^2.7.0",
+    "remark": "^14.0.3",
+    "remark-html": "^15.0.2"
+  },
+  "devDependencies": {
+    "dotenv": "^16.3.1"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
