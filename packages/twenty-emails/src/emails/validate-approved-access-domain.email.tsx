@@ -82,7 +82,7 @@ export const SendApprovedAccessDomainValidation = ({
 };
 
 SendApprovedAccessDomainValidation.PreviewProps = {
-  link: 'https://app.twenty.com/validate-domain',
+  link: 'https://app.examplecrm.com/validate-domain',
   domain: 'example.com',
   workspace: {
     name: 'Acme Inc.',
@@ -93,7 +93,7 @@ SendApprovedAccessDomainValidation.PreviewProps = {
     firstName: 'John',
     lastName: 'Doe',
   },
-  serverUrl: 'https://app.twenty.com',
+  serverUrl: 'https://app.examplecrm.com',
   locale: 'en',
 } as SendApprovedAccessDomainValidationProps;
 

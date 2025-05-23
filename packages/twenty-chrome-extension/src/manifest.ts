@@ -4,8 +4,8 @@ import packageData from '../package.json';
 
 const external_sites =
   process.env.VITE_MODE === 'development'
-    ? [`https://app.twenty.com/*`, `http://localhost:3001/*`]
-    : [`https://app.twenty.com/*`];
+    ? [`https://app.examplecrm.com/*`, `http://localhost:3001/*`]
+    : [`https://app.examplecrm.com/*`];
 
 export default defineManifest({
   manifest_version: 3,

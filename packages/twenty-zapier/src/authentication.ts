@@ -21,7 +21,7 @@ export default {
       label: 'Api Key',
       type: 'string',
       helpText:
-        'Create an API key in [your twenty workspace](https://app.twenty.com/settings/developers)',
+        'Create an API key in [your twenty workspace](https://app.examplecrm.com/settings/developers)',
     },
     {
       computed: false,

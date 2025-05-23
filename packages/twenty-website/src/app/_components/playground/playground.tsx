@@ -63,7 +63,7 @@ const Playground = ({
             under{' '}
             <a
               className="link"
-              href="https://app.twenty.com/settings/developers"
+              href="https://app.examplecrm.com/settings/developers"
             >
               Settings &gt; Developers
             </a>

@@ -30,7 +30,7 @@ export const SendEmailVerificationLinkEmail = ({
 };
 
 SendEmailVerificationLinkEmail.PreviewProps = {
-  link: 'https://app.twenty.com/verify-email/123',
+  link: 'https://app.examplecrm.com/verify-email/123',
   locale: 'en',
 };
 
