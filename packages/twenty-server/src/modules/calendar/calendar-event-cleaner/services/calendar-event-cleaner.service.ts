@@ -2,12 +2,12 @@ import { Injectable } from '@nestjs/common';
 
 import { Any, IsNull } from 'typeorm';
 
-import { TwentyORMManager } from 'src/engine/twenty-orm/twenty-orm.manager';
+import { ExampleCRMORMManager } from 'src/engine/twenty-orm/twenty-orm.manager';
 import { deleteUsingPagination } from 'src/modules/messaging/message-cleaner/utils/delete-using-pagination.util';
 
 @Injectable()
 export class CalendarEventCleanerService {
-  constructor(private readonly twentyORMManager: TwentyORMManager) {}
+  constructor(private readonly twentyORMManager: ExampleCRMORMManager) {}
 
   public async cleanWorkspaceCalendarEvents(workspaceId: string) {
     const calendarEventRepository =

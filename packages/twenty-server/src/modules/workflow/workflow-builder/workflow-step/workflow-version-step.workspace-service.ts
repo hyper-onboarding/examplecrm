@@ -11,7 +11,7 @@ import { CreateWorkflowVersionStepInput } from 'src/engine/core-modules/workflow
 import { WorkflowActionDTO } from 'src/engine/core-modules/workflow/dtos/workflow-step.dto';
 import { ObjectMetadataEntity } from 'src/engine/metadata-modules/object-metadata/object-metadata.entity';
 import { ServerlessFunctionService } from 'src/engine/metadata-modules/serverless-function/serverless-function.service';
-import { TwentyORMManager } from 'src/engine/twenty-orm/twenty-orm.manager';
+import { ExampleCRMORMManager } from 'src/engine/twenty-orm/twenty-orm.manager';
 import {
   WorkflowVersionStepException,
   WorkflowVersionStepExceptionCode,
@@ -48,7 +48,7 @@ const BASE_STEP_DEFINITION: BaseWorkflowActionSettings = {
 @Injectable()
 export class WorkflowVersionStepWorkspaceService {
   constructor(
-    private readonly twentyORMManager: TwentyORMManager,
+    private readonly twentyORMManager: ExampleCRMORMManager,
     private readonly workflowSchemaWorkspaceService: WorkflowSchemaWorkspaceService,
     private readonly serverlessFunctionService: ServerlessFunctionService,
     @InjectRepository(ObjectMetadataEntity, 'metadata')

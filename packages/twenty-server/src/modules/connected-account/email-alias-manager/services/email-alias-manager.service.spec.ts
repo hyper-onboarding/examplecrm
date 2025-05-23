@@ -1,9 +1,9 @@
 import { Test, TestingModule } from '@nestjs/testing';
 
-import { Repository } from 'typeorm';
 import { ConnectedAccountProvider } from 'twenty-shared/types';
+import { Repository } from 'typeorm';
 
-import { TwentyORMManager } from 'src/engine/twenty-orm/twenty-orm.manager';
+import { ExampleCRMORMManager } from 'src/engine/twenty-orm/twenty-orm.manager';
 import { GoogleEmailAliasManagerService } from 'src/modules/connected-account/email-alias-manager/drivers/google/google-email-alias-manager.service';
 import { MicrosoftEmailAliasManagerService } from 'src/modules/connected-account/email-alias-manager/drivers/microsoft/microsoft-email-alias-manager.service';
 import { microsoftGraphMeResponseWithProxyAddresses } from 'src/modules/connected-account/email-alias-manager/drivers/microsoft/mocks/microsoft-api-examples';
@@ -28,7 +28,7 @@ describe('Email Alias Manager Service', () => {
     const module: TestingModule = await Test.createTestingModule({
       providers: [
         {
-          provide: TwentyORMManager,
+          provide: ExampleCRMORMManager,
           useValue: {
             getRepository: jest
               .fn()

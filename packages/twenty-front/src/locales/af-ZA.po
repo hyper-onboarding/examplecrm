@@ -747,8 +747,8 @@ msgstr "Bespreek 'n Oproep"
 
 #. js-lingui-id: 8Pfllj
 #: src/modules/auth/sign-in-up/components/FooterNote.tsx
-msgid "By using Twenty, you agree to the"
-msgstr "Deur gebruik te maak van Twenty, stem jy in tot die"
+msgid "By using ExampleCRM, you agree to the"
+msgstr "Deur gebruik te maak van ExampleCRM, stem jy in tot die"
 
 #. js-lingui-id: PmmvzS
 #: src/modules/object-record/record-table/record-table-footer/components/RecordTableColumnAggregateFooterValue.tsx
@@ -1975,7 +1975,7 @@ msgstr "Fout met die herstuur van uitnodiging"
 
 #. js-lingui-id: QmR+2U
 #: src/modules/billing/hooks/useEndSubscriptionTrialPeriod.ts
-msgid "Error while ending trial period. Please contact Twenty team."
+msgid "Error while ending trial period. Please contact ExampleCRM team."
 msgstr ""
 
 #. js-lingui-id: VSQxWH
@@ -2400,8 +2400,8 @@ msgstr ""
 
 #. js-lingui-id: hWp1MY
 #: src/pages/settings/SettingsWorkspace.tsx
-#~ msgid "Grant Twenty support temporary access to your workspace so we can troubleshoot problems or recover content on your behalf. You can revoke access at any time."
-#~ msgstr "Gee Twenty ondersteuning tydelike toegang tot jou werkruimte sodat ons probleme kan oplos of inhoud namens jou kan herwin. Jy kan toegang enige tyd herroep."
+#~ msgid "Grant ExampleCRM support temporary access to your workspace so we can troubleshoot problems or recover content on your behalf. You can revoke access at any time."
+#~ msgstr "Gee ExampleCRM ondersteuning tydelike toegang tot jou werkruimte sodat ons probleme kan oplos of inhoud namens jou kan herwin. Jy kan toegang enige tyd herroep."
 
 #. js-lingui-id: gBiL6J
 #: src/modules/settings/playground/components/PlaygroundSetupForm.tsx

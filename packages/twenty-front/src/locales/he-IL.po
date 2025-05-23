@@ -747,8 +747,8 @@ msgstr "תזמן שיחה"
 
 #. js-lingui-id: 8Pfllj
 #: src/modules/auth/sign-in-up/components/FooterNote.tsx
-msgid "By using Twenty, you agree to the"
-msgstr "על ידי שימוש ב-Twenty, אתה מסכים ל"
+msgid "By using ExampleCRM, you agree to the"
+msgstr "על ידי שימוש ב-ExampleCRM, אתה מסכים ל"
 
 #. js-lingui-id: PmmvzS
 #: src/modules/object-record/record-table/record-table-footer/components/RecordTableColumnAggregateFooterValue.tsx
@@ -1975,7 +1975,7 @@ msgstr "שגיאה בשליחת הזמנה מחדש"
 
 #. js-lingui-id: QmR+2U
 #: src/modules/billing/hooks/useEndSubscriptionTrialPeriod.ts
-msgid "Error while ending trial period. Please contact Twenty team."
+msgid "Error while ending trial period. Please contact ExampleCRM team."
 msgstr ""
 
 #. js-lingui-id: VSQxWH
@@ -2400,8 +2400,8 @@ msgstr ""
 
 #. js-lingui-id: hWp1MY
 #: src/pages/settings/SettingsWorkspace.tsx
-#~ msgid "Grant Twenty support temporary access to your workspace so we can troubleshoot problems or recover content on your behalf. You can revoke access at any time."
-#~ msgstr "אפשרו לתמיכת Twenty גישה זמנית למרחב העבודה שלכם כדי שנוכל לאבחן בעיות או לשחזר תוכן בשמכם. באפשרותכם לשלול את הגישה בכל זמן."
+#~ msgid "Grant ExampleCRM support temporary access to your workspace so we can troubleshoot problems or recover content on your behalf. You can revoke access at any time."
+#~ msgstr "אפשרו לתמיכת ExampleCRM גישה זמנית למרחב העבודה שלכם כדי שנוכל לאבחן בעיות או לשחזר תוכן בשמכם. באפשרותכם לשלול את הגישה בכל זמן."
 
 #. js-lingui-id: gBiL6J
 #: src/modules/settings/playground/components/PlaygroundSetupForm.tsx

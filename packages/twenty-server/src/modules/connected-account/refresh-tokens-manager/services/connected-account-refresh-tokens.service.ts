@@ -1,20 +1,20 @@
 import { Injectable } from '@nestjs/common';
 
-import { assertUnreachable } from 'twenty-shared/utils';
 import { ConnectedAccountProvider } from 'twenty-shared/types';
+import { assertUnreachable } from 'twenty-shared/utils';
 
-import { TwentyORMManager } from 'src/engine/twenty-orm/twenty-orm.manager';
+import { ExampleCRMORMManager } from 'src/engine/twenty-orm/twenty-orm.manager';
 import {
-  GoogleAPIRefreshAccessTokenService,
-  GoogleTokens,
+    GoogleAPIRefreshAccessTokenService,
+    GoogleTokens,
 } from 'src/modules/connected-account/refresh-tokens-manager/drivers/google/services/google-api-refresh-access-token.service';
 import {
-  MicrosoftAPIRefreshAccessTokenService,
-  MicrosoftTokens,
+    MicrosoftAPIRefreshAccessTokenService,
+    MicrosoftTokens,
 } from 'src/modules/connected-account/refresh-tokens-manager/drivers/microsoft/services/microsoft-api-refresh-tokens.service';
 import {
-  ConnectedAccountRefreshAccessTokenException,
-  ConnectedAccountRefreshAccessTokenExceptionCode,
+    ConnectedAccountRefreshAccessTokenException,
+    ConnectedAccountRefreshAccessTokenExceptionCode,
 } from 'src/modules/connected-account/refresh-tokens-manager/exceptions/connected-account-refresh-tokens.exception';
 import { ConnectedAccountWorkspaceEntity } from 'src/modules/connected-account/standard-objects/connected-account.workspace-entity';
 
@@ -25,7 +25,7 @@ export class ConnectedAccountRefreshTokensService {
   constructor(
     private readonly googleAPIRefreshAccessTokenService: GoogleAPIRefreshAccessTokenService,
     private readonly microsoftAPIRefreshAccessTokenService: MicrosoftAPIRefreshAccessTokenService,
-    private readonly twentyORMManager: TwentyORMManager,
+    private readonly twentyORMManager: ExampleCRMORMManager,
   ) {}
 
   async refreshAndSaveTokens(

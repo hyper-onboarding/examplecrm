@@ -747,8 +747,8 @@ msgstr "Reservar una llamada"
 
 #. js-lingui-id: 8Pfllj
 #: src/modules/auth/sign-in-up/components/FooterNote.tsx
-msgid "By using Twenty, you agree to the"
-msgstr "Al utilizar Twenty, aceptas la"
+msgid "By using ExampleCRM, you agree to the"
+msgstr "Al utilizar ExampleCRM, aceptas la"
 
 #. js-lingui-id: PmmvzS
 #: src/modules/object-record/record-table/record-table-footer/components/RecordTableColumnAggregateFooterValue.tsx
@@ -1975,7 +1975,7 @@ msgstr "Error al reenviar la invitación"
 
 #. js-lingui-id: QmR+2U
 #: src/modules/billing/hooks/useEndSubscriptionTrialPeriod.ts
-msgid "Error while ending trial period. Please contact Twenty team."
+msgid "Error while ending trial period. Please contact ExampleCRM team."
 msgstr ""
 
 #. js-lingui-id: VSQxWH
@@ -2400,8 +2400,8 @@ msgstr ""
 
 #. js-lingui-id: hWp1MY
 #: src/pages/settings/SettingsWorkspace.tsx
-#~ msgid "Grant Twenty support temporary access to your workspace so we can troubleshoot problems or recover content on your behalf. You can revoke access at any time."
-#~ msgstr "Conceda al soporte de Twenty acceso temporal a su espacio de trabajo para que podamos solucionar problemas o recuperar contenido en su nombre. Puede revocar el acceso en cualquier momento."
+#~ msgid "Grant ExampleCRM support temporary access to your workspace so we can troubleshoot problems or recover content on your behalf. You can revoke access at any time."
+#~ msgstr "Conceda al soporte de ExampleCRM acceso temporal a su espacio de trabajo para que podamos solucionar problemas o recuperar contenido en su nombre. Puede revocar el acceso en cualquier momento."
 
 #. js-lingui-id: gBiL6J
 #: src/modules/settings/playground/components/PlaygroundSetupForm.tsx

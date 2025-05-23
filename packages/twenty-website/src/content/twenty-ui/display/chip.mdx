@@ -54,7 +54,7 @@ export const MyComponent = () => {
 
 export const MyComponent = () => {
   return (
-      <Chip 
+      <Chip
       size="large"
       label="Transparent Disabled Chip"
       clickable={false}
@@ -64,7 +64,7 @@ export const MyComponent = () => {
       rightComponent
       maxWidth="200px"
       className
-      />    
+      />
   );
 };
 `} />
@@ -74,10 +74,10 @@ export const MyComponent = () => {
 ### Disabled Chip with Tooltip
 
 <SandpackEditor content={`import { Chip } from "twenty-ui/components";
-  
+
 export const MyComponent = () => {
   return (
-      <Chip 
+      <Chip
       size="large"
       label="Disabled chip that triggers a tooltip when overflowing."
       clickable={false}
@@ -87,13 +87,13 @@ export const MyComponent = () => {
       rightComponent
       maxWidth="200px"
       className
-      />    
+      />
   );
 };`} />
 
 
 
-## Entity Chip 
+## Entity Chip
 
 A Chip-like element to display information about an entity.
 
@@ -102,7 +102,7 @@ A Chip-like element to display information about an entity.
 <ArticleTab>
 
 <SandpackEditor content={`import { BrowserRouter as Router } from 'react-router-dom';
-import { IconTwentyStar } from 'twenty-ui/display';
+import { IconExampleCRMStar } from 'twenty-ui/display';
 import { Chip } from 'twenty-ui/components';
 
 export const MyComponent = () => {
@@ -115,7 +115,7 @@ export const MyComponent = () => {
         pictureUrl=""
         avatarType="rounded"
         variant="regular"
-        LeftIcon={IconTwentyStar}
+        LeftIcon={IconExampleCRMStar}
       />
     </Router>
   );
@@ -124,7 +124,7 @@ export const MyComponent = () => {
 </ArticleTab>
 
 <ArticleTab>
-  
+
 <ArticlePropsTable options={[
   ['linkToEntity', 'string', 'The link to the entity', ''],
   ['entityId', 'string', 'The unique identifier for the entity', ''],

@@ -4,7 +4,7 @@ import { ConnectedAccountProvider } from 'twenty-shared/types';
 
 import { CacheStorageService } from 'src/engine/core-modules/cache-storage/services/cache-storage.service';
 import { CacheStorageNamespace } from 'src/engine/core-modules/cache-storage/types/cache-storage-namespace.enum';
-import { TwentyORMManager } from 'src/engine/twenty-orm/twenty-orm.manager';
+import { ExampleCRMORMManager } from 'src/engine/twenty-orm/twenty-orm.manager';
 import { MessageChannelSyncStatusService } from 'src/modules/messaging/common/services/message-channel-sync-status.service';
 import { MessageChannelWorkspaceEntity } from 'src/modules/messaging/common/standard-objects/message-channel.workspace-entity';
 import { MessageFolderWorkspaceEntity } from 'src/modules/messaging/common/standard-objects/message-folder.workspace-entity';
@@ -18,7 +18,7 @@ describe('MessagingFullMessageListFetchService', () => {
   let messagingFullMessageListFetchService: MessagingFullMessageListFetchService;
   let messagingGetMessageListService: MessagingGetMessageListService;
   let messageChannelSyncStatusService: MessageChannelSyncStatusService;
-  let twentyORMManager: TwentyORMManager;
+  let twentyORMManager: ExampleCRMORMManager;
   let messagingCursorService: MessagingCursorService;
 
   let mockMicrosoftMessageChannel: MessageChannelWorkspaceEntity;
@@ -126,7 +126,7 @@ describe('MessagingFullMessageListFetchService', () => {
           },
         },
         {
-          provide: TwentyORMManager,
+          provide: ExampleCRMORMManager,
           useValue: {
             getRepository: jest
               .fn()
@@ -173,7 +173,7 @@ describe('MessagingFullMessageListFetchService', () => {
       module.get<MessageChannelSyncStatusService>(
         MessageChannelSyncStatusService,
       );
-    twentyORMManager = module.get<TwentyORMManager>(TwentyORMManager);
+    twentyORMManager = module.get<ExampleCRMORMManager>(ExampleCRMORMManager);
     messagingCursorService = module.get<MessagingCursorService>(
       MessagingCursorService,
     );

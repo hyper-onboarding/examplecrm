@@ -747,8 +747,8 @@ msgstr "Objednat hovor"
 
 #. js-lingui-id: 8Pfllj
 #: src/modules/auth/sign-in-up/components/FooterNote.tsx
-msgid "By using Twenty, you agree to the"
-msgstr "Použitím Twenty souhlasíte s"
+msgid "By using ExampleCRM, you agree to the"
+msgstr "Použitím ExampleCRM souhlasíte s"
 
 #. js-lingui-id: PmmvzS
 #: src/modules/object-record/record-table/record-table-footer/components/RecordTableColumnAggregateFooterValue.tsx
@@ -1975,7 +1975,7 @@ msgstr "Chyba při opětovném odeslání pozvánky"
 
 #. js-lingui-id: QmR+2U
 #: src/modules/billing/hooks/useEndSubscriptionTrialPeriod.ts
-msgid "Error while ending trial period. Please contact Twenty team."
+msgid "Error while ending trial period. Please contact ExampleCRM team."
 msgstr ""
 
 #. js-lingui-id: VSQxWH
@@ -2400,8 +2400,8 @@ msgstr ""
 
 #. js-lingui-id: hWp1MY
 #: src/pages/settings/SettingsWorkspace.tsx
-#~ msgid "Grant Twenty support temporary access to your workspace so we can troubleshoot problems or recover content on your behalf. You can revoke access at any time."
-#~ msgstr "Twenty podpoře dočasně udělit přístup do vašeho pracovního prostoru, aby bylo možné řešit problémy nebo obnovit obsah za vás. Přístup můžete kdykoli zrušit."
+#~ msgid "Grant ExampleCRM support temporary access to your workspace so we can troubleshoot problems or recover content on your behalf. You can revoke access at any time."
+#~ msgstr "ExampleCRM podpoře dočasně udělit přístup do vašeho pracovního prostoru, aby bylo možné řešit problémy nebo obnovit obsah za vás. Přístup můžete kdykoli zrušit."
 
 #. js-lingui-id: gBiL6J
 #: src/modules/settings/playground/components/PlaygroundSetupForm.tsx

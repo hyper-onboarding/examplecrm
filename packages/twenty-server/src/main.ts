@@ -13,7 +13,7 @@ import { NodeEnvironment } from 'src/engine/core-modules/twenty-config/interface
 
 import { LoggerService } from 'src/engine/core-modules/logger/logger.service';
 import { getSessionStorageOptions } from 'src/engine/core-modules/session-storage/session-storage.module-factory';
-import { TwentyConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
+import { ExampleCRMConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
 import { UnhandledExceptionFilter } from 'src/filters/unhandled-exception.filter';
 
 import { AppModule } from './app.module';
@@ -38,7 +38,7 @@ const bootstrap = async () => {
       : {}),
   });
   const logger = app.get(LoggerService);
-  const twentyConfigService = app.get(TwentyConfigService);
+  const twentyConfigService = app.get(ExampleCRMConfigService);
 
   app.use(session(getSessionStorageOptions(twentyConfigService)));
 

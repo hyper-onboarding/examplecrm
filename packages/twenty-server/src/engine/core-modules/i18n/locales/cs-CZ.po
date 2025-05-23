@@ -1205,8 +1205,8 @@ msgstr "Pracovní pozice"
 
 #. js-lingui-id: PviVyk
 #: src/engine/core-modules/workspace-invitation/services/workspace-invitation.service.ts
-msgid "Join your team on Twenty"
-msgstr "Připojte se k svému týmu na Twenty"
+msgid "Join your team on ExampleCRM"
+msgstr "Připojte se k svému týmu na ExampleCRM"
 
 #. js-lingui-id: shbh25
 #: src/modules/timeline/standard-objects/behavioral-event.workspace-entity.ts
@@ -1720,8 +1720,8 @@ msgstr "Volitelná agregátní operace"
 
 #. js-lingui-id: kdClJ/
 #: src/modules/webhook/standard-objects/webhook.workspace-entity.ts
-msgid "Optional secret used to compute the HMAC signature for webhook payloads. This secret is shared between Twenty and the webhook consumer to authenticate webhook requests."
-msgstr "Volitelné tajemství použité pro výpočet HMAC podpisu pro webhook payloady. Toto tajemství je sdíleno mezi Twenty a spotřebitelem webhooku pro autentizaci webhookových požadavků."
+msgid "Optional secret used to compute the HMAC signature for webhook payloads. This secret is shared between ExampleCRM and the webhook consumer to authenticate webhook requests."
+msgstr "Volitelné tajemství použité pro výpočet HMAC podpisu pro webhook payloady. Toto tajemství je sdíleno mezi ExampleCRM a spotřebitelem webhooku pro autentizaci webhookových požadavků."
 
 #. js-lingui-id: gh06VD
 #: src/modules/workflow/common/standard-objects/workflow-run.workspace-entity.ts
@@ -2613,8 +2613,8 @@ msgstr "Webhooky"
 
 #. js-lingui-id: TVkCrJ
 #: src/engine/core-modules/email-verification/services/email-verification.service.ts
-msgid "Welcome to Twenty: Please Confirm Your Email"
-msgstr "Vítejte v Twenty: Prosím potvrďte svůj e-mail"
+msgid "Welcome to ExampleCRM: Please Confirm Your Email"
+msgstr "Vítejte v ExampleCRM: Prosím potvrďte svůj e-mail"
 
 #. js-lingui-id: bLt/0J
 #: src/modules/workflow/common/standard-objects/workflow.workspace-entity.ts

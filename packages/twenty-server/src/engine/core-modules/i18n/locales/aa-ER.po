@@ -1196,7 +1196,7 @@ msgstr "crwdns1231:0crwdne1231:0"
 
 #. js-lingui-id: PviVyk
 #: src/engine/core-modules/workspace-invitation/services/workspace-invitation.service.ts
-msgid "Join your team on Twenty"
+msgid "Join your team on ExampleCRM"
 msgstr "crwdns4977:0crwdne4977:0"
 
 #. js-lingui-id: shbh25
@@ -1714,7 +1714,7 @@ msgstr "crwdns1407:0crwdne1407:0"
 
 #. js-lingui-id: kdClJ/
 #: src/modules/webhook/standard-objects/webhook.workspace-entity.ts
-msgid "Optional secret used to compute the HMAC signature for webhook payloads. This secret is shared between Twenty and the webhook consumer to authenticate webhook requests."
+msgid "Optional secret used to compute the HMAC signature for webhook payloads. This secret is shared between ExampleCRM and the webhook consumer to authenticate webhook requests."
 msgstr "crwdns1409:0crwdne1409:0"
 
 #. js-lingui-id: gh06VD
@@ -2586,7 +2586,7 @@ msgstr "crwdns1715:0crwdne1715:0"
 
 #. js-lingui-id: TVkCrJ
 #: src/engine/core-modules/email-verification/services/email-verification.service.ts
-msgid "Welcome to Twenty: Please Confirm Your Email"
+msgid "Welcome to ExampleCRM: Please Confirm Your Email"
 msgstr "crwdns4981:0crwdne4981:0"
 
 #. js-lingui-id: bLt/0J

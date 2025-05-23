@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 
 import { WorkspaceEntityManager } from 'src/engine/twenty-orm/entity-manager/workspace-entity-manager';
-import { TwentyORMManager } from 'src/engine/twenty-orm/twenty-orm.manager';
+import { ExampleCRMORMManager } from 'src/engine/twenty-orm/twenty-orm.manager';
 import { MatchParticipantService } from 'src/modules/match-participant/match-participant.service';
 import { MessageParticipantWorkspaceEntity } from 'src/modules/messaging/common/standard-objects/message-participant.workspace-entity';
 import { ParticipantWithMessageId } from 'src/modules/messaging/message-import-manager/drivers/gmail/types/gmail-message.type';
@@ -9,7 +9,7 @@ import { ParticipantWithMessageId } from 'src/modules/messaging/message-import-m
 @Injectable()
 export class MessagingMessageParticipantService {
   constructor(
-    private readonly twentyORMManager: TwentyORMManager,
+    private readonly twentyORMManager: ExampleCRMORMManager,
     private readonly matchParticipantService: MatchParticipantService<MessageParticipantWorkspaceEntity>,
   ) {}
 

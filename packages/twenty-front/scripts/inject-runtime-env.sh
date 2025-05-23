@@ -8,18 +8,18 @@ CONFIG_BLOCK=$(cat << EOF
         REACT_APP_SERVER_BASE_URL: "$REACT_APP_SERVER_BASE_URL"
       };
     </script>
-    <!-- END: Twenty Config -->
+    <!-- END: ExampleCRM Config -->
 EOF
 )
 # Use sed to replace the config block in index.html
 # Using pattern space to match across multiple lines
 echo "$CONFIG_BLOCK" | sed -i.bak '
-  /<!-- BEGIN: Twenty Config -->/,/<!-- END: Twenty Config -->/{
-    /<!-- BEGIN: Twenty Config -->/!{
-      /<!-- END: Twenty Config -->/!d
+  /<!-- BEGIN: ExampleCRM Config -->/,/<!-- END: ExampleCRM Config -->/{
+    /<!-- BEGIN: ExampleCRM Config -->/!{
+      /<!-- END: ExampleCRM Config -->/!d
     }
-    /<!-- BEGIN: Twenty Config -->/r /dev/stdin
-    /<!-- END: Twenty Config -->/d
+    /<!-- BEGIN: ExampleCRM Config -->/r /dev/stdin
+    /<!-- END: ExampleCRM Config -->/d
   }
 ' build/index.html
 rm -f build/index.html.bak

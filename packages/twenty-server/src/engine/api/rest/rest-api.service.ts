@@ -6,7 +6,7 @@ import { Request } from 'express';
 
 import { Query } from 'src/engine/api/rest/core/types/query.type';
 import { RestApiException } from 'src/engine/api/rest/errors/RestApiException';
-import { TwentyConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
+import { ExampleCRMConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
 import { getServerUrl } from 'src/utils/get-server-url';
 
 export enum GraphqlApiType {
@@ -17,7 +17,7 @@ export enum GraphqlApiType {
 @Injectable()
 export class RestApiService {
   constructor(
-    private readonly twentyConfigService: TwentyConfigService,
+    private readonly twentyConfigService: ExampleCRMConfigService,
     private readonly httpService: HttpService,
   ) {}
 

@@ -1,4 +1,4 @@
-export type PerformTwentyConfigQueryParams<T> = {
+export type PerformExampleCRMConfigQueryParams<T> = {
   input: T;
   expectToFail?: boolean;
 };

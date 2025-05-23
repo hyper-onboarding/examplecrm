@@ -1,10 +1,10 @@
 import { FactoryProvider, ModuleMetadata } from '@nestjs/common';
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
-export interface TwentyORMOptions {}
+export interface ExampleCRMORMOptions {}
 
-export type TwentyORMModuleAsyncOptions = {
+export type ExampleCRMORMModuleAsyncOptions = {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  useFactory: (...args: any[]) => TwentyORMOptions | Promise<TwentyORMOptions>;
+  useFactory: (...args: any[]) => ExampleCRMORMOptions | Promise<ExampleCRMORMOptions>;
 } & Pick<ModuleMetadata, 'imports'> &
   Pick<FactoryProvider, 'inject'>;

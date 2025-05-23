@@ -8,7 +8,7 @@ import { MessageQueue } from 'src/engine/core-modules/message-queue/message-queu
 import { Processor } from 'src/engine/core-modules/message-queue/decorators/processor.decorator';
 import { Process } from 'src/engine/core-modules/message-queue/decorators/process.decorator';
 import { SentryCronMonitor } from 'src/engine/core-modules/cron/sentry-cron-monitor.decorator';
-import { TwentyORMGlobalManager } from 'src/engine/twenty-orm/twenty-orm-global.manager';
+import { ExampleCRMORMGlobalManager } from 'src/engine/twenty-orm/twenty-orm-global.manager';
 import {
   AutomatedTriggerType,
   WorkflowAutomatedTriggerWorkspaceEntity,
@@ -31,7 +31,7 @@ export class CronTriggerCronJob {
     private readonly workspaceRepository: Repository<Workspace>,
     @InjectMessageQueue(MessageQueue.workflowQueue)
     private readonly messageQueueService: MessageQueueService,
-    private readonly twentyORMGlobalManager: TwentyORMGlobalManager,
+    private readonly twentyORMGlobalManager: ExampleCRMORMGlobalManager,
   ) {}
 
   @Process(CronTriggerCronJob.name)

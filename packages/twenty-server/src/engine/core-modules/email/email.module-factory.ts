@@ -1,12 +1,12 @@
 import {
-  EmailDriver,
-  EmailModuleOptions,
+    EmailDriver,
+    EmailModuleOptions,
 } from 'src/engine/core-modules/email/interfaces/email.interface';
 
-import { TwentyConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
+import { ExampleCRMConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
 
 export const emailModuleFactory = (
-  twentyConfigService: TwentyConfigService,
+  twentyConfigService: ExampleCRMConfigService,
 ): EmailModuleOptions => {
   const driver = twentyConfigService.get('EMAIL_DRIVER');
 

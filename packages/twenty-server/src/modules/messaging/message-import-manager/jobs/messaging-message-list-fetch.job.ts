@@ -3,7 +3,7 @@ import { Scope } from '@nestjs/common';
 import { Process } from 'src/engine/core-modules/message-queue/decorators/process.decorator';
 import { Processor } from 'src/engine/core-modules/message-queue/decorators/processor.decorator';
 import { MessageQueue } from 'src/engine/core-modules/message-queue/message-queue.constants';
-import { TwentyORMManager } from 'src/engine/twenty-orm/twenty-orm.manager';
+import { ExampleCRMORMManager } from 'src/engine/twenty-orm/twenty-orm.manager';
 import { ConnectedAccountRefreshAccessTokenExceptionCode } from 'src/modules/connected-account/refresh-tokens-manager/exceptions/connected-account-refresh-tokens.exception';
 import { ConnectedAccountRefreshTokensService } from 'src/modules/connected-account/refresh-tokens-manager/services/connected-account-refresh-tokens.service';
 import { isThrottled } from 'src/modules/connected-account/utils/is-throttled';
@@ -35,7 +35,7 @@ export class MessagingMessageListFetchJob {
     private readonly messagingFullMessageListFetchService: MessagingFullMessageListFetchService,
     private readonly messagingPartialMessageListFetchService: MessagingPartialMessageListFetchService,
     private readonly messagingMonitoringService: MessagingMonitoringService,
-    private readonly twentyORMManager: TwentyORMManager,
+    private readonly twentyORMManager: ExampleCRMORMManager,
     private readonly connectedAccountRefreshTokensService: ConnectedAccountRefreshTokensService,
     private readonly messageImportErrorHandlerService: MessageImportExceptionHandlerService,
   ) {}

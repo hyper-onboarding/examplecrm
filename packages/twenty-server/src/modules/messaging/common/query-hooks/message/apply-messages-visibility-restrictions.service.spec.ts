@@ -2,7 +2,7 @@ import { Test, TestingModule } from '@nestjs/testing';
 
 import { FIELD_RESTRICTED_ADDITIONAL_PERMISSIONS_REQUIRED } from 'twenty-shared/constants';
 
-import { TwentyORMManager } from 'src/engine/twenty-orm/twenty-orm.manager';
+import { ExampleCRMORMManager } from 'src/engine/twenty-orm/twenty-orm.manager';
 import { MessageChannelVisibility } from 'src/modules/messaging/common/standard-objects/message-channel.workspace-entity';
 import { MessageWorkspaceEntity } from 'src/modules/messaging/common/standard-objects/message.workspace-entity';
 
@@ -42,7 +42,7 @@ describe('ApplyMessagesVisibilityRestrictionsService', () => {
     findOneByOrFail: jest.fn(),
   };
 
-  const mockTwentyORMManager = {
+  const mockExampleCRMORMManager = {
     getRepository: jest.fn().mockImplementation((name) => {
       if (name === 'messageChannelMessageAssociation') {
         return mockMessageChannelMessageAssociationRepository;
@@ -61,8 +61,8 @@ describe('ApplyMessagesVisibilityRestrictionsService', () => {
       providers: [
         ApplyMessagesVisibilityRestrictionsService,
         {
-          provide: TwentyORMManager,
-          useValue: mockTwentyORMManager,
+          provide: ExampleCRMORMManager,
+          useValue: mockExampleCRMORMManager,
         },
       ],
     }).compile();

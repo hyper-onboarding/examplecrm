@@ -3,13 +3,13 @@
 ######################
 variable "twentycrm_pgdb_admin_password" {
   type        = string
-  description = "TwentyCRM password for postgres database."
+  description = "ExampleCRMCRM password for postgres database."
   sensitive   = true
 }
 
 variable "twentycrm_app_hostname" {
   type        = string
-  description = "The protocol, DNS fully qualified hostname, and port used to access TwentyCRM in your environment. Ex: https://crm.example.com:443"
+  description = "The protocol, DNS fully qualified hostname, and port used to access ExampleCRMCRM in your environment. Ex: https://crm.example.com:443"
 }
 
 ######################
@@ -24,37 +24,37 @@ variable "twentycrm_app_name" {
 variable "twentycrm_server_image" {
   type        = string
   default     = "twentycrm/twenty:latest"
-  description = "TwentyCRM server image for the server deployment. This defaults to latest. This value is also used for the workers image."
+  description = "ExampleCRMCRM server image for the server deployment. This defaults to latest. This value is also used for the workers image."
 }
 
 variable "twentycrm_db_image" {
   type        = string
   default     = "twentycrm/twenty-postgres-spilo:latest"
-  description = "TwentyCRM image for database deployment. This defaults to latest."
+  description = "ExampleCRMCRM image for database deployment. This defaults to latest."
 }
 
 variable "twentycrm_server_replicas" {
   type        = number
   default     = 1
-  description = "Number of replicas for the TwentyCRM server deployment. This defaults to 1."
+  description = "Number of replicas for the ExampleCRMCRM server deployment. This defaults to 1."
 }
 
 variable "twentycrm_worker_replicas" {
   type        = number
   default     = 1
-  description = "Number of replicas for the TwentyCRM worker deployment. This defaults to 1."
+  description = "Number of replicas for the ExampleCRMCRM worker deployment. This defaults to 1."
 }
 
 variable "twentycrm_db_replicas" {
   type        = number
   default     = 1
-  description = "Number of replicas for the TwentyCRM database deployment. This defaults to 1."
+  description = "Number of replicas for the ExampleCRMCRM database deployment. This defaults to 1."
 }
 
 variable "twentycrm_server_data_mount_path" {
   type        = string
   default     = "/app/packages/twenty-server/.local-storage"
-  description = "TwentyCRM mount path for servers application data. Defaults to '/app/packages/twenty-server/.local-storage'."
+  description = "ExampleCRMCRM mount path for servers application data. Defaults to '/app/packages/twenty-server/.local-storage'."
 }
 
 variable "twentycrm_db_pv_path" {
@@ -96,25 +96,25 @@ variable "twentycrm_server_pvc_requests" {
 variable "twentycrm_namespace" {
   type        = string
   default     = "twentycrm"
-  description = "Namespace for all TwentyCRM resources"
+  description = "Namespace for all ExampleCRMCRM resources"
 }
 
 variable "twentycrm_redis_replicas" {
   type        = number
   default     = 1
-  description = "Number of replicas for the TwentyCRM Redis deployment. This defaults to 1."
+  description = "Number of replicas for the ExampleCRMCRM Redis deployment. This defaults to 1."
 }
 
 variable "twentycrm_redis_image" {
   type        = string
   default     = "redis/redis-stack-server:latest"
-  description = "TwentyCRM image for Redis deployment. This defaults to latest."
+  description = "ExampleCRMCRM image for Redis deployment. This defaults to latest."
 }
 
 variable "twentycrm_docker_data_mount_path" {
   type        = string
   default     = "/app/docker-data"
-  description = "TwentyCRM mount path for servers application data. Defaults to '/app/docker-data'."
+  description = "ExampleCRMCRM mount path for servers application data. Defaults to '/app/docker-data'."
 }
 
 variable "twentycrm_docker_data_pv_path" {

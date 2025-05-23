@@ -24,7 +24,7 @@ import { WorkspaceMetadataCacheModule } from 'src/engine/metadata-modules/worksp
 import { GraphQLHydrateRequestFromTokenMiddleware } from 'src/engine/middlewares/graphql-hydrate-request-from-token.middleware';
 import { MiddlewareModule } from 'src/engine/middlewares/middleware.module';
 import { RestCoreMiddleware } from 'src/engine/middlewares/rest-core.middleware';
-import { TwentyORMModule } from 'src/engine/twenty-orm/twenty-orm.module';
+import { ExampleCRMORMModule } from 'src/engine/twenty-orm/twenty-orm.module';
 import { WorkspaceCacheStorageModule } from 'src/engine/workspace-cache-storage/workspace-cache-storage.module';
 import { ModulesModule } from 'src/modules/modules.module';
 
@@ -32,7 +32,7 @@ import { ClickHouseModule } from './database/clickHouse/clickHouse.module';
 import { CoreEngineModule } from './engine/core-modules/core-engine.module';
 import { I18nModule } from './engine/core-modules/i18n/i18n.module';
 
-// TODO: Remove this middleware when all the rest endpoints are migrated to TwentyORM
+// TODO: Remove this middleware when all the rest endpoints are migrated to ExampleCRMORM
 const MIGRATED_REST_METHODS = [
   RequestMethod.DELETE,
   RequestMethod.POST,
@@ -53,7 +53,7 @@ const MIGRATED_REST_METHODS = [
       imports: [GraphQLConfigModule],
       useClass: GraphQLConfigService,
     }),
-    TwentyORMModule,
+    ExampleCRMORMModule,
     ClickHouseModule,
     // Core engine module, contains all the core modules
     CoreEngineModule,

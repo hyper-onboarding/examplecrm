@@ -10,7 +10,7 @@ Docker containers are for production hosting or self-hosting, for the contributi
 
 ## Overview
 
-This guide provides step-by-step instructions to install and configure the Twenty application using Docker Compose. The aim is to make the process straightforward and prevent common pitfalls that could break your setup.
+This guide provides step-by-step instructions to install and configure the ExampleCRM application using Docker Compose. The aim is to make the process straightforward and prevent common pitfalls that could break your setup.
 
 **Important:** Only modify settings explicitly mentioned in this guide. Altering other configurations may lead to issues.
 
@@ -23,7 +23,7 @@ See docs [Setup Environment Variables](https://twenty.com/developers/section/sel
 
 ## Option 1: One-line script
 
-Install the latest stable version of Twenty with a single command:
+Install the latest stable version of ExampleCRM with a single command:
 ```bash
 bash <(curl -sL https://git.new/20)
 ```
@@ -92,9 +92,9 @@ Open your browser and navigate to [http://localhost:3000](http://localhost:3000)
 
 ## Configuration
 
-### Expose Twenty to External Access
+### Expose ExampleCRM to External Access
 
-By default, Twenty runs on `localhost` at port `3000`. To access it via an external domain or IP address, you need to configure the `SERVER_URL` in your `.env` file.
+By default, ExampleCRM runs on `localhost` at port `3000`. To access it via an external domain or IP address, you need to configure the `SERVER_URL` in your `.env` file.
 
 #### Understanding `SERVER_URL`
 
@@ -106,11 +106,11 @@ By default, Twenty runs on `localhost` at port `3000`. To access it via an exter
 
 ### SSL Requirements
 
-SSL (HTTPS) is required for certain browser features to work properly. While these features might work during local development (as browsers treat localhost differently), a proper SSL setup is needed when hosting Twenty on a regular domain.
+SSL (HTTPS) is required for certain browser features to work properly. While these features might work during local development (as browsers treat localhost differently), a proper SSL setup is needed when hosting ExampleCRM on a regular domain.
 
 For example, the clipboard API might require a secure context - some features like copy buttons throughout the application might not work without HTTPS enabled.
 
-We strongly recommend setting up Twenty behind a reverse proxy with SSL termination for optimal security and functionality.
+We strongly recommend setting up ExampleCRM behind a reverse proxy with SSL termination for optimal security and functionality.
 
 #### Configuring `SERVER_URL`
 

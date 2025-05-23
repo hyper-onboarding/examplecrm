@@ -49,7 +49,7 @@ msgstr ""
 
 #. js-lingui-explicit-id
 #: src/emails/warn-suspended-workspace.email.tsx
-msgid "If you wish to continue using Twenty, please update your subscription within the next {remainingDays} {dayOrDays}."
+msgid "If you wish to continue using ExampleCRM, please update your subscription within the next {remainingDays} {dayOrDays}."
 msgstr ""
 
 #. js-lingui-explicit-id
@@ -75,7 +75,7 @@ msgstr ""
 
 #. js-lingui-explicit-id
 #: src/emails/send-invite-link.email.tsx
-msgid "Join your team on Twenty"
+msgid "Join your team on ExampleCRM"
 msgstr ""
 
 #. js-lingui-explicit-id
@@ -95,7 +95,7 @@ msgstr ""
 
 #. js-lingui-explicit-id
 #: src/emails/send-email-verification-link.email.tsx
-msgid "Thanks for registering for an account on Twenty! Before we get started, we just need to confirm that this is you. Click below to verify your email address."
+msgid "Thanks for registering for an account on ExampleCRM! Before we get started, we just need to confirm that this is you. Click below to verify your email address."
 msgstr ""
 
 #. js-lingui-explicit-id
@@ -120,7 +120,7 @@ msgstr ""
 
 #. js-lingui-explicit-id
 #: src/emails/password-update-notify.email.tsx
-msgid "Connect to Twenty"
+msgid "Connect to ExampleCRM"
 msgstr ""
 
 #. js-lingui-explicit-id
@@ -155,7 +155,7 @@ msgstr ""
 
 #. js-lingui-explicit-id
 #: src/emails/clean-suspended-workspace.email.tsx
-msgid "If you wish to use Twenty again, you can create a new workspace."
+msgid "If you wish to use ExampleCRM again, you can create a new workspace."
 msgstr ""
 
 #. js-lingui-explicit-id
@@ -164,12 +164,12 @@ msgid "Create a new workspace"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/components/WhatIsTwenty.tsx
-msgid "What is Twenty?"
+#: src/components/WhatIsExampleCRM.tsx
+msgid "What is ExampleCRM?"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/components/WhatIsTwenty.tsx
+#: src/components/WhatIsExampleCRM.tsx
 msgid "It's a CRM, a software to help businesses manage their customer data and relationships efficiently."
 msgstr ""
 
@@ -180,7 +180,7 @@ msgstr ""
 
 #. js-lingui-explicit-id
 #: src/components/Footer.tsx
-msgid "Visit Twenty's website"
+msgid "Visit ExampleCRM's website"
 msgstr ""
 
 #. js-lingui-explicit-id
@@ -190,7 +190,7 @@ msgstr ""
 
 #. js-lingui-explicit-id
 #: src/components/Footer.tsx
-msgid "Visit Twenty's GitHub repository"
+msgid "Visit ExampleCRM's GitHub repository"
 msgstr ""
 
 #. js-lingui-explicit-id
@@ -200,7 +200,7 @@ msgstr ""
 
 #. js-lingui-explicit-id
 #: src/components/Footer.tsx
-msgid "Read Twenty's user guide"
+msgid "Read ExampleCRM's user guide"
 msgstr ""
 
 #. js-lingui-explicit-id
@@ -210,12 +210,12 @@ msgstr ""
 
 #. js-lingui-explicit-id
 #: src/components/Footer.tsx
-msgid "Visit Twenty's developer documentation"
+msgid "Visit ExampleCRM's developer documentation"
 msgstr ""
 
 #. js-lingui-explicit-id
 #: src/components/Footer.tsx
-msgid "Twenty.com, Public Benefit Corporation"
+msgid "ExampleCRM.com, Public Benefit Corporation"
 msgstr ""
 
 #. js-lingui-explicit-id
@@ -225,7 +225,7 @@ msgstr ""
 
 #. js-lingui-explicit-id
 #: src/emails/send-email-verification-link.email.tsx
-#~ msgid "Thanks for registering for an account on Twenty! Before we get started, we just need to confirm that this is you. Click above to verify your email address."
+#~ msgid "Thanks for registering for an account on ExampleCRM! Before we get started, we just need to confirm that this is you. Click above to verify your email address."
 #~ msgstr ""
 
 #. js-lingui-id: 4WPI3S
@@ -245,8 +245,8 @@ msgstr ""
 
 #. js-lingui-id: nvkBPN
 #: src/emails/password-update-notify.email.tsx
-#~ msgid "Connect to Twenty"
-#~ msgstr "Kết nối với Twenty"
+#~ msgid "Connect to ExampleCRM"
+#~ msgstr "Kết nối với ExampleCRM"
 
 #. js-lingui-id: jPQSEz
 #: src/emails/clean-suspended-workspace.email.tsx
@@ -300,13 +300,13 @@ msgstr ""
 
 #. js-lingui-id: Gz91L8
 #: src/emails/warn-suspended-workspace.email.tsx
-#~ msgid "If you wish to continue using Twenty, please update your subscription within the next {remainingDays} {dayOrDays}."
-#~ msgstr "Nếu bạn muốn tiếp tục sử dụng Twenty, vui lòng cập nhật gói đăng ký của bạn trong vòng {remainingDays} ngày kế tiếp."
+#~ msgid "If you wish to continue using ExampleCRM, please update your subscription within the next {remainingDays} {dayOrDays}."
+#~ msgstr "Nếu bạn muốn tiếp tục sử dụng ExampleCRM, vui lòng cập nhật gói đăng ký của bạn trong vòng {remainingDays} ngày kế tiếp."
 
 #. js-lingui-id: 0weyko
 #: src/emails/clean-suspended-workspace.email.tsx
-#~ msgid "If you wish to use Twenty again, you can create a new workspace."
-#~ msgstr "Nếu bạn muốn sử dụng Twenty lại, bạn có thể tạo một không gian làm việc mới."
+#~ msgid "If you wish to use ExampleCRM again, you can create a new workspace."
+#~ msgstr "Nếu bạn muốn sử dụng ExampleCRM lại, bạn có thể tạo một không gian làm việc mới."
 
 #. js-lingui-id: 7JuhZQ
 #: src/emails/warn-suspended-workspace.email.tsx
@@ -315,8 +315,8 @@ msgstr ""
 
 #. js-lingui-id: PviVyk
 #: src/emails/send-invite-link.email.tsx
-#~ msgid "Join your team on Twenty"
-#~ msgstr "Tham gia vào đội ngũ của bạn trên Twenty"
+#~ msgid "Join your team on ExampleCRM"
+#~ msgstr "Tham gia vào đội ngũ của bạn trên ExampleCRM"
 
 #. js-lingui-id: ogtYkT
 #: src/emails/password-update-notify.email.tsx
@@ -350,8 +350,8 @@ msgstr ""
 
 #. js-lingui-id: 7yDt8q
 #: src/emails/send-email-verification-link.email.tsx
-#~ msgid "Thanks for registering for an account on Twenty! Before we get started, we just need to confirm that this is you. Click above to verify your email address."
-#~ msgstr "Cảm ơn bạn đã đăng ký tài khoản trên Twenty! Trước khi chúng ta bắt đầu, chúng ta chỉ cần xác nhận đây có phải là bạn không. Nhấp vào phía trên để xác minh địa chỉ email của bạn."
+#~ msgid "Thanks for registering for an account on ExampleCRM! Before we get started, we just need to confirm that this is you. Click above to verify your email address."
+#~ msgstr "Cảm ơn bạn đã đăng ký tài khoản trên ExampleCRM! Trước khi chúng ta bắt đầu, chúng ta chỉ cần xác nhận đây có phải là bạn không. Nhấp vào phía trên để xác minh địa chỉ email của bạn."
 
 #. js-lingui-id: igorB1
 #: src/emails/warn-suspended-workspace.email.tsx

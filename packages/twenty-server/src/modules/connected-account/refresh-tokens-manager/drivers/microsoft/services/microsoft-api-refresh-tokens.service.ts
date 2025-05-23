@@ -3,7 +3,7 @@ import { Injectable } from '@nestjs/common';
 import axios from 'axios';
 import { z } from 'zod';
 
-import { TwentyConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
+import { ExampleCRMConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
 
 export type MicrosoftTokens = {
   accessToken: string;
@@ -20,7 +20,7 @@ interface MicrosoftRefreshTokenResponse {
 }
 @Injectable()
 export class MicrosoftAPIRefreshAccessTokenService {
-  constructor(private readonly twentyConfigService: TwentyConfigService) {}
+  constructor(private readonly twentyConfigService: ExampleCRMConfigService) {}
 
   async refreshTokens(refreshToken: string): Promise<MicrosoftTokens> {
     const response = await axios.post<MicrosoftRefreshTokenResponse>(

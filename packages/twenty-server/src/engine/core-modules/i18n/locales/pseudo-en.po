@@ -1200,7 +1200,7 @@ msgstr ""
 
 #. js-lingui-id: PviVyk
 #: src/engine/core-modules/workspace-invitation/services/workspace-invitation.service.ts
-msgid "Join your team on Twenty"
+msgid "Join your team on ExampleCRM"
 msgstr ""
 
 #. js-lingui-id: shbh25
@@ -1715,7 +1715,7 @@ msgstr ""
 
 #. js-lingui-id: kdClJ/
 #: src/modules/webhook/standard-objects/webhook.workspace-entity.ts
-msgid "Optional secret used to compute the HMAC signature for webhook payloads. This secret is shared between Twenty and the webhook consumer to authenticate webhook requests."
+msgid "Optional secret used to compute the HMAC signature for webhook payloads. This secret is shared between ExampleCRM and the webhook consumer to authenticate webhook requests."
 msgstr ""
 
 #. js-lingui-id: gh06VD
@@ -2608,7 +2608,7 @@ msgstr ""
 
 #. js-lingui-id: TVkCrJ
 #: src/engine/core-modules/email-verification/services/email-verification.service.ts
-msgid "Welcome to Twenty: Please Confirm Your Email"
+msgid "Welcome to ExampleCRM: Please Confirm Your Email"
 msgstr ""
 
 #. js-lingui-id: bLt/0J

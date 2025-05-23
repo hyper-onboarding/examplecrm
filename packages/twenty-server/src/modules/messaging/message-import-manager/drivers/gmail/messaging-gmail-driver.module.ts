@@ -4,7 +4,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 
 import { FeatureFlag } from 'src/engine/core-modules/feature-flag/feature-flag.entity';
 import { FeatureFlagModule } from 'src/engine/core-modules/feature-flag/feature-flag.module';
-import { TwentyConfigModule } from 'src/engine/core-modules/twenty-config/twenty-config.module';
+import { ExampleCRMConfigModule } from 'src/engine/core-modules/twenty-config/twenty-config.module';
 import { ObjectMetadataRepositoryModule } from 'src/engine/object-metadata-repository/object-metadata-repository.module';
 import { WorkspaceDataSourceModule } from 'src/engine/workspace-datasource/workspace-datasource.module';
 import { BlocklistWorkspaceEntity } from 'src/modules/blocklist/standard-objects/blocklist.workspace-entity';
@@ -25,7 +25,7 @@ import { OAuth2ClientProvider } from 'src/modules/messaging/message-import-manag
     HttpModule.register({
       baseURL: 'https://www.googleapis.com/batch/gmail/v1',
     }),
-    TwentyConfigModule,
+    ExampleCRMConfigModule,
     ObjectMetadataRepositoryModule.forFeature([BlocklistWorkspaceEntity]),
     MessagingCommonModule,
     TypeOrmModule.forFeature([FeatureFlag], 'core'),

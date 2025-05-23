@@ -8,7 +8,7 @@ import { z } from 'zod';
 import { WorkflowExecutor } from 'src/modules/workflow/workflow-executor/interfaces/workflow-executor.interface';
 
 import { ScopedWorkspaceContextFactory } from 'src/engine/twenty-orm/factories/scoped-workspace-context.factory';
-import { TwentyORMGlobalManager } from 'src/engine/twenty-orm/twenty-orm-global.manager';
+import { ExampleCRMORMGlobalManager } from 'src/engine/twenty-orm/twenty-orm-global.manager';
 import { ConnectedAccountWorkspaceEntity } from 'src/modules/connected-account/standard-objects/connected-account.workspace-entity';
 import { MessagingSendMessageService } from 'src/modules/messaging/message-import-manager/services/messaging-send-message.service';
 import {
@@ -34,7 +34,7 @@ export class SendEmailWorkflowAction implements WorkflowExecutor {
   private readonly logger = new Logger(SendEmailWorkflowAction.name);
   constructor(
     private readonly scopedWorkspaceContextFactory: ScopedWorkspaceContextFactory,
-    private readonly twentyORMGlobalManager: TwentyORMGlobalManager,
+    private readonly twentyORMGlobalManager: ExampleCRMORMGlobalManager,
     private readonly sendMessageService: MessagingSendMessageService,
   ) {}
 

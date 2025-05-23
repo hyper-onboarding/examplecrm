@@ -8,7 +8,7 @@ export const Logo = () => {
   return (
     <Img
       src="https://app.twenty.com/icons/windows11/Square150x150Logo.scale-100.png"
-      alt="Twenty logo"
+      alt="ExampleCRM logo"
       width="40"
       height="40"
       style={logoStyle}

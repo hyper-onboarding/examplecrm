@@ -41,8 +41,8 @@ import { serverlessModuleFactory } from 'src/engine/core-modules/serverless/serv
 import { ServerlessModule } from 'src/engine/core-modules/serverless/serverless.module';
 import { WorkspaceSSOModule } from 'src/engine/core-modules/sso/sso.module';
 import { TelemetryModule } from 'src/engine/core-modules/telemetry/telemetry.module';
-import { TwentyConfigModule } from 'src/engine/core-modules/twenty-config/twenty-config.module';
-import { TwentyConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
+import { ExampleCRMConfigModule } from 'src/engine/core-modules/twenty-config/twenty-config.module';
+import { ExampleCRMConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
 import { UserModule } from 'src/engine/core-modules/user/user.module';
 import { WorkflowApiModule } from 'src/engine/core-modules/workflow/workflow-api.module';
 import { WorkspaceInvitationModule } from 'src/engine/core-modules/workspace-invitation/workspace-invitation.module';
@@ -57,7 +57,7 @@ import { FileModule } from './file/file.module';
 
 @Module({
   imports: [
-    TwentyConfigModule.forRoot(),
+    ExampleCRMConfigModule.forRoot(),
     HealthModule,
     AuditModule,
     AuthModule,
@@ -87,27 +87,27 @@ import { FileModule } from './file/file.module';
     SubscriptionsModule,
     FileStorageModule.forRootAsync({
       useFactory: fileStorageModuleFactory,
-      inject: [TwentyConfigService],
+      inject: [ExampleCRMConfigService],
     }),
     LoggerModule.forRootAsync({
       useFactory: loggerModuleFactory,
-      inject: [TwentyConfigService],
+      inject: [ExampleCRMConfigService],
     }),
     MessageQueueModule.registerAsync({
       useFactory: messageQueueModuleFactory,
-      inject: [TwentyConfigService, RedisClientService],
+      inject: [ExampleCRMConfigService, RedisClientService],
     }),
     ExceptionHandlerModule.forRootAsync({
       useFactory: exceptionHandlerModuleFactory,
-      inject: [TwentyConfigService, HttpAdapterHost],
+      inject: [ExampleCRMConfigService, HttpAdapterHost],
     }),
     EmailModule.forRoot({
       useFactory: emailModuleFactory,
-      inject: [TwentyConfigService],
+      inject: [ExampleCRMConfigService],
     }),
     CaptchaModule.forRoot({
       useFactory: captchaModuleFactory,
-      inject: [TwentyConfigService],
+      inject: [ExampleCRMConfigService],
     }),
     EventEmitterModule.forRoot({
       wildcard: true,
@@ -115,15 +115,15 @@ import { FileModule } from './file/file.module';
     CacheStorageModule,
     LLMChatModelModule.forRoot({
       useFactory: llmChatModelModuleFactory,
-      inject: [TwentyConfigService],
+      inject: [ExampleCRMConfigService],
     }),
     LLMTracingModule.forRoot({
       useFactory: llmTracingModuleFactory,
-      inject: [TwentyConfigService],
+      inject: [ExampleCRMConfigService],
     }),
     ServerlessModule.forRootAsync({
       useFactory: serverlessModuleFactory,
-      inject: [TwentyConfigService, FileStorageService],
+      inject: [ExampleCRMConfigService, FileStorageService],
     }),
     SearchModule,
   ],

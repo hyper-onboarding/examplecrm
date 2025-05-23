@@ -7,7 +7,7 @@ import { GraphQLConfigModule } from 'src/engine/api/graphql/graphql-config/graph
 import { metadataModuleFactory } from 'src/engine/api/graphql/metadata.module-factory';
 import { CacheStorageNamespace } from 'src/engine/core-modules/cache-storage/types/cache-storage-namespace.enum';
 import { ExceptionHandlerService } from 'src/engine/core-modules/exception-handler/exception-handler.service';
-import { TwentyConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
+import { ExampleCRMConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
 import { DataloaderModule } from 'src/engine/dataloaders/dataloader.module';
 import { DataloaderService } from 'src/engine/dataloaders/dataloader.service';
 import { MetadataEngineModule } from 'src/engine/metadata-modules/metadata-engine.module';
@@ -21,7 +21,7 @@ import { WorkspaceMigrationRunnerModule } from 'src/engine/workspace-manager/wor
       useFactory: metadataModuleFactory,
       imports: [GraphQLConfigModule, DataloaderModule],
       inject: [
-        TwentyConfigService,
+        ExampleCRMConfigService,
         ExceptionHandlerService,
         DataloaderService,
         CacheStorageNamespace.EngineWorkspace,

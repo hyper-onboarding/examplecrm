@@ -5,7 +5,7 @@ import differenceWith from 'lodash.differencewith';
 import { Any } from 'typeorm';
 
 import { WorkspaceEntityManager } from 'src/engine/twenty-orm/entity-manager/workspace-entity-manager';
-import { TwentyORMManager } from 'src/engine/twenty-orm/twenty-orm.manager';
+import { ExampleCRMORMManager } from 'src/engine/twenty-orm/twenty-orm.manager';
 import { CalendarEventParticipantWorkspaceEntity } from 'src/modules/calendar/common/standard-objects/calendar-event-participant.workspace-entity';
 import { CalendarEventParticipantWithCalendarEventId } from 'src/modules/calendar/common/types/calendar-event';
 import { MatchParticipantService } from 'src/modules/match-participant/match-participant.service';
@@ -13,7 +13,7 @@ import { MatchParticipantService } from 'src/modules/match-participant/match-par
 @Injectable()
 export class CalendarEventParticipantService {
   constructor(
-    private readonly twentyORMManager: TwentyORMManager,
+    private readonly twentyORMManager: ExampleCRMORMManager,
     private readonly matchParticipantService: MatchParticipantService<CalendarEventParticipantWorkspaceEntity>,
   ) {}
 

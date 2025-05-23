@@ -3,7 +3,7 @@ import { Test, TestingModule } from '@nestjs/testing';
 
 import { ConnectedAccountProvider } from 'twenty-shared/types';
 
-import { TwentyConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
+import { ExampleCRMConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
 import { MicrosoftOAuth2ClientManagerService } from 'src/modules/connected-account/oauth2-client-manager/drivers/microsoft/microsoft-oauth2-client-manager.service';
 import {
   microsoftGraphBatchWithHtmlMessagesResponse,
@@ -29,7 +29,7 @@ describe('Microsoft get messages service', () => {
         MicrosoftFetchByBatchService,
         ConfigService,
         {
-          provide: TwentyConfigService,
+          provide: ExampleCRMConfigService,
           useValue: {},
         },
       ],

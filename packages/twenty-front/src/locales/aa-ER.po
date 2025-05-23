@@ -676,7 +676,7 @@ msgstr "crwdns153:0crwdne153:0"
 
 #. js-lingui-id: 8Pfllj
 #: src/modules/auth/sign-in-up/components/FooterNote.tsx
-msgid "By using Twenty, you agree to the"
+msgid "By using ExampleCRM, you agree to the"
 msgstr "crwdns155:0crwdne155:0"
 
 #. js-lingui-id: PmmvzS
@@ -2046,7 +2046,7 @@ msgstr "crwdns5606:0crwdne5606:0"
 
 #. js-lingui-id: hWp1MY
 #: src/pages/settings/SettingsWorkspace.tsx
-msgid "Grant Twenty support temporary access to your workspace so we can troubleshoot problems or recover content on your behalf. You can revoke access at any time."
+msgid "Grant ExampleCRM support temporary access to your workspace so we can troubleshoot problems or recover content on your behalf. You can revoke access at any time."
 msgstr "crwdns411:0crwdne411:0"
 
 #. js-lingui-id: gBiL6J

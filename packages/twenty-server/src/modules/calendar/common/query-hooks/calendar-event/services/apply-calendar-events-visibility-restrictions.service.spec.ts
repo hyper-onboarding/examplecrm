@@ -2,7 +2,7 @@ import { Test, TestingModule } from '@nestjs/testing';
 
 import { FIELD_RESTRICTED_ADDITIONAL_PERMISSIONS_REQUIRED } from 'twenty-shared/constants';
 
-import { TwentyORMManager } from 'src/engine/twenty-orm/twenty-orm.manager';
+import { ExampleCRMORMManager } from 'src/engine/twenty-orm/twenty-orm.manager';
 import { CalendarChannelVisibility } from 'src/modules/calendar/common/standard-objects/calendar-channel.workspace-entity';
 import { CalendarEventWorkspaceEntity } from 'src/modules/calendar/common/standard-objects/calendar-event.workspace-entity';
 
@@ -52,7 +52,7 @@ describe('ApplyCalendarEventsVisibilityRestrictionsService', () => {
     findOneByOrFail: jest.fn(),
   };
 
-  const mockTwentyORMManager = {
+  const mockExampleCRMORMManager = {
     getRepository: jest.fn().mockImplementation((name) => {
       if (name === 'calendarChannelEventAssociation') {
         return mockCalendarEventAssociationRepository;
@@ -71,8 +71,8 @@ describe('ApplyCalendarEventsVisibilityRestrictionsService', () => {
       providers: [
         ApplyCalendarEventsVisibilityRestrictionsService,
         {
-          provide: TwentyORMManager,
-          useValue: mockTwentyORMManager,
+          provide: ExampleCRMORMManager,
+          useValue: mockExampleCRMORMManager,
         },
       ],
     }).compile();

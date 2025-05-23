@@ -3,7 +3,7 @@ import { getRepositoryToken } from '@nestjs/typeorm';
 
 import { ObjectMetadataEntity } from 'src/engine/metadata-modules/object-metadata/object-metadata.entity';
 import { ServerlessFunctionService } from 'src/engine/metadata-modules/serverless-function/serverless-function.service';
-import { TwentyORMManager } from 'src/engine/twenty-orm/twenty-orm.manager';
+import { ExampleCRMORMManager } from 'src/engine/twenty-orm/twenty-orm.manager';
 import { WorkspaceEventEmitter } from 'src/engine/workspace-event-emitter/workspace-event-emitter';
 import { WorkflowVersionStatus } from 'src/modules/workflow/common/standard-objects/workflow-version.workspace-entity';
 import { WorkflowStatus } from 'src/modules/workflow/common/standard-objects/workflow.workspace-entity';
@@ -21,7 +21,7 @@ describe('WorkflowStatusesUpdate', () => {
     update: jest.fn(),
   };
 
-  const mockTwentyORMManager = {
+  const mockExampleCRMORMManager = {
     getRepository: jest.fn().mockResolvedValue(mockWorkflowRepository),
   };
 
@@ -38,8 +38,8 @@ describe('WorkflowStatusesUpdate', () => {
       providers: [
         WorkflowStatusesUpdateJob,
         {
-          provide: TwentyORMManager,
-          useValue: mockTwentyORMManager,
+          provide: ExampleCRMORMManager,
+          useValue: mockExampleCRMORMManager,
         },
         {
           provide: ServerlessFunctionService,

@@ -1,9 +1,9 @@
 import { Injectable } from '@nestjs/common';
 
-import { assertUnreachable } from 'twenty-shared/utils';
 import { ConnectedAccountProvider } from 'twenty-shared/types';
+import { assertUnreachable } from 'twenty-shared/utils';
 
-import { TwentyORMManager } from 'src/engine/twenty-orm/twenty-orm.manager';
+import { ExampleCRMORMManager } from 'src/engine/twenty-orm/twenty-orm.manager';
 import { GoogleEmailAliasManagerService } from 'src/modules/connected-account/email-alias-manager/drivers/google/google-email-alias-manager.service';
 import { MicrosoftEmailAliasManagerService } from 'src/modules/connected-account/email-alias-manager/drivers/microsoft/microsoft-email-alias-manager.service';
 import { ConnectedAccountWorkspaceEntity } from 'src/modules/connected-account/standard-objects/connected-account.workspace-entity';
@@ -13,7 +13,7 @@ export class EmailAliasManagerService {
   constructor(
     private readonly googleEmailAliasManagerService: GoogleEmailAliasManagerService,
     private readonly microsoftEmailAliasManagerService: MicrosoftEmailAliasManagerService,
-    private readonly twentyORMManager: TwentyORMManager,
+    private readonly twentyORMManager: ExampleCRMORMManager,
   ) {}
 
   public async refreshHandleAliases(

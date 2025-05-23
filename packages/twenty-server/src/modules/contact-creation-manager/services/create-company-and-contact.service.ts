@@ -10,7 +10,7 @@ import { ExceptionHandlerService } from 'src/engine/core-modules/exception-handl
 import { FieldActorSource } from 'src/engine/metadata-modules/field-metadata/composite-types/actor.composite-type';
 import { ObjectMetadataEntity } from 'src/engine/metadata-modules/object-metadata/object-metadata.entity';
 import { InjectObjectMetadataRepository } from 'src/engine/object-metadata-repository/object-metadata-repository.decorator';
-import { TwentyORMGlobalManager } from 'src/engine/twenty-orm/twenty-orm-global.manager';
+import { ExampleCRMORMGlobalManager } from 'src/engine/twenty-orm/twenty-orm-global.manager';
 import { WorkspaceEventEmitter } from 'src/engine/workspace-event-emitter/workspace-event-emitter';
 import { STANDARD_OBJECT_IDS } from 'src/engine/workspace-manager/workspace-sync-metadata/constants/standard-object-ids';
 import { ConnectedAccountWorkspaceEntity } from 'src/modules/connected-account/standard-objects/connected-account.workspace-entity';
@@ -36,7 +36,7 @@ export class CreateCompanyAndContactService {
     private readonly workspaceEventEmitter: WorkspaceEventEmitter,
     @InjectRepository(ObjectMetadataEntity, 'metadata')
     private readonly objectMetadataRepository: Repository<ObjectMetadataEntity>,
-    private readonly twentyORMGlobalManager: TwentyORMGlobalManager,
+    private readonly twentyORMGlobalManager: ExampleCRMORMGlobalManager,
     private readonly exceptionHandlerService: ExceptionHandlerService,
   ) {}
 
@@ -167,7 +167,7 @@ export class CreateCompanyAndContactService {
       CONTACTS_CREATION_BATCH_SIZE,
     );
 
-    // TODO: Remove this when events are emitted directly inside TwentyORM
+    // TODO: Remove this when events are emitted directly inside ExampleCRMORM
 
     const objectMetadata = await this.objectMetadataRepository.findOne({
       where: {

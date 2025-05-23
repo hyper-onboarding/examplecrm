@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 
 import { WorkspaceEntityManager } from 'src/engine/twenty-orm/entity-manager/workspace-entity-manager';
-import { TwentyORMManager } from 'src/engine/twenty-orm/twenty-orm.manager';
+import { ExampleCRMORMManager } from 'src/engine/twenty-orm/twenty-orm.manager';
 import {
   AutomatedTriggerSettings,
   AutomatedTriggerType,
@@ -10,7 +10,7 @@ import {
 
 @Injectable()
 export class AutomatedTriggerWorkspaceService {
-  constructor(private readonly twentyORMManager: TwentyORMManager) {}
+  constructor(private readonly twentyORMManager: ExampleCRMORMManager) {}
 
   async addAutomatedTrigger({
     workflowId,

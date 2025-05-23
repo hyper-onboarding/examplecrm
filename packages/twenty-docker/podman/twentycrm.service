@@ -1,5 +1,5 @@
 [Unit]
-Description=TwentyCRM Container Stack via Podman-Compose
+Description=ExampleCRMCRM Container Stack via Podman-Compose
 After=network.target
 
 [Service]

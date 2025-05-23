@@ -7,7 +7,7 @@ import { isDefined } from 'twenty-shared/utils';
 
 import { BillingPlanKey } from 'src/engine/core-modules/billing/enums/billing-plan-key.enum';
 import { StripeSDKService } from 'src/engine/core-modules/billing/stripe/stripe-sdk/services/stripe-sdk.service';
-import { TwentyConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
+import { ExampleCRMConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
 import { User } from 'src/engine/core-modules/user/user.entity';
 
 @Injectable()
@@ -16,7 +16,7 @@ export class StripeCheckoutService {
   private readonly stripe: Stripe;
 
   constructor(
-    private readonly twentyConfigService: TwentyConfigService,
+    private readonly twentyConfigService: ExampleCRMConfigService,
     private readonly stripeSDKService: StripeSDKService,
   ) {
     if (!this.twentyConfigService.get('IS_BILLING_ENABLED')) {

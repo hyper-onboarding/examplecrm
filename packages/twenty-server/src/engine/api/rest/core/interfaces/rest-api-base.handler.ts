@@ -6,21 +6,24 @@ import { capitalize, isDefined } from 'twenty-shared/utils';
 import { In, ObjectLiteral, SelectQueryBuilder } from 'typeorm';
 
 import {
-  ObjectRecord,
-  ObjectRecordFilter,
+    ObjectRecord,
+    ObjectRecordFilter,
 } from 'src/engine/api/graphql/workspace-query-builder/interfaces/object-record.interface';
 
 import { GraphqlQueryParser } from 'src/engine/api/graphql/graphql-query-runner/graphql-query-parsers/graphql-query.parser';
 import { ApiEventEmitterService } from 'src/engine/api/graphql/graphql-query-runner/services/api-event-emitter.service';
+import { encodeCursor } from 'src/engine/api/graphql/graphql-query-runner/utils/cursors.util';
 import { CoreQueryBuilderFactory } from 'src/engine/api/rest/core/query-builder/core-query-builder.factory';
 import { GetVariablesFactory } from 'src/engine/api/rest/core/query-builder/factories/get-variables.factory';
 import { parseCorePath } from 'src/engine/api/rest/core/query-builder/utils/path-parsers/parse-core-path.utils';
 import { QueryVariables } from 'src/engine/api/rest/core/types/query-variables.type';
 import {
-  Depth,
-  DepthInputFactory,
-  MAX_DEPTH,
+    Depth,
+    DepthInputFactory,
+    MAX_DEPTH,
 } from 'src/engine/api/rest/input-factories/depth-input.factory';
+import { computeCursorArgFilter } from 'src/engine/api/utils/compute-cursor-arg-filter.utils';
+import { CreatedByFromAuthContextService } from 'src/engine/core-modules/actor/services/created-by-from-auth-context.service';
 import { AuthContext } from 'src/engine/core-modules/auth/types/auth-context.type';
 import { RecordInputTransformerService } from 'src/engine/core-modules/record-transformer/services/record-input-transformer.service';
 import { ObjectMetadataItemWithFieldMaps } from 'src/engine/metadata-modules/types/object-metadata-item-with-field-maps';
@@ -28,11 +31,8 @@ import { ObjectMetadataMaps } from 'src/engine/metadata-modules/types/object-met
 import { getObjectMetadataMapItemByNameSingular } from 'src/engine/metadata-modules/utils/get-object-metadata-map-item-by-name-singular.util';
 import { WorkspacePermissionsCacheService } from 'src/engine/metadata-modules/workspace-permissions-cache/workspace-permissions-cache.service';
 import { WorkspaceRepository } from 'src/engine/twenty-orm/repository/workspace.repository';
-import { TwentyORMGlobalManager } from 'src/engine/twenty-orm/twenty-orm-global.manager';
+import { ExampleCRMORMGlobalManager } from 'src/engine/twenty-orm/twenty-orm-global.manager';
 import { formatResult as formatGetManyData } from 'src/engine/twenty-orm/utils/format-result.util';
-import { encodeCursor } from 'src/engine/api/graphql/graphql-query-runner/utils/cursors.util';
-import { computeCursorArgFilter } from 'src/engine/api/utils/compute-cursor-arg-filter.utils';
-import { CreatedByFromAuthContextService } from 'src/engine/core-modules/actor/services/created-by-from-auth-context.service';
 
 export interface PageInfo {
   hasNextPage?: boolean;
@@ -70,7 +70,7 @@ export abstract class RestApiBaseHandler {
   @Inject()
   protected readonly coreQueryBuilderFactory: CoreQueryBuilderFactory;
   @Inject()
-  protected readonly twentyORMGlobalManager: TwentyORMGlobalManager;
+  protected readonly twentyORMGlobalManager: ExampleCRMORMGlobalManager;
   @Inject()
   protected readonly getVariablesFactory: GetVariablesFactory;
   @Inject()

@@ -743,12 +743,12 @@ msgstr "Engellenmiş Liste"
 #. js-lingui-id: 2yl5lQ
 #: src/pages/onboarding/ChooseYourPlan.tsx
 msgid "Book a Call"
-msgstr "\"Twenty\"'yi kullanarak"
+msgstr "\"ExampleCRM\"'yi kullanarak"
 
 #. js-lingui-id: 8Pfllj
 #: src/modules/auth/sign-in-up/components/FooterNote.tsx
-msgid "By using Twenty, you agree to the"
-msgstr "Twenty'i kullanarak,"
+msgid "By using ExampleCRM, you agree to the"
+msgstr "ExampleCRM'i kullanarak,"
 
 #. js-lingui-id: PmmvzS
 #: src/modules/object-record/record-table/record-table-footer/components/RecordTableColumnAggregateFooterValue.tsx
@@ -1975,7 +1975,7 @@ msgstr "Davet yeniden gönderilirken hata"
 
 #. js-lingui-id: QmR+2U
 #: src/modules/billing/hooks/useEndSubscriptionTrialPeriod.ts
-msgid "Error while ending trial period. Please contact Twenty team."
+msgid "Error while ending trial period. Please contact ExampleCRM team."
 msgstr ""
 
 #. js-lingui-id: VSQxWH
@@ -2400,8 +2400,8 @@ msgstr ""
 
 #. js-lingui-id: hWp1MY
 #: src/pages/settings/SettingsWorkspace.tsx
-#~ msgid "Grant Twenty support temporary access to your workspace so we can troubleshoot problems or recover content on your behalf. You can revoke access at any time."
-#~ msgstr "Sorunları gidermemizi veya adınıza içerikleri kurtarmamızı sağlayacak şekilde Twenty destek ekibine çalışma alanınızda geçici olarak erişim izni verin. İstediğiniz zaman erişimi iptal edebilirsiniz."
+#~ msgid "Grant ExampleCRM support temporary access to your workspace so we can troubleshoot problems or recover content on your behalf. You can revoke access at any time."
+#~ msgstr "Sorunları gidermemizi veya adınıza içerikleri kurtarmamızı sağlayacak şekilde ExampleCRM destek ekibine çalışma alanınızda geçici olarak erişim izni verin. İstediğiniz zaman erişimi iptal edebilirsiniz."
 
 #. js-lingui-id: gBiL6J
 #: src/modules/settings/playground/components/PlaygroundSetupForm.tsx

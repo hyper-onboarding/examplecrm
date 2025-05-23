@@ -3,8 +3,8 @@ import { ContextIdFactory, ModuleRef } from '@nestjs/core';
 import { GqlOptionsFactory } from '@nestjs/graphql';
 
 import {
-  YogaDriverConfig,
-  YogaDriverServerContext,
+    YogaDriverConfig,
+    YogaDriverServerContext,
 } from '@graphql-yoga/nestjs';
 import * as Sentry from '@sentry/node';
 import { GraphQLError, GraphQLSchema } from 'graphql';
@@ -21,7 +21,7 @@ import { CoreEngineModule } from 'src/engine/core-modules/core-engine.module';
 import { ExceptionHandlerService } from 'src/engine/core-modules/exception-handler/exception-handler.service';
 import { useSentryTracing } from 'src/engine/core-modules/exception-handler/hooks/use-sentry-tracing';
 import { useGraphQLErrorHandlerHook } from 'src/engine/core-modules/graphql/hooks/use-graphql-error-handler.hook';
-import { TwentyConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
+import { ExampleCRMConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
 import { User } from 'src/engine/core-modules/user/user.entity';
 import { Workspace } from 'src/engine/core-modules/workspace/workspace.entity';
 import { handleExceptionAndConvertToGraphQLError } from 'src/engine/utils/global-exception-handler.util';
@@ -38,7 +38,7 @@ export class GraphQLConfigService
 {
   constructor(
     private readonly exceptionHandlerService: ExceptionHandlerService,
-    private readonly twentyConfigService: TwentyConfigService,
+    private readonly twentyConfigService: ExampleCRMConfigService,
     private readonly moduleRef: ModuleRef,
   ) {}
 

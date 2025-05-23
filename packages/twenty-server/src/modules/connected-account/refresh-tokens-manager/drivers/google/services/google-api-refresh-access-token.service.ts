@@ -3,7 +3,7 @@ import { Injectable } from '@nestjs/common';
 import axios from 'axios';
 import { z } from 'zod';
 
-import { TwentyConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
+import { ExampleCRMConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
 
 export type GoogleTokens = {
   accessToken: string;
@@ -18,7 +18,7 @@ interface GoogleRefreshTokenResponse {
 }
 @Injectable()
 export class GoogleAPIRefreshAccessTokenService {
-  constructor(private readonly twentyConfigService: TwentyConfigService) {}
+  constructor(private readonly twentyConfigService: ExampleCRMConfigService) {}
 
   async refreshAccessToken(refreshToken: string): Promise<GoogleTokens> {
     const response = await axios.post<GoogleRefreshTokenResponse>(
