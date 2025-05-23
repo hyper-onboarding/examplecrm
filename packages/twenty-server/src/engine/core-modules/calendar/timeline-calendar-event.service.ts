@@ -6,14 +6,14 @@ import { Any } from 'typeorm';
 
 import { TIMELINE_CALENDAR_EVENTS_DEFAULT_PAGE_SIZE } from 'src/engine/core-modules/calendar/constants/calendar.constants';
 import { TimelineCalendarEventsWithTotal } from 'src/engine/core-modules/calendar/dtos/timeline-calendar-events-with-total.dto';
-import { TwentyORMManager } from 'src/engine/twenty-orm/twenty-orm.manager';
+import { ExampleCRMORMManager } from 'src/engine/twenty-orm/twenty-orm.manager';
 import { CalendarChannelVisibility } from 'src/modules/calendar/common/standard-objects/calendar-channel.workspace-entity';
 import { CalendarEventWorkspaceEntity } from 'src/modules/calendar/common/standard-objects/calendar-event.workspace-entity';
 import { PersonWorkspaceEntity } from 'src/modules/person/standard-objects/person.workspace-entity';
 
 @Injectable()
 export class TimelineCalendarEventService {
-  constructor(private readonly twentyORMManager: TwentyORMManager) {}
+  constructor(private readonly twentyORMManager: ExampleCRMORMManager) {}
 
   // TODO: Align return type with the entities to avoid mapping
   async getCalendarEventsFromPersonIds({

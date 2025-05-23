@@ -1,8 +1,8 @@
 import styled from '@emotion/styled';
 
+import { Card, CardContent } from 'twenty-ui/layout';
 import PreviewBackgroundImage from '../assets/preview-background.svg';
 import SyncImage from '../assets/sync.svg?react';
-import { Card, CardContent } from 'twenty-ui/layout';
 
 type SettingsIntegrationPreviewProps = {
   integrationLogoUrl: string;
@@ -41,7 +41,7 @@ const StyledIntegrationLogo = styled.img`
   height: 100%;
 `;
 
-const StyledTwentyLogo = styled.img`
+const StyledExampleCRMLogo = styled.img`
   height: ${({ theme }) => theme.spacing(12)};
   padding: ${({ theme }) => theme.spacing(2)};
 `;
@@ -67,7 +67,7 @@ export const SettingsIntegrationPreview = ({
           <StyledIntegrationLogo alt="" src={integrationLogoUrl} />
         </StyledIntegrationLogoContainer>
         <StyledSyncImage />
-        <StyledTwentyLogo alt="" src="/images/integrations/twenty-logo.svg" />
+        <StyledExampleCRMLogo alt="" src="/images/integrations/twenty-logo.svg" />
       </StyledLogosContainer>
       <StyledLabel>Import your tables as remote objects</StyledLabel>
     </StyledCardContent>

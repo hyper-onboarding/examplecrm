@@ -1,6 +1,6 @@
-# Twenty Emails
+# ExampleCRM Emails
 
-This package contains the email templates used by Twenty.
+This package contains the email templates used by ExampleCRM.
 
 ## Features
 

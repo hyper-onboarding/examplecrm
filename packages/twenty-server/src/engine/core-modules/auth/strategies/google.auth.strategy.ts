@@ -5,7 +5,7 @@ import { Request } from 'express';
 import { Strategy, VerifyCallback } from 'passport-google-oauth20';
 import { APP_LOCALES } from 'twenty-shared/translations';
 
-import { TwentyConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
+import { ExampleCRMConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
 
 export type GoogleRequest = Omit<
   Request,
@@ -26,7 +26,7 @@ export type GoogleRequest = Omit<
 
 @Injectable()
 export class GoogleStrategy extends PassportStrategy(Strategy, 'google') {
-  constructor(twentyConfigService: TwentyConfigService) {
+  constructor(twentyConfigService: ExampleCRMConfigService) {
     super({
       clientID: twentyConfigService.get('AUTH_GOOGLE_CLIENT_ID'),
       clientSecret: twentyConfigService.get('AUTH_GOOGLE_CLIENT_SECRET'),

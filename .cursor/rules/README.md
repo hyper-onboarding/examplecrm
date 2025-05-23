@@ -1,6 +1,6 @@
-# Twenty Development Rules
+# ExampleCRM Development Rules
 
-This directory contains Twenty's development guidelines and best practices. The rules are organized into several key categories:
+This directory contains ExampleCRM's development guidelines and best practices. The rules are organized into several key categories:
 
 ## Guidelines Structure
 
@@ -60,6 +60,6 @@ npx nx run twenty-server:command workspace:sync-metadata -f  # Sync metadata
 
 ## Usage
 
-These rules are automatically attached to relevant files in your workspace through Cursor's context system. They help maintain consistency and quality across the Twenty codebase.
+These rules are automatically attached to relevant files in your workspace through Cursor's context system. They help maintain consistency and quality across the ExampleCRM codebase.
 
-For the most up-to-date version of these guidelines, always refer to the files in this directory. 
+For the most up-to-date version of these guidelines, always refer to the files in this directory.

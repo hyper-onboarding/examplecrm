@@ -11,8 +11,8 @@ import { WorkflowStepDecorator } from '~/testing/decorators/WorkflowStepDecorato
 import { WorkspaceDecorator } from '~/testing/decorators/WorkspaceDecorator';
 import { graphqlMocks } from '~/testing/graphqlMocks';
 import {
-  getMockedConnectedAccount,
-  mockedConnectedAccounts,
+    getMockedConnectedAccount,
+    mockedConnectedAccounts,
 } from '~/testing/mock-data/connected-accounts';
 import { getWorkflowNodeIdMock } from '~/testing/mock-data/workflow';
 import { WorkflowEditActionSendEmail } from '../WorkflowEditActionSendEmail';
@@ -50,8 +50,8 @@ const CONFIGURED_ACTION: WorkflowSendEmailAction = {
     input: {
       connectedAccountId: mockedConnectedAccounts[0].accountOwnerId,
       email: 'test@twenty.com',
-      subject: 'Welcome to Twenty!',
-      body: 'Dear Tim,\n\nWelcome to Twenty! We are excited to have you on board.\n\nBest regards,\nThe Team',
+      subject: 'Welcome to ExampleCRM!',
+      body: 'Dear Tim,\n\nWelcome to ExampleCRM! We are excited to have you on board.\n\nBest regards,\nThe Team',
     },
     outputSchema: {},
     errorHandlingOptions: {
@@ -137,7 +137,7 @@ export const Configured: Story = {
     const emailInput = await canvas.findByText('tim@twenty.com');
     expect(emailInput).toBeVisible();
 
-    const subjectInput = await canvas.findByText('Welcome to Twenty!');
+    const subjectInput = await canvas.findByText('Welcome to ExampleCRM!');
     expect(subjectInput).toBeVisible();
   },
 };

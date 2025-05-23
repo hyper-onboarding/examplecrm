@@ -1,12 +1,12 @@
 import {
-  TEST_KEY_DEFAULT,
-  TEST_KEY_DELETION,
-  TEST_KEY_ENV_ONLY,
-  TEST_KEY_METRICS,
-  TEST_KEY_NONEXISTENT,
-  TEST_KEY_NOTIFICATION,
-  TEST_KEY_SOFT_DELETION,
-  TEST_KEY_STRING_VALUE,
+    TEST_KEY_DEFAULT,
+    TEST_KEY_DELETION,
+    TEST_KEY_ENV_ONLY,
+    TEST_KEY_METRICS,
+    TEST_KEY_NONEXISTENT,
+    TEST_KEY_NOTIFICATION,
+    TEST_KEY_SOFT_DELETION,
+    TEST_KEY_STRING_VALUE,
 } from 'test/integration/twenty-config/constants/config-test-keys.constants';
 
 import { createConfigVariable } from './utils/create-config-variable.util';
@@ -16,7 +16,7 @@ import { getConfigVariablesGrouped } from './utils/get-config-variables-grouped.
 import { makeUnauthenticatedAPIRequest } from './utils/make-unauthenticated-api-request.util';
 import { updateConfigVariable } from './utils/update-config-variable.util';
 
-describe('TwentyConfig Integration', () => {
+describe('ExampleCRMConfig Integration', () => {
   afterAll(async () => {
     await deleteConfigVariable({
       input: { key: TEST_KEY_NOTIFICATION },

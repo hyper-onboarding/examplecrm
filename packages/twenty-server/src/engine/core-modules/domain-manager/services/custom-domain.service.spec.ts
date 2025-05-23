@@ -8,13 +8,13 @@ import { AuditService } from 'src/engine/core-modules/audit/services/audit.servi
 import { DomainManagerException } from 'src/engine/core-modules/domain-manager/domain-manager.exception';
 import { CustomDomainService } from 'src/engine/core-modules/domain-manager/services/custom-domain.service';
 import { DomainManagerService } from 'src/engine/core-modules/domain-manager/services/domain-manager.service';
-import { TwentyConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
+import { ExampleCRMConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
 
 jest.mock('cloudflare');
 
 describe('CustomDomainService', () => {
   let customDomainService: CustomDomainService;
-  let twentyConfigService: TwentyConfigService;
+  let twentyConfigService: ExampleCRMConfigService;
   let domainManagerService: DomainManagerService;
 
   beforeEach(async () => {
@@ -22,7 +22,7 @@ describe('CustomDomainService', () => {
       providers: [
         CustomDomainService,
         {
-          provide: TwentyConfigService,
+          provide: ExampleCRMConfigService,
           useValue: {
             get: jest.fn(),
           },
@@ -43,7 +43,7 @@ describe('CustomDomainService', () => {
     }).compile();
 
     customDomainService = module.get<CustomDomainService>(CustomDomainService);
-    twentyConfigService = module.get<TwentyConfigService>(TwentyConfigService);
+    twentyConfigService = module.get<ExampleCRMConfigService>(ExampleCRMConfigService);
     domainManagerService =
       module.get<DomainManagerService>(DomainManagerService);
 

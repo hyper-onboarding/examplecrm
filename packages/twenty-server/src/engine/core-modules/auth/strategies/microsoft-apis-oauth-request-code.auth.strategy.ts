@@ -1,11 +1,11 @@
 import { Injectable } from '@nestjs/common';
 
 import { MicrosoftAPIsOauthCommonStrategy } from 'src/engine/core-modules/auth/strategies/microsoft-apis-oauth-common.auth.strategy';
-import { TwentyConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
+import { ExampleCRMConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
 
 @Injectable()
 export class MicrosoftAPIsOauthRequestCodeStrategy extends MicrosoftAPIsOauthCommonStrategy {
-  constructor(twentyConfigService: TwentyConfigService) {
+  constructor(twentyConfigService: ExampleCRMConfigService) {
     super(twentyConfigService);
   }
 

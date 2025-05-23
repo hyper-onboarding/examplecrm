@@ -2,8 +2,8 @@ import { Injectable, Logger } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 
 import {
-  ObjectRecordsPermissions,
-  ObjectRecordsPermissionsByRoleId,
+    ObjectRecordsPermissions,
+    ObjectRecordsPermissionsByRoleId,
 } from 'twenty-shared/types';
 import { isDefined } from 'twenty-shared/utils';
 import { In, Repository } from 'typeorm';
@@ -15,7 +15,7 @@ import { RoleEntity } from 'src/engine/metadata-modules/role/role.entity';
 import { UserWorkspaceRoleEntity } from 'src/engine/metadata-modules/role/user-workspace-role.entity';
 import { UserWorkspaceRoleMap } from 'src/engine/metadata-modules/workspace-permissions-cache/types/user-workspace-role-map.type';
 import { WorkspacePermissionsCacheStorageService } from 'src/engine/metadata-modules/workspace-permissions-cache/workspace-permissions-cache-storage.service';
-import { TwentyORMExceptionCode } from 'src/engine/twenty-orm/exceptions/twenty-orm.exception';
+import { ExampleCRMORMExceptionCode } from 'src/engine/twenty-orm/exceptions/twenty-orm.exception';
 import { getFromCacheWithRecompute } from 'src/engine/utils/get-data-from-cache-with-recompute.util';
 import { WorkspaceCacheStorageService } from 'src/engine/workspace-cache-storage/workspace-cache-storage.service';
 
@@ -184,7 +184,7 @@ export class WorkspacePermissionsCacheService {
         ),
       recomputeCache: (params) => this.recomputeRolesPermissionsCache(params),
       cachedEntityName: ROLES_PERMISSIONS,
-      exceptionCode: TwentyORMExceptionCode.ROLES_PERMISSIONS_VERSION_NOT_FOUND,
+      exceptionCode: ExampleCRMORMExceptionCode.ROLES_PERMISSIONS_VERSION_NOT_FOUND,
       logger: this.logger,
     });
   }
@@ -204,7 +204,7 @@ export class WorkspacePermissionsCacheService {
         this.recomputeUserWorkspaceRoleMapCache(params),
       cachedEntityName: USER_WORKSPACE_ROLE_MAP,
       exceptionCode:
-        TwentyORMExceptionCode.USER_WORKSPACE_ROLE_MAP_VERSION_NOT_FOUND,
+        ExampleCRMORMExceptionCode.USER_WORKSPACE_ROLE_MAP_VERSION_NOT_FOUND,
       logger: this.logger,
     });
   }

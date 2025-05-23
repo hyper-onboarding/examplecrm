@@ -1,11 +1,11 @@
 import { UseFilters, UseGuards } from '@nestjs/common';
 import {
-  Args,
-  Mutation,
-  Parent,
-  Query,
-  ResolveField,
-  Resolver,
+    Args,
+    Mutation,
+    Parent,
+    Query,
+    ResolveField,
+    Resolver,
 } from '@nestjs/graphql';
 import { InjectRepository } from '@nestjs/typeorm';
 
@@ -26,13 +26,13 @@ import { FeatureFlagKey } from 'src/engine/core-modules/feature-flag/enums/featu
 import { FeatureFlagService } from 'src/engine/core-modules/feature-flag/services/feature-flag.service';
 import { FileUploadService } from 'src/engine/core-modules/file/file-upload/services/file-upload.service';
 import { FileService } from 'src/engine/core-modules/file/services/file.service';
-import { TwentyConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
+import { ExampleCRMConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
 import { UserWorkspaceService } from 'src/engine/core-modules/user-workspace/user-workspace.service';
 import { User } from 'src/engine/core-modules/user/user.entity';
 import { ActivateWorkspaceInput } from 'src/engine/core-modules/workspace/dtos/activate-workspace-input';
 import {
-  AuthProviders,
-  PublicWorkspaceDataOutput,
+    AuthProviders,
+    PublicWorkspaceDataOutput,
 } from 'src/engine/core-modules/workspace/dtos/public-workspace-data-output';
 import { UpdateWorkspaceInput } from 'src/engine/core-modules/workspace/dtos/update-workspace-input';
 import { WorkspaceUrls } from 'src/engine/core-modules/workspace/dtos/workspace-urls.dto';
@@ -68,7 +68,7 @@ export class WorkspaceResolver {
     private readonly workspaceService: WorkspaceService,
     private readonly domainManagerService: DomainManagerService,
     private readonly userWorkspaceService: UserWorkspaceService,
-    private readonly twentyConfigService: TwentyConfigService,
+    private readonly twentyConfigService: ExampleCRMConfigService,
     private readonly fileUploadService: FileUploadService,
     private readonly fileService: FileService,
     private readonly billingSubscriptionService: BillingSubscriptionService,

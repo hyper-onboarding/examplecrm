@@ -12,13 +12,13 @@ import { CustomDomainService } from 'src/engine/core-modules/domain-manager/serv
 import { DomainManagerService } from 'src/engine/core-modules/domain-manager/services/domain-manager.service';
 import { ExceptionHandlerService } from 'src/engine/core-modules/exception-handler/exception-handler.service';
 import { HttpExceptionHandlerService } from 'src/engine/core-modules/exception-handler/http-exception-handler.service';
-import { TwentyConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
+import { ExampleCRMConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
 import { Workspace } from 'src/engine/core-modules/workspace/workspace.entity';
 
 describe('CloudflareController - customHostnameWebhooks', () => {
   let controller: CloudflareController;
   let WorkspaceRepository: Repository<Workspace>;
-  let twentyConfigService: TwentyConfigService;
+  let twentyConfigService: ExampleCRMConfigService;
   let domainManagerService: DomainManagerService;
   let customDomainService: CustomDomainService;
 
@@ -58,7 +58,7 @@ describe('CloudflareController - customHostnameWebhooks', () => {
           },
         },
         {
-          provide: TwentyConfigService,
+          provide: ExampleCRMConfigService,
           useValue: {
             get: jest.fn(),
           },
@@ -74,7 +74,7 @@ describe('CloudflareController - customHostnameWebhooks', () => {
 
     controller = module.get<CloudflareController>(CloudflareController);
     WorkspaceRepository = module.get(getRepositoryToken(Workspace, 'core'));
-    twentyConfigService = module.get<TwentyConfigService>(TwentyConfigService);
+    twentyConfigService = module.get<ExampleCRMConfigService>(ExampleCRMConfigService);
     domainManagerService =
       module.get<DomainManagerService>(DomainManagerService);
     customDomainService = module.get<CustomDomainService>(CustomDomainService);

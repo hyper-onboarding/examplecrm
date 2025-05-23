@@ -1,10 +1,10 @@
+import { isDefined } from 'twenty-shared/utils';
 import { createDefaultButton } from '~/contentScript/createButton';
 import changeSidePanelUrl from '~/contentScript/utils/changeSidepanelUrl';
 import extractCompanyLinkedinLink from '~/contentScript/utils/extractCompanyLinkedinLink';
 import extractDomain from '~/contentScript/utils/extractDomain';
 import { createCompany, fetchCompany } from '~/db/company.db';
 import { CompanyInput } from '~/db/types/company.types';
-import { isDefined } from 'twenty-shared/utils';
 
 export const checkIfCompanyExists = async () => {
   const { tab: activeTab } = await chrome.runtime.sendMessage({
@@ -99,7 +99,7 @@ export const insertButtonForCompany = async () => {
   const company = await checkIfCompanyExists();
 
   const openCompanyOnSidePanel = (companyId: string) => {
-    companyButtonSpan.textContent = 'View in Twenty';
+    companyButtonSpan.textContent = 'View in ExampleCRM';
     companyButtonDiv.onClickHandler(async () => {
       await changeSidePanelUrl(`/object/company/${companyId}`);
       chrome.runtime.sendMessage({ action: 'openSidepanel' });
@@ -111,7 +111,7 @@ export const insertButtonForCompany = async () => {
     if (isDefined(company.id)) openCompanyOnSidePanel(company.id);
   } else {
     await changeSidePanelUrl(`/objects/companies`);
-    companyButtonSpan.textContent = 'Add to Twenty';
+    companyButtonSpan.textContent = 'Add to ExampleCRM';
 
     companyButtonDiv.onClickHandler(async () => {
       companyButtonSpan.textContent = 'Saving...';

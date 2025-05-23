@@ -2,18 +2,18 @@ import { DynamicModule, Global, Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 
 import {
-  ConfigVariables,
-  validate,
+    ConfigVariables,
+    validate,
 } from 'src/engine/core-modules/twenty-config/config-variables';
 import { CONFIG_VARIABLES_INSTANCE_TOKEN } from 'src/engine/core-modules/twenty-config/constants/config-variables-instance-tokens.constants';
 import { DatabaseConfigModule } from 'src/engine/core-modules/twenty-config/drivers/database-config.module';
 import { EnvironmentConfigDriver } from 'src/engine/core-modules/twenty-config/drivers/environment-config.driver';
 import { ConfigurableModuleClass } from 'src/engine/core-modules/twenty-config/twenty-config.module-definition';
-import { TwentyConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
+import { ExampleCRMConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
 
 @Global()
 @Module({})
-export class TwentyConfigModule extends ConfigurableModuleClass {
+export class ExampleCRMConfigModule extends ConfigurableModuleClass {
   static forRoot(): DynamicModule {
     const isConfigVariablesInDbEnabled =
       process.env.IS_CONFIG_VARIABLES_IN_DB_ENABLED !== 'false';
@@ -32,17 +32,17 @@ export class TwentyConfigModule extends ConfigurableModuleClass {
     }
 
     return {
-      module: TwentyConfigModule,
+      module: ExampleCRMConfigModule,
       imports,
       providers: [
-        TwentyConfigService,
+        ExampleCRMConfigService,
         EnvironmentConfigDriver,
         {
           provide: CONFIG_VARIABLES_INSTANCE_TOKEN,
           useValue: new ConfigVariables(),
         },
       ],
-      exports: [TwentyConfigService],
+      exports: [ExampleCRMConfigService],
     };
   }
 }

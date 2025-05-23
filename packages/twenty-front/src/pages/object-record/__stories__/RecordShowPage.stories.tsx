@@ -4,13 +4,13 @@ import { within } from '@storybook/test';
 import { HttpResponse, graphql } from 'msw';
 
 import {
-  PageDecorator,
-  PageDecoratorArgs,
+    PageDecorator,
+    PageDecoratorArgs,
 } from '~/testing/decorators/PageDecorator';
 import { graphqlMocks } from '~/testing/graphqlMocks';
 import {
-  allMockPersonRecords,
-  peopleQueryResult,
+    allMockPersonRecords,
+    peopleQueryResult,
 } from '~/testing/mock-data/people';
 import { mockedWorkspaceMemberData } from '~/testing/mock-data/users';
 
@@ -68,7 +68,7 @@ export const Default: Story = {
 
     // await canvas.findAllByText(peopleMock[0].name.firstName);
     expect(
-      await canvas.findByText('Twenty', undefined, {
+      await canvas.findByText('ExampleCRM', undefined, {
         timeout: 5000,
       }),
     ).toBeInTheDocument();

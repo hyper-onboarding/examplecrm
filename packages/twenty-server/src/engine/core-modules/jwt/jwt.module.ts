@@ -3,11 +3,11 @@ import { Module } from '@nestjs/common';
 import { JwtModule as NestJwtModule } from '@nestjs/jwt';
 
 import { JwtWrapperService } from 'src/engine/core-modules/jwt/services/jwt-wrapper.service';
-import { TwentyConfigModule } from 'src/engine/core-modules/twenty-config/twenty-config.module';
-import { TwentyConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
+import { ExampleCRMConfigModule } from 'src/engine/core-modules/twenty-config/twenty-config.module';
+import { ExampleCRMConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
 
 const InternalJwtModule = NestJwtModule.registerAsync({
-  useFactory: async (twentyConfigService: TwentyConfigService) => {
+  useFactory: async (twentyConfigService: ExampleCRMConfigService) => {
     return {
       secret: twentyConfigService.get('APP_SECRET'),
       signOptions: {
@@ -15,11 +15,11 @@ const InternalJwtModule = NestJwtModule.registerAsync({
       },
     };
   },
-  inject: [TwentyConfigService],
+  inject: [ExampleCRMConfigService],
 });
 
 @Module({
-  imports: [InternalJwtModule, TwentyConfigModule],
+  imports: [InternalJwtModule, ExampleCRMConfigModule],
   controllers: [],
   providers: [JwtWrapperService],
   exports: [JwtWrapperService],

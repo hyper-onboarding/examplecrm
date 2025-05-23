@@ -18,7 +18,7 @@ const mockStep = {
           isLeaf: true,
         },
         fields: {
-          name: { label: 'Name', value: 'Twenty', isLeaf: true },
+          name: { label: 'Name', value: 'ExampleCRM', isLeaf: true },
           address: {
             label: 'Address',
             value: {

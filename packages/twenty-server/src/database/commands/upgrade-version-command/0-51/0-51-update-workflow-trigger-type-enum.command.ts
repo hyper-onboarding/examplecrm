@@ -5,12 +5,12 @@ import { isDefined } from 'twenty-shared/utils';
 import { Repository } from 'typeorm';
 
 import {
-  ActiveOrSuspendedWorkspacesMigrationCommandRunner,
-  RunOnWorkspaceArgs,
+    ActiveOrSuspendedWorkspacesMigrationCommandRunner,
+    RunOnWorkspaceArgs,
 } from 'src/database/commands/command-runners/active-or-suspended-workspaces-migration.command-runner';
 import { Workspace } from 'src/engine/core-modules/workspace/workspace.entity';
 import { ObjectMetadataEntity } from 'src/engine/metadata-modules/object-metadata/object-metadata.entity';
-import { TwentyORMGlobalManager } from 'src/engine/twenty-orm/twenty-orm-global.manager';
+import { ExampleCRMORMGlobalManager } from 'src/engine/twenty-orm/twenty-orm-global.manager';
 import { computeTableName } from 'src/engine/utils/compute-table-name.util';
 import { WorkspaceDataSourceService } from 'src/engine/workspace-datasource/workspace-datasource.service';
 
@@ -24,7 +24,7 @@ export class UpgradeCreatedByEnumCommand extends ActiveOrSuspendedWorkspacesMigr
     protected readonly workspaceRepository: Repository<Workspace>,
     @InjectRepository(ObjectMetadataEntity, 'metadata')
     private readonly objectMetadataRepository: Repository<ObjectMetadataEntity>,
-    protected readonly twentyORMGlobalManager: TwentyORMGlobalManager,
+    protected readonly twentyORMGlobalManager: ExampleCRMORMGlobalManager,
     private readonly workspaceDataSourceService: WorkspaceDataSourceService,
   ) {
     super(workspaceRepository, twentyORMGlobalManager);

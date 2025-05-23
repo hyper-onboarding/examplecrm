@@ -5,18 +5,18 @@ import axios from 'axios';
 
 import { AdminPanelService } from 'src/engine/core-modules/admin-panel/admin-panel.service';
 import {
-  AuthException,
-  AuthExceptionCode,
+    AuthException,
+    AuthExceptionCode,
 } from 'src/engine/core-modules/auth/auth.exception';
 import { LoginTokenService } from 'src/engine/core-modules/auth/token/services/login-token.service';
 import { DomainManagerService } from 'src/engine/core-modules/domain-manager/services/domain-manager.service';
-import { TwentyConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
+import { ExampleCRMConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
 import { User } from 'src/engine/core-modules/user/user.entity';
 
 const UserFindOneMock = jest.fn();
 const LoginTokenServiceGenerateLoginTokenMock = jest.fn();
-const TwentyConfigServiceGetAllMock = jest.fn();
-const TwentyConfigServiceGetVariableWithMetadataMock = jest.fn();
+const ExampleCRMConfigServiceGetAllMock = jest.fn();
+const ExampleCRMConfigServiceGetVariableWithMetadataMock = jest.fn();
 
 jest.mock(
   'src/engine/core-modules/twenty-config/constants/config-variables-group-metadata',
@@ -70,11 +70,11 @@ describe('AdminPanelService', () => {
           },
         },
         {
-          provide: TwentyConfigService,
+          provide: ExampleCRMConfigService,
           useValue: {
-            getAll: TwentyConfigServiceGetAllMock,
+            getAll: ExampleCRMConfigServiceGetAllMock,
             getVariableWithMetadata:
-              TwentyConfigServiceGetVariableWithMetadataMock,
+              ExampleCRMConfigServiceGetVariableWithMetadataMock,
           },
         },
       ],
@@ -162,7 +162,7 @@ describe('AdminPanelService', () => {
 
   describe('getConfigVariablesGrouped', () => {
     it('should correctly group and sort config variables', () => {
-      TwentyConfigServiceGetAllMock.mockReturnValue({
+      ExampleCRMConfigServiceGetAllMock.mockReturnValue({
         SERVER_URL: {
           value: 'http://localhost',
           metadata: {
@@ -280,7 +280,7 @@ describe('AdminPanelService', () => {
     });
 
     it('should handle empty config variables', () => {
-      TwentyConfigServiceGetAllMock.mockReturnValue({});
+      ExampleCRMConfigServiceGetAllMock.mockReturnValue({});
 
       const result = service.getConfigVariablesGrouped();
 
@@ -290,7 +290,7 @@ describe('AdminPanelService', () => {
     });
 
     it('should handle variables with undefined metadata fields', () => {
-      TwentyConfigServiceGetAllMock.mockReturnValue({
+      ExampleCRMConfigServiceGetAllMock.mockReturnValue({
         TEST_VAR: {
           value: 'test',
           metadata: {
@@ -417,7 +417,7 @@ describe('AdminPanelService', () => {
 
   describe('getConfigVariable', () => {
     it('should return config variable with all fields', () => {
-      TwentyConfigServiceGetVariableWithMetadataMock.mockReturnValue({
+      ExampleCRMConfigServiceGetVariableWithMetadataMock.mockReturnValue({
         value: 'test-value',
         metadata: {
           group: 'SERVER_CONFIG',
@@ -445,7 +445,7 @@ describe('AdminPanelService', () => {
     });
 
     it('should throw error when variable not found', () => {
-      TwentyConfigServiceGetVariableWithMetadataMock.mockReturnValue(undefined);
+      ExampleCRMConfigServiceGetVariableWithMetadataMock.mockReturnValue(undefined);
 
       expect(() => service.getConfigVariable('INVALID_VAR')).toThrow(
         'Config variable INVALID_VAR not found',

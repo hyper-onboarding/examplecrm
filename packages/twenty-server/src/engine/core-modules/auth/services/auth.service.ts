@@ -16,17 +16,17 @@ import { Repository } from 'typeorm';
 import { NodeEnvironment } from 'src/engine/core-modules/twenty-config/interfaces/node-environment.interface';
 
 import {
-  AppToken,
-  AppTokenType,
+    AppToken,
+    AppTokenType,
 } from 'src/engine/core-modules/app-token/app-token.entity';
 import {
-  AuthException,
-  AuthExceptionCode,
+    AuthException,
+    AuthExceptionCode,
 } from 'src/engine/core-modules/auth/auth.exception';
 import {
-  PASSWORD_REGEX,
-  compareHash,
-  hashPassword,
+    PASSWORD_REGEX,
+    compareHash,
+    hashPassword,
 } from 'src/engine/core-modules/auth/auth.util';
 import { AuthorizeApp } from 'src/engine/core-modules/auth/dto/authorize-app.entity';
 import { AuthorizeAppInput } from 'src/engine/core-modules/auth/dto/authorize-app.input';
@@ -34,8 +34,8 @@ import { GetLoginTokenFromCredentialsInput } from 'src/engine/core-modules/auth/
 import { AuthTokens } from 'src/engine/core-modules/auth/dto/token.entity';
 import { UpdatePassword } from 'src/engine/core-modules/auth/dto/update-password.entity';
 import {
-  UserExists,
-  UserNotExists,
+    UserExists,
+    UserNotExists,
 } from 'src/engine/core-modules/auth/dto/user-exists.entity';
 import { WorkspaceInviteHashValid } from 'src/engine/core-modules/auth/dto/workspace-invite-hash-valid.entity';
 import { AuthSsoService } from 'src/engine/core-modules/auth/services/auth-sso.service';
@@ -43,15 +43,15 @@ import { SignInUpService } from 'src/engine/core-modules/auth/services/sign-in-u
 import { AccessTokenService } from 'src/engine/core-modules/auth/token/services/access-token.service';
 import { RefreshTokenService } from 'src/engine/core-modules/auth/token/services/refresh-token.service';
 import {
-  AuthProviderWithPasswordType,
-  ExistingUserOrNewUser,
-  SignInUpBaseParams,
-  SignInUpNewUserPayload,
+    AuthProviderWithPasswordType,
+    ExistingUserOrNewUser,
+    SignInUpBaseParams,
+    SignInUpNewUserPayload,
 } from 'src/engine/core-modules/auth/types/signInUp.type';
 import { WorkspaceSubdomainCustomDomainAndIsCustomDomainEnabledType } from 'src/engine/core-modules/domain-manager/domain-manager.type';
 import { DomainManagerService } from 'src/engine/core-modules/domain-manager/services/domain-manager.service';
 import { EmailService } from 'src/engine/core-modules/email/email.service';
-import { TwentyConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
+import { ExampleCRMConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
 import { UserWorkspaceService } from 'src/engine/core-modules/user-workspace/user-workspace.service';
 import { UserService } from 'src/engine/core-modules/user/services/user.service';
 import { User } from 'src/engine/core-modules/user/user.entity';
@@ -77,7 +77,7 @@ export class AuthService {
     private readonly workspaceRepository: Repository<Workspace>,
     @InjectRepository(User, 'core')
     private readonly userRepository: Repository<User>,
-    private readonly twentyConfigService: TwentyConfigService,
+    private readonly twentyConfigService: ExampleCRMConfigService,
     private readonly emailService: EmailService,
     @InjectRepository(AppToken, 'core')
     private readonly appTokenRepository: Repository<AppToken>,

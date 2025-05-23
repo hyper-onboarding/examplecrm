@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 import { SettingsFieldType } from '@/settings/data-model/types/SettingsFieldType';
 import { getSettingsFieldTypeConfig } from '@/settings/data-model/utils/getSettingsFieldTypeConfig';
-import { IconComponent, IconTwentyStar } from 'twenty-ui/display';
+import { IconComponent, IconExampleCRMStar } from 'twenty-ui/display';
 
 type SettingsObjectFieldDataTypeProps = {
   to?: string;
@@ -63,7 +63,7 @@ export const SettingsObjectFieldDataType = ({
 
   const fieldTypeConfig = getSettingsFieldTypeConfig(value);
   const Icon: IconComponent =
-    IconFromProps ?? fieldTypeConfig?.Icon ?? IconTwentyStar;
+    IconFromProps ?? fieldTypeConfig?.Icon ?? IconExampleCRMStar;
   const label = labelFromProps ?? fieldTypeConfig?.label;
 
   const StyledIcon = styled(Icon)`

@@ -5,20 +5,20 @@ import Cloudflare from 'cloudflare';
 import { isDefined } from 'twenty-shared/utils';
 
 import {
-  DomainManagerException,
-  DomainManagerExceptionCode,
+    DomainManagerException,
+    DomainManagerExceptionCode,
 } from 'src/engine/core-modules/domain-manager/domain-manager.exception';
 import { CustomDomainValidRecords } from 'src/engine/core-modules/domain-manager/dtos/custom-domain-valid-records';
 import { DomainManagerService } from 'src/engine/core-modules/domain-manager/services/domain-manager.service';
 import { domainManagerValidator } from 'src/engine/core-modules/domain-manager/validator/cloudflare.validate';
-import { TwentyConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
+import { ExampleCRMConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
 
 @Injectable()
 export class CustomDomainService {
   cloudflareClient?: Cloudflare;
 
   constructor(
-    private readonly twentyConfigService: TwentyConfigService,
+    private readonly twentyConfigService: ExampleCRMConfigService,
     private readonly domainManagerService: DomainManagerService,
   ) {
     if (this.twentyConfigService.get('CLOUDFLARE_API_KEY')) {

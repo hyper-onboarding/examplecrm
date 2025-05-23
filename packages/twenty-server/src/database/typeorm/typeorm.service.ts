@@ -17,7 +17,7 @@ import { FeatureFlag } from 'src/engine/core-modules/feature-flag/feature-flag.e
 import { KeyValuePair } from 'src/engine/core-modules/key-value-pair/key-value-pair.entity';
 import { PostgresCredentials } from 'src/engine/core-modules/postgres-credentials/postgres-credentials.entity';
 import { WorkspaceSSOIdentityProvider } from 'src/engine/core-modules/sso/workspace-sso-identity-provider.entity';
-import { TwentyConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
+import { ExampleCRMConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
 import { TwoFactorMethod } from 'src/engine/core-modules/two-factor-method/two-factor-method.entity';
 import { UserWorkspace } from 'src/engine/core-modules/user-workspace/user-workspace.entity';
 import { User } from 'src/engine/core-modules/user/user.entity';
@@ -26,7 +26,7 @@ import { Workspace } from 'src/engine/core-modules/workspace/workspace.entity';
 export class TypeORMService implements OnModuleInit, OnModuleDestroy {
   private mainDataSource: DataSource;
 
-  constructor(private readonly twentyConfigService: TwentyConfigService) {
+  constructor(private readonly twentyConfigService: ExampleCRMConfigService) {
     this.mainDataSource = new DataSource({
       url: twentyConfigService.get('PG_DATABASE_URL'),
       type: 'postgres',

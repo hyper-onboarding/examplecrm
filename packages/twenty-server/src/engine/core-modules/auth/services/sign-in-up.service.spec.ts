@@ -7,20 +7,20 @@ import { Repository } from 'typeorm';
 
 import { AppToken } from 'src/engine/core-modules/app-token/app-token.entity';
 import {
-  AuthException,
-  AuthExceptionCode,
+    AuthException,
+    AuthExceptionCode,
 } from 'src/engine/core-modules/auth/auth.exception';
 import { SignInUpService } from 'src/engine/core-modules/auth/services/sign-in-up.service';
 import {
-  AuthProviderWithPasswordType,
-  ExistingUserOrPartialUserWithPicture,
-  SignInUpBaseParams,
+    AuthProviderWithPasswordType,
+    ExistingUserOrPartialUserWithPicture,
+    SignInUpBaseParams,
 } from 'src/engine/core-modules/auth/types/signInUp.type';
 import { DomainManagerService } from 'src/engine/core-modules/domain-manager/services/domain-manager.service';
 import { FeatureFlagService } from 'src/engine/core-modules/feature-flag/services/feature-flag.service';
 import { FileUploadService } from 'src/engine/core-modules/file/file-upload/services/file-upload.service';
 import { OnboardingService } from 'src/engine/core-modules/onboarding/onboarding.service';
-import { TwentyConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
+import { ExampleCRMConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
 import { UserWorkspace } from 'src/engine/core-modules/user-workspace/user-workspace.entity';
 import { UserWorkspaceService } from 'src/engine/core-modules/user-workspace/user-workspace.service';
 import { UserService } from 'src/engine/core-modules/user/services/user.service';
@@ -41,7 +41,7 @@ describe('SignInUpService', () => {
   let WorkspaceRepository: Repository<Workspace>;
   let workspaceInvitationService: WorkspaceInvitationService;
   let userWorkspaceService: UserWorkspaceService;
-  let twentyConfigService: TwentyConfigService;
+  let twentyConfigService: ExampleCRMConfigService;
   let domainManagerService: DomainManagerService;
 
   beforeEach(async () => {
@@ -97,7 +97,7 @@ describe('SignInUpService', () => {
           useValue: {},
         },
         {
-          provide: TwentyConfigService,
+          provide: ExampleCRMConfigService,
           useValue: {
             get: jest.fn(),
           },
@@ -141,7 +141,7 @@ describe('SignInUpService', () => {
     );
     userWorkspaceService =
       module.get<UserWorkspaceService>(UserWorkspaceService);
-    twentyConfigService = module.get<TwentyConfigService>(TwentyConfigService);
+    twentyConfigService = module.get<ExampleCRMConfigService>(ExampleCRMConfigService);
     domainManagerService =
       module.get<DomainManagerService>(DomainManagerService);
   });

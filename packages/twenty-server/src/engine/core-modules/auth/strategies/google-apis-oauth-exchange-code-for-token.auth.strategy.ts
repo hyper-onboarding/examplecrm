@@ -4,7 +4,7 @@ import { VerifyCallback } from 'passport-google-oauth20';
 
 import { GoogleAPIsOauthCommonStrategy } from 'src/engine/core-modules/auth/strategies/google-apis-oauth-common.auth.strategy';
 import { GoogleAPIsRequest } from 'src/engine/core-modules/auth/types/google-api-request.type';
-import { TwentyConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
+import { ExampleCRMConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
 
 export type GoogleAPIScopeConfig = {
   isCalendarEnabled?: boolean;
@@ -12,7 +12,7 @@ export type GoogleAPIScopeConfig = {
 
 @Injectable()
 export class GoogleAPIsOauthExchangeCodeForTokenStrategy extends GoogleAPIsOauthCommonStrategy {
-  constructor(twentyConfigService: TwentyConfigService) {
+  constructor(twentyConfigService: ExampleCRMConfigService) {
     super(twentyConfigService);
   }
 

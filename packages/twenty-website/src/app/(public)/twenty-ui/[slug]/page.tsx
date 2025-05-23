@@ -16,12 +16,12 @@ export async function generateMetadata({
   const basePath = '/src/content/twenty-ui';
   const mainPost = await fetchArticleFromSlug(params.slug, basePath);
   return {
-    title: 'Twenty - ' + formattedSlug,
+    title: 'ExampleCRM - ' + formattedSlug,
     description: mainPost?.itemInfo?.info,
   };
 }
 
-export default async function TwentyUISlug({
+export default async function ExampleCRMUISlug({
   params,
 }: {
   params: { slug: string };

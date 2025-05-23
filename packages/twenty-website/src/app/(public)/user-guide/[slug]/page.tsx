@@ -14,7 +14,7 @@ export async function generateMetadata({
   const basePath = '/src/content/user-guide';
   const mainPost = await fetchArticleFromSlug(params.slug, basePath);
   return {
-    title: 'Twenty - ' + formattedSlug,
+    title: 'ExampleCRM - ' + formattedSlug,
     description: mainPost?.itemInfo?.info,
   };
 }

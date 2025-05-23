@@ -4,7 +4,7 @@ import { NodeEnvironment } from 'src/engine/core-modules/twenty-config/interface
 
 import { OPTIONS_TYPE } from 'src/engine/core-modules/exception-handler/exception-handler.module-definition';
 import { ExceptionHandlerDriver } from 'src/engine/core-modules/exception-handler/interfaces';
-import { TwentyConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
+import { ExampleCRMConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
 
 /**
  * ExceptionHandler Module factory
@@ -13,7 +13,7 @@ import { TwentyConfigService } from 'src/engine/core-modules/twenty-config/twent
  * @param adapterHost
  */
 export const exceptionHandlerModuleFactory = async (
-  twentyConfigService: TwentyConfigService,
+  twentyConfigService: ExampleCRMConfigService,
   adapterHost: HttpAdapterHost,
 ): Promise<typeof OPTIONS_TYPE> => {
   const driverType = twentyConfigService.get('EXCEPTION_HANDLER_DRIVER');

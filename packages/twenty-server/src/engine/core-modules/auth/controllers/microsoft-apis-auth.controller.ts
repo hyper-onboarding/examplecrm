@@ -1,10 +1,10 @@
 import {
-  Controller,
-  Get,
-  Req,
-  Res,
-  UseFilters,
-  UseGuards,
+    Controller,
+    Get,
+    Req,
+    Res,
+    UseFilters,
+    UseGuards,
 } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 
@@ -12,8 +12,8 @@ import { Response } from 'express';
 import { Repository } from 'typeorm';
 
 import {
-  AuthException,
-  AuthExceptionCode,
+    AuthException,
+    AuthExceptionCode,
 } from 'src/engine/core-modules/auth/auth.exception';
 import { AuthRestApiExceptionFilter } from 'src/engine/core-modules/auth/filters/auth-rest-api-exception.filter';
 import { MicrosoftAPIsOauthExchangeCodeForTokenGuard } from 'src/engine/core-modules/auth/guards/microsoft-apis-oauth-exchange-code-for-token.guard';
@@ -24,7 +24,7 @@ import { MicrosoftAPIsRequest } from 'src/engine/core-modules/auth/types/microso
 import { DomainManagerService } from 'src/engine/core-modules/domain-manager/services/domain-manager.service';
 import { GuardRedirectService } from 'src/engine/core-modules/guard-redirect/services/guard-redirect.service';
 import { OnboardingService } from 'src/engine/core-modules/onboarding/onboarding.service';
-import { TwentyConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
+import { ExampleCRMConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
 import { Workspace } from 'src/engine/core-modules/workspace/workspace.entity';
 
 @Controller('auth/microsoft-apis')
@@ -33,7 +33,7 @@ export class MicrosoftAPIsAuthController {
   constructor(
     private readonly microsoftAPIsService: MicrosoftAPIsService,
     private readonly transientTokenService: TransientTokenService,
-    private readonly twentyConfigService: TwentyConfigService,
+    private readonly twentyConfigService: ExampleCRMConfigService,
     private readonly domainManagerService: DomainManagerService,
     private readonly onboardingService: OnboardingService,
     private readonly guardRedirectService: GuardRedirectService,

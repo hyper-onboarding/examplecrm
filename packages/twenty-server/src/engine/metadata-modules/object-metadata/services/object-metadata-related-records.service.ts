@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 
 import { ObjectMetadataEntity } from 'src/engine/metadata-modules/object-metadata/object-metadata.entity';
-import { TwentyORMGlobalManager } from 'src/engine/twenty-orm/twenty-orm-global.manager';
+import { ExampleCRMORMGlobalManager } from 'src/engine/twenty-orm/twenty-orm-global.manager';
 import { FavoriteWorkspaceEntity } from 'src/modules/favorite/standard-objects/favorite.workspace-entity';
 import { ViewFieldWorkspaceEntity } from 'src/modules/view/standard-objects/view-field.workspace-entity';
 import { ViewWorkspaceEntity } from 'src/modules/view/standard-objects/view.workspace-entity';
@@ -9,7 +9,7 @@ import { ViewWorkspaceEntity } from 'src/modules/view/standard-objects/view.work
 @Injectable()
 export class ObjectMetadataRelatedRecordsService {
   constructor(
-    private readonly twentyORMGlobalManager: TwentyORMGlobalManager,
+    private readonly twentyORMGlobalManager: ExampleCRMORMGlobalManager,
   ) {}
 
   public async createObjectRelatedRecords(

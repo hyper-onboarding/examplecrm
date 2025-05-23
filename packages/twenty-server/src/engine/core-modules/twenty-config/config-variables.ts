@@ -2,12 +2,12 @@ import { LogLevel, Logger } from '@nestjs/common';
 
 import { plainToClass } from 'class-transformer';
 import {
-  IsDefined,
-  IsOptional,
-  IsUrl,
-  ValidateIf,
-  ValidationError,
-  validateSync,
+    IsDefined,
+    IsOptional,
+    IsUrl,
+    ValidateIf,
+    ValidationError,
+    validateSync,
 } from 'class-validator';
 import { isDefined } from 'twenty-shared/utils';
 
@@ -32,12 +32,12 @@ import { IsAWSRegion } from 'src/engine/core-modules/twenty-config/decorators/is
 import { IsDuration } from 'src/engine/core-modules/twenty-config/decorators/is-duration.decorator';
 import { IsOptionalOrEmptyString } from 'src/engine/core-modules/twenty-config/decorators/is-optional-or-empty-string.decorator';
 import { IsStrictlyLowerThan } from 'src/engine/core-modules/twenty-config/decorators/is-strictly-lower-than.decorator';
-import { IsTwentySemVer } from 'src/engine/core-modules/twenty-config/decorators/is-twenty-semver.decorator';
+import { IsExampleCRMSemVer } from 'src/engine/core-modules/twenty-config/decorators/is-twenty-semver.decorator';
 import { ConfigVariableType } from 'src/engine/core-modules/twenty-config/enums/config-variable-type.enum';
 import { ConfigVariablesGroup } from 'src/engine/core-modules/twenty-config/enums/config-variables-group.enum';
 import {
-  ConfigVariableException,
-  ConfigVariableExceptionCode,
+    ConfigVariableException,
+    ConfigVariableExceptionCode,
 } from 'src/engine/core-modules/twenty-config/twenty-config.exception';
 
 export class ConfigVariables {
@@ -292,7 +292,7 @@ export class ConfigVariables {
     description: 'Name used in the From header for outgoing emails',
     type: ConfigVariableType.STRING,
   })
-  EMAIL_FROM_NAME = 'Felix from Twenty';
+  EMAIL_FROM_NAME = 'Felix from ExampleCRM';
 
   @ConfigVariablesMetadata({
     group: ConfigVariablesGroup.EmailSettings,
@@ -1090,12 +1090,12 @@ export class ConfigVariables {
 
   @ConfigVariablesMetadata({
     group: ConfigVariablesGroup.ServerConfig,
-    description: 'Twenty server version',
+    description: 'ExampleCRM server version',
     type: ConfigVariableType.STRING,
     isEnvOnly: true,
   })
   @IsOptionalOrEmptyString()
-  @IsTwentySemVer()
+  @IsExampleCRMSemVer()
   APP_VERSION?: string;
 }
 

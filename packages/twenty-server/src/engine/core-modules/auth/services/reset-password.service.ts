@@ -13,12 +13,12 @@ import { APP_LOCALES } from 'twenty-shared/translations';
 import { IsNull, MoreThan, Repository } from 'typeorm';
 
 import {
-  AppToken,
-  AppTokenType,
+    AppToken,
+    AppTokenType,
 } from 'src/engine/core-modules/app-token/app-token.entity';
 import {
-  AuthException,
-  AuthExceptionCode,
+    AuthException,
+    AuthExceptionCode,
 } from 'src/engine/core-modules/auth/auth.exception';
 import { EmailPasswordResetLink } from 'src/engine/core-modules/auth/dto/email-password-reset-link.entity';
 import { InvalidatePassword } from 'src/engine/core-modules/auth/dto/invalidate-password.entity';
@@ -26,7 +26,7 @@ import { PasswordResetToken } from 'src/engine/core-modules/auth/dto/token.entit
 import { ValidatePasswordResetToken } from 'src/engine/core-modules/auth/dto/validate-password-reset-token.entity';
 import { DomainManagerService } from 'src/engine/core-modules/domain-manager/services/domain-manager.service';
 import { EmailService } from 'src/engine/core-modules/email/email.service';
-import { TwentyConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
+import { ExampleCRMConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
 import { User } from 'src/engine/core-modules/user/user.entity';
 import { Workspace } from 'src/engine/core-modules/workspace/workspace.entity';
 import { workspaceValidator } from 'src/engine/core-modules/workspace/workspace.validate';
@@ -34,7 +34,7 @@ import { workspaceValidator } from 'src/engine/core-modules/workspace/workspace.
 @Injectable()
 export class ResetPasswordService {
   constructor(
-    private readonly twentyConfigService: TwentyConfigService,
+    private readonly twentyConfigService: ExampleCRMConfigService,
     private readonly domainManagerService: DomainManagerService,
     @InjectRepository(User, 'core')
     private readonly userRepository: Repository<User>,

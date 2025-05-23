@@ -11,18 +11,18 @@ import { APP_LOCALES } from 'twenty-shared/translations';
 import { Repository } from 'typeorm';
 
 import {
-  AppToken,
-  AppTokenType,
+    AppToken,
+    AppTokenType,
 } from 'src/engine/core-modules/app-token/app-token.entity';
 import { EmailVerificationTokenService } from 'src/engine/core-modules/auth/token/services/email-verification-token.service';
 import { WorkspaceSubdomainCustomDomainAndIsCustomDomainEnabledType } from 'src/engine/core-modules/domain-manager/domain-manager.type';
 import { DomainManagerService } from 'src/engine/core-modules/domain-manager/services/domain-manager.service';
 import {
-  EmailVerificationException,
-  EmailVerificationExceptionCode,
+    EmailVerificationException,
+    EmailVerificationExceptionCode,
 } from 'src/engine/core-modules/email-verification/email-verification.exception';
 import { EmailService } from 'src/engine/core-modules/email/email.service';
-import { TwentyConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
+import { ExampleCRMConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
 import { UserService } from 'src/engine/core-modules/user/services/user.service';
 
 @Injectable()
@@ -33,7 +33,7 @@ export class EmailVerificationService {
     private readonly appTokenRepository: Repository<AppToken>,
     private readonly domainManagerService: DomainManagerService,
     private readonly emailService: EmailService,
-    private readonly twentyConfigService: TwentyConfigService,
+    private readonly twentyConfigService: ExampleCRMConfigService,
     private readonly userService: UserService,
     private readonly emailVerificationTokenService: EmailVerificationTokenService,
   ) {}
@@ -83,7 +83,7 @@ export class EmailVerificationService {
         'EMAIL_FROM_NAME',
       )} <${this.twentyConfigService.get('EMAIL_FROM_ADDRESS')}>`,
       to: email,
-      subject: t`Welcome to Twenty: Please Confirm Your Email`,
+      subject: t`Welcome to ExampleCRM: Please Confirm Your Email`,
       text,
       html,
     });

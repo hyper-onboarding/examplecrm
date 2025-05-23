@@ -1,14 +1,14 @@
 import { Test, TestingModule } from '@nestjs/testing';
 
 import { JwtWrapperService } from 'src/engine/core-modules/jwt/services/jwt-wrapper.service';
-import { TwentyConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
+import { ExampleCRMConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
 
 import { ApiKeyService } from './api-key.service';
 
 describe('ApiKeyService', () => {
   let service: ApiKeyService;
   let jwtWrapperService: JwtWrapperService;
-  let twentyConfigService: TwentyConfigService;
+  let twentyConfigService: ExampleCRMConfigService;
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
@@ -22,7 +22,7 @@ describe('ApiKeyService', () => {
           },
         },
         {
-          provide: TwentyConfigService,
+          provide: ExampleCRMConfigService,
           useValue: {
             get: jest.fn(),
           },
@@ -32,7 +32,7 @@ describe('ApiKeyService', () => {
 
     service = module.get<ApiKeyService>(ApiKeyService);
     jwtWrapperService = module.get<JwtWrapperService>(JwtWrapperService);
-    twentyConfigService = module.get<TwentyConfigService>(TwentyConfigService);
+    twentyConfigService = module.get<ExampleCRMConfigService>(ExampleCRMConfigService);
   });
 
   it('should be defined', () => {

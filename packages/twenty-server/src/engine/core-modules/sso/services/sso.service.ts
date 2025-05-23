@@ -10,20 +10,20 @@ import { BillingEntitlementKey } from 'src/engine/core-modules/billing/enums/bil
 import { BillingService } from 'src/engine/core-modules/billing/services/billing.service';
 import { ExceptionHandlerService } from 'src/engine/core-modules/exception-handler/exception-handler.service';
 import {
-  SSOException,
-  SSOExceptionCode,
+    SSOException,
+    SSOExceptionCode,
 } from 'src/engine/core-modules/sso/sso.exception';
 import {
-  OIDCConfiguration,
-  SAMLConfiguration,
-  SSOConfiguration,
+    OIDCConfiguration,
+    SAMLConfiguration,
+    SSOConfiguration,
 } from 'src/engine/core-modules/sso/types/SSOConfigurations.type';
 import {
-  IdentityProviderType,
-  OIDCResponseType,
-  WorkspaceSSOIdentityProvider,
+    IdentityProviderType,
+    OIDCResponseType,
+    WorkspaceSSOIdentityProvider,
 } from 'src/engine/core-modules/sso/workspace-sso-identity-provider.entity';
-import { TwentyConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
+import { ExampleCRMConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
 
 @Injectable()
 export class SSOService {
@@ -31,7 +31,7 @@ export class SSOService {
   constructor(
     @InjectRepository(WorkspaceSSOIdentityProvider, 'core')
     private readonly workspaceSSOIdentityProviderRepository: Repository<WorkspaceSSOIdentityProvider>,
-    private readonly twentyConfigService: TwentyConfigService,
+    private readonly twentyConfigService: ExampleCRMConfigService,
     private readonly billingService: BillingService,
     private readonly exceptionHandlerService: ExceptionHandlerService,
   ) {}

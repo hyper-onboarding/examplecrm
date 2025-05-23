@@ -5,13 +5,13 @@ import { addMilliseconds } from 'date-fns';
 import { Repository } from 'typeorm';
 
 import {
-  AppToken,
-  AppTokenType,
+    AppToken,
+    AppTokenType,
 } from 'src/engine/core-modules/app-token/app-token.entity';
 import { AuthException } from 'src/engine/core-modules/auth/auth.exception';
 import { DomainManagerService } from 'src/engine/core-modules/domain-manager/services/domain-manager.service';
 import { EmailService } from 'src/engine/core-modules/email/email.service';
-import { TwentyConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
+import { ExampleCRMConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
 import { User } from 'src/engine/core-modules/user/user.entity';
 import { Workspace } from 'src/engine/core-modules/workspace/workspace.entity';
 
@@ -23,7 +23,7 @@ describe('ResetPasswordService', () => {
   let workspaceRepository: Repository<Workspace>;
   let appTokenRepository: Repository<AppToken>;
   let emailService: EmailService;
-  let twentyConfigService: TwentyConfigService;
+  let twentyConfigService: ExampleCRMConfigService;
   let domainManagerService: DomainManagerService;
 
   beforeEach(async () => {
@@ -62,7 +62,7 @@ describe('ResetPasswordService', () => {
           },
         },
         {
-          provide: TwentyConfigService,
+          provide: ExampleCRMConfigService,
           useValue: {
             get: jest.fn(),
           },
@@ -81,7 +81,7 @@ describe('ResetPasswordService', () => {
       getRepositoryToken(AppToken, 'core'),
     );
     emailService = module.get<EmailService>(EmailService);
-    twentyConfigService = module.get<TwentyConfigService>(TwentyConfigService);
+    twentyConfigService = module.get<ExampleCRMConfigService>(ExampleCRMConfigService);
     domainManagerService =
       module.get<DomainManagerService>(DomainManagerService);
   });

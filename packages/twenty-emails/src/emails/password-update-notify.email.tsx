@@ -42,7 +42,7 @@ export const PasswordUpdateNotifyEmail = ({
         <br />
       </MainText>
       <br />
-      <CallToAction value={i18n._('Connect to Twenty')} href={link} />
+      <CallToAction value={i18n._('Connect to ExampleCRM')} href={link} />
       <br />
       <br />
     </BaseEmail>

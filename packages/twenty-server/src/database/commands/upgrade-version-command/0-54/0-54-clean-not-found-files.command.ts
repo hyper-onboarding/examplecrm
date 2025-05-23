@@ -5,12 +5,12 @@ import { Command } from 'nest-commander';
 import { Equal, Not, Repository } from 'typeorm';
 
 import {
-  ActiveOrSuspendedWorkspacesMigrationCommandRunner,
-  RunOnWorkspaceArgs,
+    ActiveOrSuspendedWorkspacesMigrationCommandRunner,
+    RunOnWorkspaceArgs,
 } from 'src/database/commands/command-runners/active-or-suspended-workspaces-migration.command-runner';
 import { FileStorageService } from 'src/engine/core-modules/file-storage/file-storage.service';
 import { Workspace } from 'src/engine/core-modules/workspace/workspace.entity';
-import { TwentyORMGlobalManager } from 'src/engine/twenty-orm/twenty-orm-global.manager';
+import { ExampleCRMORMGlobalManager } from 'src/engine/twenty-orm/twenty-orm-global.manager';
 import { AttachmentWorkspaceEntity } from 'src/modules/attachment/standard-objects/attachment.workspace-entity';
 import { PersonWorkspaceEntity } from 'src/modules/person/standard-objects/person.workspace-entity';
 import { WorkspaceMemberWorkspaceEntity } from 'src/modules/workspace-member/standard-objects/workspace-member.workspace-entity';
@@ -23,7 +23,7 @@ export class CleanNotFoundFilesCommand extends ActiveOrSuspendedWorkspacesMigrat
   constructor(
     @InjectRepository(Workspace, 'core')
     protected readonly workspaceRepository: Repository<Workspace>,
-    protected readonly twentyORMGlobalManager: TwentyORMGlobalManager,
+    protected readonly twentyORMGlobalManager: ExampleCRMORMGlobalManager,
     private readonly fileStorageService: FileStorageService,
   ) {
     super(workspaceRepository, twentyORMGlobalManager);

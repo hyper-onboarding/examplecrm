@@ -6,9 +6,9 @@ import { Repository } from 'typeorm';
 
 import { UpgradeCommandRunner } from 'src/database/commands/command-runners/upgrade.command-runner';
 import { ConfigVariables } from 'src/engine/core-modules/twenty-config/config-variables';
-import { TwentyConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
+import { ExampleCRMConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
 import { Workspace } from 'src/engine/core-modules/workspace/workspace.entity';
-import { TwentyORMGlobalManager } from 'src/engine/twenty-orm/twenty-orm-global.manager';
+import { ExampleCRMORMGlobalManager } from 'src/engine/twenty-orm/twenty-orm-global.manager';
 import { SyncWorkspaceMetadataCommand } from 'src/engine/workspace-manager/workspace-sync-metadata/commands/sync-workspace-metadata.command';
 
 class BasicUpgradeCommandRunner extends UpgradeCommandRunner {
@@ -85,7 +85,7 @@ const buildUpgradeCommandModule = async ({
         },
       },
       {
-        provide: TwentyConfigService,
+        provide: ExampleCRMConfigService,
         useValue: {
           get: jest.fn().mockImplementation((key: keyof ConfigVariables) => {
             switch (key) {
@@ -100,7 +100,7 @@ const buildUpgradeCommandModule = async ({
         },
       },
       {
-        provide: TwentyORMGlobalManager,
+        provide: ExampleCRMORMGlobalManager,
         useValue: {
           connect: jest.fn(),
           destroyDataSourceForWorkspace: jest.fn(),
@@ -125,7 +125,7 @@ describe('UpgradeCommandRunner', () => {
   let syncWorkspaceMetadataCommand: jest.Mocked<SyncWorkspaceMetadataCommand>;
   let runAfterSyncMetadataSpy: jest.SpyInstance;
   let runBeforeSyncMetadataSpy: jest.SpyInstance;
-  let twentyORMGlobalManagerSpy: TwentyORMGlobalManager;
+  let twentyORMGlobalManagerSpy: ExampleCRMORMGlobalManager;
 
   type BuildModuleAndSetupSpiesArgs = {
     numberOfWorkspace?: number;
@@ -170,8 +170,8 @@ describe('UpgradeCommandRunner', () => {
       getRepositoryToken(Workspace, 'core'),
     );
     syncWorkspaceMetadataCommand = module.get(SyncWorkspaceMetadataCommand);
-    twentyORMGlobalManagerSpy = module.get<TwentyORMGlobalManager>(
-      TwentyORMGlobalManager,
+    twentyORMGlobalManagerSpy = module.get<ExampleCRMORMGlobalManager>(
+      ExampleCRMORMGlobalManager,
     );
   };
 

@@ -4,13 +4,13 @@ import { Command } from 'nest-commander';
 import { Repository } from 'typeorm';
 
 import {
-  ActiveOrSuspendedWorkspacesMigrationCommandRunner,
-  RunOnWorkspaceArgs,
+    ActiveOrSuspendedWorkspacesMigrationCommandRunner,
+    RunOnWorkspaceArgs,
 } from 'src/database/commands/command-runners/active-or-suspended-workspaces-migration.command-runner';
 import { Workspace } from 'src/engine/core-modules/workspace/workspace.entity';
 import { FieldMetadataEntity } from 'src/engine/metadata-modules/field-metadata/field-metadata.entity';
 import { WorkspaceMetadataVersionService } from 'src/engine/metadata-modules/workspace-metadata-version/services/workspace-metadata-version.service';
-import { TwentyORMGlobalManager } from 'src/engine/twenty-orm/twenty-orm-global.manager';
+import { ExampleCRMORMGlobalManager } from 'src/engine/twenty-orm/twenty-orm-global.manager';
 import { TASK_STANDARD_FIELD_IDS } from 'src/engine/workspace-manager/workspace-sync-metadata/constants/standard-field-ids';
 
 @Command({
@@ -21,7 +21,7 @@ export class FixStandardSelectFieldsPositionCommand extends ActiveOrSuspendedWor
   constructor(
     @InjectRepository(Workspace, 'core')
     protected readonly workspaceRepository: Repository<Workspace>,
-    protected readonly twentyORMGlobalManager: TwentyORMGlobalManager,
+    protected readonly twentyORMGlobalManager: ExampleCRMORMGlobalManager,
     @InjectRepository(FieldMetadataEntity, 'metadata')
     private readonly fieldMetadataRepository: Repository<FieldMetadataEntity>,
     private readonly workspaceMetadataVersionService: WorkspaceMetadataVersionService,

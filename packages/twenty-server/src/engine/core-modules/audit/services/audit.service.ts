@@ -2,24 +2,24 @@ import { Injectable } from '@nestjs/common';
 
 import { ClickHouseService } from 'src/database/clickHouse/clickHouse.service';
 import {
-  AuditException,
-  AuditExceptionCode,
+    AuditException,
+    AuditExceptionCode,
 } from 'src/engine/core-modules/audit/audit.exception';
 import {
-  TrackEventName,
-  TrackEventProperties,
+    TrackEventName,
+    TrackEventProperties,
 } from 'src/engine/core-modules/audit/types/events.type';
 import {
-  makePageview,
-  makeTrackEvent,
+    makePageview,
+    makeTrackEvent,
 } from 'src/engine/core-modules/audit/utils/analytics.utils';
 import { PageviewProperties } from 'src/engine/core-modules/audit/utils/events/pageview/pageview';
-import { TwentyConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
+import { ExampleCRMConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
 
 @Injectable()
 export class AuditService {
   constructor(
-    private readonly twentyConfigService: TwentyConfigService,
+    private readonly twentyConfigService: ExampleCRMConfigService,
     private readonly clickHouseService: ClickHouseService,
   ) {}
 

@@ -1,15 +1,15 @@
-import { PerformTwentyConfigQueryParams } from 'test/integration/twenty-config/types/perform-twenty-config-query.type';
+import { PerformExampleCRMConfigQueryParams } from 'test/integration/twenty-config/types/perform-twenty-config-query.type';
 
 import { makeAdminPanelAPIRequest } from './make-admin-panel-api-request.util';
 import {
-  UpdateConfigVariableFactoryInput,
-  updateConfigVariableQueryFactory,
+    UpdateConfigVariableFactoryInput,
+    updateConfigVariableQueryFactory,
 } from './update-config-variable.query-factory.util';
 
 export const updateConfigVariable = async ({
   input,
   expectToFail = false,
-}: PerformTwentyConfigQueryParams<UpdateConfigVariableFactoryInput>) => {
+}: PerformExampleCRMConfigQueryParams<UpdateConfigVariableFactoryInput>) => {
   const graphqlOperation = updateConfigVariableQueryFactory({
     key: input.key,
     value: input.value,

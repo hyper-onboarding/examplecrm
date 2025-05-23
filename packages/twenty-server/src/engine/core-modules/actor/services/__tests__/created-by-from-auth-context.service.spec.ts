@@ -6,14 +6,14 @@ import { AuthContext } from 'src/engine/core-modules/auth/types/auth-context.typ
 import { User } from 'src/engine/core-modules/user/user.entity';
 import { Workspace } from 'src/engine/core-modules/workspace/workspace.entity';
 import {
-  ActorMetadata,
-  FieldActorSource,
+    ActorMetadata,
+    FieldActorSource,
 } from 'src/engine/metadata-modules/field-metadata/composite-types/actor.composite-type';
 import { FullNameMetadata } from 'src/engine/metadata-modules/field-metadata/composite-types/full-name.composite-type';
-import { TwentyORMGlobalManager } from 'src/engine/twenty-orm/twenty-orm-global.manager';
+import { FieldMetadataEntity } from 'src/engine/metadata-modules/field-metadata/field-metadata.entity';
+import { ExampleCRMORMGlobalManager } from 'src/engine/twenty-orm/twenty-orm-global.manager';
 import { ApiKeyWorkspaceEntity } from 'src/modules/api-key/standard-objects/api-key.workspace-entity';
 import { WorkspaceMemberWorkspaceEntity } from 'src/modules/workspace-member/standard-objects/workspace-member.workspace-entity';
-import { FieldMetadataEntity } from 'src/engine/metadata-modules/field-metadata/field-metadata.entity';
 
 type TestingAuthContext = Omit<AuthContext, 'workspace' | 'apiKey' | 'user'> & {
   workspace: Partial<Workspace>;
@@ -35,7 +35,7 @@ describe('CreatedByFromAuthContextService', () => {
     findOneOrFail: jest.fn(),
   };
   const twentyORMGlobalManager: jest.Mocked<
-    Pick<TwentyORMGlobalManager, 'getRepositoryForWorkspace'>
+    Pick<ExampleCRMORMGlobalManager, 'getRepositoryForWorkspace'>
   > = {
     getRepositoryForWorkspace: jest
       .fn()
@@ -47,7 +47,7 @@ describe('CreatedByFromAuthContextService', () => {
       providers: [
         CreatedByFromAuthContextService,
         {
-          provide: TwentyORMGlobalManager,
+          provide: ExampleCRMORMGlobalManager,
           useValue: twentyORMGlobalManager,
         },
         {

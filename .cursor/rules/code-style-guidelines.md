@@ -1,7 +1,7 @@
 # Code Style Guidelines
 
 ## Core Code Style Principles
-Twenty emphasizes clean, readable, and maintainable code. This document outlines our code style conventions and best practices.
+ExampleCRM emphasizes clean, readable, and maintainable code. This document outlines our code style conventions and best practices.
 
 ## Control Flow
 
@@ -13,7 +13,7 @@ Twenty emphasizes clean, readable, and maintainable code. This document outlines
   const processUser = (user: User | null) => {
     if (!user) return null;
     if (!user.isActive) return null;
-    
+
     return {
       id: user.id,
       name: user.name,
@@ -46,10 +46,10 @@ Twenty emphasizes clean, readable, and maintainable code. This document outlines
   };
 
   // ❌ Incorrect
-  const getUserDisplay = (user: User) => 
-    user.name 
-      ? user.isActive 
-        ? user.name 
+  const getUserDisplay = (user: User) =>
+    user.name
+      ? user.isActive
+        ? user.name
         : 'Inactive User'
       : 'Anonymous';
   ```
@@ -256,4 +256,4 @@ Twenty emphasizes clean, readable, and maintainable code. This document outlines
       // Implementation
     }
   }
-  ``` 
+  ```

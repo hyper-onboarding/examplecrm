@@ -1,14 +1,14 @@
 import { Test, TestingModule } from '@nestjs/testing';
 
 import { JwtWrapperService } from 'src/engine/core-modules/jwt/services/jwt-wrapper.service';
-import { TwentyConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
+import { ExampleCRMConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
 
 import { TransientTokenService } from './transient-token.service';
 
 describe('TransientTokenService', () => {
   let service: TransientTokenService;
   let jwtWrapperService: JwtWrapperService;
-  let twentyConfigService: TwentyConfigService;
+  let twentyConfigService: ExampleCRMConfigService;
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
@@ -24,7 +24,7 @@ describe('TransientTokenService', () => {
           },
         },
         {
-          provide: TwentyConfigService,
+          provide: ExampleCRMConfigService,
           useValue: {
             get: jest.fn(),
           },
@@ -34,7 +34,7 @@ describe('TransientTokenService', () => {
 
     service = module.get<TransientTokenService>(TransientTokenService);
     jwtWrapperService = module.get<JwtWrapperService>(JwtWrapperService);
-    twentyConfigService = module.get<TwentyConfigService>(TwentyConfigService);
+    twentyConfigService = module.get<ExampleCRMConfigService>(ExampleCRMConfigService);
   });
 
   it('should be defined', () => {

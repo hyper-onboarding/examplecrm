@@ -6,14 +6,14 @@ import { In, Not, Repository } from 'typeorm';
 import { UserWorkspace } from 'src/engine/core-modules/user-workspace/user-workspace.entity';
 import { ADMIN_ROLE_LABEL } from 'src/engine/metadata-modules/permissions/constants/admin-role-label.constants';
 import {
-  PermissionsException,
-  PermissionsExceptionCode,
-  PermissionsExceptionMessage,
+    PermissionsException,
+    PermissionsExceptionCode,
+    PermissionsExceptionMessage,
 } from 'src/engine/metadata-modules/permissions/permissions.exception';
 import { RoleEntity } from 'src/engine/metadata-modules/role/role.entity';
 import { UserWorkspaceRoleEntity } from 'src/engine/metadata-modules/role/user-workspace-role.entity';
 import { WorkspacePermissionsCacheService } from 'src/engine/metadata-modules/workspace-permissions-cache/workspace-permissions-cache.service';
-import { TwentyORMGlobalManager } from 'src/engine/twenty-orm/twenty-orm-global.manager';
+import { ExampleCRMORMGlobalManager } from 'src/engine/twenty-orm/twenty-orm-global.manager';
 import { WorkspaceMemberWorkspaceEntity } from 'src/modules/workspace-member/standard-objects/workspace-member.workspace-entity';
 
 export class UserRoleService {
@@ -24,7 +24,7 @@ export class UserRoleService {
     private readonly userWorkspaceRoleRepository: Repository<UserWorkspaceRoleEntity>,
     @InjectRepository(UserWorkspace, 'core')
     private readonly userWorkspaceRepository: Repository<UserWorkspace>,
-    private readonly twentyORMGlobalManager: TwentyORMGlobalManager,
+    private readonly twentyORMGlobalManager: ExampleCRMORMGlobalManager,
     private readonly workspacePermissionsCacheService: WorkspacePermissionsCacheService,
   ) {}
 

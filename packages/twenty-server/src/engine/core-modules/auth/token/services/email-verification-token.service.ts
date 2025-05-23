@@ -8,22 +8,22 @@ import ms from 'ms';
 import { Repository } from 'typeorm';
 
 import {
-  AppToken,
-  AppTokenType,
+    AppToken,
+    AppTokenType,
 } from 'src/engine/core-modules/app-token/app-token.entity';
 import { AuthToken } from 'src/engine/core-modules/auth/dto/token.entity';
 import {
-  EmailVerificationException,
-  EmailVerificationExceptionCode,
+    EmailVerificationException,
+    EmailVerificationExceptionCode,
 } from 'src/engine/core-modules/email-verification/email-verification.exception';
-import { TwentyConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
+import { ExampleCRMConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
 
 @Injectable()
 export class EmailVerificationTokenService {
   constructor(
     @InjectRepository(AppToken, 'core')
     private readonly appTokenRepository: Repository<AppToken>,
-    private readonly twentyConfigService: TwentyConfigService,
+    private readonly twentyConfigService: ExampleCRMConfigService,
   ) {}
 
   async generateToken(userId: string, email: string): Promise<AuthToken> {

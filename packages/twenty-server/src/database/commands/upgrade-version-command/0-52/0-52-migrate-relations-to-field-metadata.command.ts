@@ -8,15 +8,15 @@ import { In, Repository } from 'typeorm';
 import { RelationType } from 'src/engine/metadata-modules/field-metadata/interfaces/relation-type.interface';
 
 import {
-  ActiveOrSuspendedWorkspacesMigrationCommandRunner,
-  RunOnWorkspaceArgs,
+    ActiveOrSuspendedWorkspacesMigrationCommandRunner,
+    RunOnWorkspaceArgs,
 } from 'src/database/commands/command-runners/active-or-suspended-workspaces-migration.command-runner';
 import { Workspace } from 'src/engine/core-modules/workspace/workspace.entity';
 import { FieldMetadataEntity } from 'src/engine/metadata-modules/field-metadata/field-metadata.entity';
-import { TwentyORMGlobalManager } from 'src/engine/twenty-orm/twenty-orm-global.manager';
+import { ExampleCRMORMGlobalManager } from 'src/engine/twenty-orm/twenty-orm-global.manager';
 import {
-  RelationDirection,
-  deduceRelationDirection,
+    RelationDirection,
+    deduceRelationDirection,
 } from 'src/engine/utils/deduce-relation-direction.util';
 import { isFieldMetadataEntityOfType } from 'src/engine/utils/is-field-metadata-of-type.util';
 
@@ -30,7 +30,7 @@ export class MigrateRelationsToFieldMetadataCommand extends ActiveOrSuspendedWor
     protected readonly workspaceRepository: Repository<Workspace>,
     @InjectRepository(FieldMetadataEntity, 'metadata')
     private readonly fieldMetadataRepository: Repository<FieldMetadataEntity>,
-    protected readonly twentyORMGlobalManager: TwentyORMGlobalManager,
+    protected readonly twentyORMGlobalManager: ExampleCRMORMGlobalManager,
   ) {
     super(workspaceRepository, twentyORMGlobalManager);
   }

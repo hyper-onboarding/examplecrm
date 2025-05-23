@@ -6,7 +6,7 @@ import { Repository } from 'typeorm';
 import { FeatureFlagMap } from 'src/engine/core-modules/feature-flag/interfaces/feature-flag-map.interface';
 
 import { FeatureFlag } from 'src/engine/core-modules/feature-flag/feature-flag.entity';
-import { TwentyORMExceptionCode } from 'src/engine/twenty-orm/exceptions/twenty-orm.exception';
+import { ExampleCRMORMExceptionCode } from 'src/engine/twenty-orm/exceptions/twenty-orm.exception';
 import { getFromCacheWithRecompute } from 'src/engine/utils/get-data-from-cache-with-recompute.util';
 import { WorkspaceCacheStorageService } from 'src/engine/workspace-cache-storage/workspace-cache-storage.service';
 
@@ -48,7 +48,7 @@ export class WorkspaceFeatureFlagsMapCacheService {
         ),
       recomputeCache: (params) => this.recomputeFeatureFlagsMapCache(params),
       cachedEntityName: FEATURE_FLAG_MAP,
-      exceptionCode: TwentyORMExceptionCode.FEATURE_FLAG_MAP_VERSION_NOT_FOUND,
+      exceptionCode: ExampleCRMORMExceptionCode.FEATURE_FLAG_MAP_VERSION_NOT_FOUND,
       logger: this.logger,
     });
   }

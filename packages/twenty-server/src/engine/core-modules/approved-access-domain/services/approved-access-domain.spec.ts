@@ -5,12 +5,12 @@ import { DeleteResult, Repository } from 'typeorm';
 
 import { ApprovedAccessDomain } from 'src/engine/core-modules/approved-access-domain/approved-access-domain.entity';
 import {
-  ApprovedAccessDomainException,
-  ApprovedAccessDomainExceptionCode,
+    ApprovedAccessDomainException,
+    ApprovedAccessDomainExceptionCode,
 } from 'src/engine/core-modules/approved-access-domain/approved-access-domain.exception';
 import { DomainManagerService } from 'src/engine/core-modules/domain-manager/services/domain-manager.service';
 import { EmailService } from 'src/engine/core-modules/email/email.service';
-import { TwentyConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
+import { ExampleCRMConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
 import { User } from 'src/engine/core-modules/user/user.entity';
 import { Workspace } from 'src/engine/core-modules/workspace/workspace.entity';
 
@@ -20,7 +20,7 @@ describe('ApprovedAccessDomainService', () => {
   let service: ApprovedAccessDomainService;
   let approvedAccessDomainRepository: Repository<ApprovedAccessDomain>;
   let emailService: EmailService;
-  let twentyConfigService: TwentyConfigService;
+  let twentyConfigService: ExampleCRMConfigService;
   let domainManagerService: DomainManagerService;
 
   beforeEach(async () => {
@@ -43,7 +43,7 @@ describe('ApprovedAccessDomainService', () => {
           },
         },
         {
-          provide: TwentyConfigService,
+          provide: ExampleCRMConfigService,
           useValue: {
             get: jest.fn(),
           },
@@ -64,7 +64,7 @@ describe('ApprovedAccessDomainService', () => {
       getRepositoryToken(ApprovedAccessDomain, 'core'),
     );
     emailService = module.get<EmailService>(EmailService);
-    twentyConfigService = module.get<TwentyConfigService>(TwentyConfigService);
+    twentyConfigService = module.get<ExampleCRMConfigService>(ExampleCRMConfigService);
     domainManagerService =
       module.get<DomainManagerService>(DomainManagerService);
   });
@@ -287,7 +287,7 @@ describe('ApprovedAccessDomainService', () => {
       });
 
       expect(emailService.send).toHaveBeenCalledWith({
-        from: 'John Doe (via Twenty) <no-reply@example.com>',
+        from: 'John Doe (via ExampleCRM) <no-reply@example.com>',
         to: email,
         subject: 'Approve your access domain',
         text: expect.any(String),

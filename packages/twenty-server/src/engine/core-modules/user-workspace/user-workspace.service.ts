@@ -11,8 +11,8 @@ import { FileFolder } from 'src/engine/core-modules/file/interfaces/file-folder.
 import { DatabaseEventAction } from 'src/engine/api/graphql/graphql-query-runner/enums/database-event-action';
 import { USER_SIGNUP_EVENT_NAME } from 'src/engine/api/graphql/workspace-query-runner/constants/user-signup-event-name.constants';
 import {
-  AuthException,
-  AuthExceptionCode,
+    AuthException,
+    AuthExceptionCode,
 } from 'src/engine/core-modules/auth/auth.exception';
 import { AvailableWorkspaceOutput } from 'src/engine/core-modules/auth/dto/available-workspaces.output';
 import { DomainManagerService } from 'src/engine/core-modules/domain-manager/services/domain-manager.service';
@@ -26,12 +26,12 @@ import { Workspace } from 'src/engine/core-modules/workspace/workspace.entity';
 import { workspaceValidator } from 'src/engine/core-modules/workspace/workspace.validate';
 import { ObjectMetadataEntity } from 'src/engine/metadata-modules/object-metadata/object-metadata.entity';
 import {
-  PermissionsException,
-  PermissionsExceptionCode,
-  PermissionsExceptionMessage,
+    PermissionsException,
+    PermissionsExceptionCode,
+    PermissionsExceptionMessage,
 } from 'src/engine/metadata-modules/permissions/permissions.exception';
 import { UserRoleService } from 'src/engine/metadata-modules/user-role/user-role.service';
-import { TwentyORMGlobalManager } from 'src/engine/twenty-orm/twenty-orm-global.manager';
+import { ExampleCRMORMGlobalManager } from 'src/engine/twenty-orm/twenty-orm-global.manager';
 import { WorkspaceEventEmitter } from 'src/engine/workspace-event-emitter/workspace-event-emitter';
 import { WorkspaceMemberWorkspaceEntity } from 'src/modules/workspace-member/standard-objects/workspace-member.workspace-entity';
 import { assert } from 'src/utils/assert';
@@ -48,7 +48,7 @@ export class UserWorkspaceService extends TypeOrmQueryService<UserWorkspace> {
     private readonly workspaceInvitationService: WorkspaceInvitationService,
     private readonly workspaceEventEmitter: WorkspaceEventEmitter,
     private readonly domainManagerService: DomainManagerService,
-    private readonly twentyORMGlobalManager: TwentyORMGlobalManager,
+    private readonly twentyORMGlobalManager: ExampleCRMORMGlobalManager,
     private readonly userRoleService: UserRoleService,
     private readonly fileUploadService: FileUploadService,
     private readonly fileService: FileService,

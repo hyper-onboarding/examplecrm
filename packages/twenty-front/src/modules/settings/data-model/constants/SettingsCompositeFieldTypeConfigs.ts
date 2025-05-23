@@ -1,26 +1,26 @@
 import { CurrencyCode } from '@/object-record/record-field/types/CurrencyCode';
 import {
-  FieldActorValue,
-  FieldAddressValue,
-  FieldCurrencyValue,
-  FieldEmailsValue,
-  FieldFullNameValue,
-  FieldLinksValue,
-  FieldPhonesValue,
-  FieldRichTextV2Value,
+    FieldActorValue,
+    FieldAddressValue,
+    FieldCurrencyValue,
+    FieldEmailsValue,
+    FieldFullNameValue,
+    FieldLinksValue,
+    FieldPhonesValue,
+    FieldRichTextV2Value,
 } from '@/object-record/record-field/types/FieldMetadata';
 import { SettingsFieldTypeConfig } from '@/settings/data-model/constants/SettingsNonCompositeFieldTypeConfigs';
 import { CompositeFieldType } from '@/settings/data-model/types/CompositeFieldType';
 import { ConnectedAccountProvider } from 'twenty-shared/types';
 import {
-  IllustrationIconCurrency,
-  IllustrationIconLink,
-  IllustrationIconMail,
-  IllustrationIconMap,
-  IllustrationIconPhone,
-  IllustrationIconSetting,
-  IllustrationIconText,
-  IllustrationIconUser,
+    IllustrationIconCurrency,
+    IllustrationIconLink,
+    IllustrationIconMail,
+    IllustrationIconMap,
+    IllustrationIconPhone,
+    IllustrationIconSetting,
+    IllustrationIconText,
+    IllustrationIconUser,
 } from 'twenty-ui/display';
 import { FieldMetadataType } from '~/generated-metadata/graphql';
 
@@ -77,7 +77,7 @@ export const SETTINGS_COMPOSITE_FIELD_TYPE_CONFIGS = {
     exampleValue: {
       primaryLinkUrl: 'twenty.com',
       primaryLinkLabel: '',
-      secondaryLinks: [{ url: 'twenty.com', label: 'Twenty' }],
+      secondaryLinks: [{ url: 'twenty.com', label: 'ExampleCRM' }],
     },
     category: 'Basic',
     subFields: ['primaryLinkUrl', 'primaryLinkLabel', 'secondaryLinks'],

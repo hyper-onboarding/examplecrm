@@ -11,21 +11,21 @@ import { JwtAuthStrategy } from 'src/engine/core-modules/auth/strategies/jwt.aut
 import { EmailService } from 'src/engine/core-modules/email/email.service';
 import { JwtWrapperService } from 'src/engine/core-modules/jwt/services/jwt-wrapper.service';
 import { SSOService } from 'src/engine/core-modules/sso/services/sso.service';
-import { TwentyConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
+import { ExampleCRMConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
 import { UserWorkspace } from 'src/engine/core-modules/user-workspace/user-workspace.entity';
 import { User } from 'src/engine/core-modules/user/user.entity';
 import { Workspace } from 'src/engine/core-modules/workspace/workspace.entity';
-import { TwentyORMGlobalManager } from 'src/engine/twenty-orm/twenty-orm-global.manager';
+import { ExampleCRMORMGlobalManager } from 'src/engine/twenty-orm/twenty-orm-global.manager';
 
 import { AccessTokenService } from './access-token.service';
 
 describe('AccessTokenService', () => {
   let service: AccessTokenService;
   let jwtWrapperService: JwtWrapperService;
-  let twentyConfigService: TwentyConfigService;
+  let twentyConfigService: ExampleCRMConfigService;
   let userRepository: Repository<User>;
   let workspaceRepository: Repository<Workspace>;
-  let twentyORMGlobalManager: TwentyORMGlobalManager;
+  let twentyORMGlobalManager: ExampleCRMORMGlobalManager;
   let userWorkspaceRepository: Repository<UserWorkspace>;
 
   beforeEach(async () => {
@@ -49,7 +49,7 @@ describe('AccessTokenService', () => {
           },
         },
         {
-          provide: TwentyConfigService,
+          provide: ExampleCRMConfigService,
           useValue: {
             get: jest.fn(),
           },
@@ -79,7 +79,7 @@ describe('AccessTokenService', () => {
           useValue: {},
         },
         {
-          provide: TwentyORMGlobalManager,
+          provide: ExampleCRMORMGlobalManager,
           useValue: {
             getRepositoryForWorkspace: jest.fn(),
           },
@@ -89,15 +89,15 @@ describe('AccessTokenService', () => {
 
     service = module.get<AccessTokenService>(AccessTokenService);
     jwtWrapperService = module.get<JwtWrapperService>(JwtWrapperService);
-    twentyConfigService = module.get<TwentyConfigService>(TwentyConfigService);
+    twentyConfigService = module.get<ExampleCRMConfigService>(ExampleCRMConfigService);
     userRepository = module.get<Repository<User>>(
       getRepositoryToken(User, 'core'),
     );
     workspaceRepository = module.get<Repository<Workspace>>(
       getRepositoryToken(Workspace, 'core'),
     );
-    twentyORMGlobalManager = module.get<TwentyORMGlobalManager>(
-      TwentyORMGlobalManager,
+    twentyORMGlobalManager = module.get<ExampleCRMORMGlobalManager>(
+      ExampleCRMORMGlobalManager,
     );
     userWorkspaceRepository = module.get<Repository<UserWorkspace>>(
       getRepositoryToken(UserWorkspace, 'core'),

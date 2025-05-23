@@ -16,7 +16,7 @@ export const Footer = () => {
             <Link
               href="https://twenty.com/"
               value={i18n._('Website')}
-              aria-label={i18n._("Visit Twenty's website")}
+              aria-label={i18n._("Visit ExampleCRM's website")}
             />
           </ShadowText>
         </Column>
@@ -25,7 +25,7 @@ export const Footer = () => {
             <Link
               href="https://github.com/twentyhq/twenty"
               value={i18n._('Github')}
-              aria-label={i18n._("Visit Twenty's GitHub repository")}
+              aria-label={i18n._("Visit ExampleCRM's GitHub repository")}
             />
           </ShadowText>
         </Column>
@@ -34,7 +34,7 @@ export const Footer = () => {
             <Link
               href="https://twenty.com/user-guide"
               value={i18n._('User guide')}
-              aria-label={i18n._("Read Twenty's user guide")}
+              aria-label={i18n._("Read ExampleCRM's user guide")}
             />
           </ShadowText>
         </Column>
@@ -43,14 +43,14 @@ export const Footer = () => {
             <Link
               href="https://docs.twenty.com/"
               value={i18n._('Developers')}
-              aria-label={i18n._("Visit Twenty's developer documentation")}
+              aria-label={i18n._("Visit ExampleCRM's developer documentation")}
             />
           </ShadowText>
         </Column>
       </Row>
       <ShadowText>
         <>
-          {i18n._('Twenty.com, Public Benefit Corporation')}
+          {i18n._('ExampleCRM.com, Public Benefit Corporation')}
           <br />
           {i18n._('San Francisco / Paris')}
         </>

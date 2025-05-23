@@ -1,16 +1,16 @@
-import IconTwentyStarFilledRaw from '@assets/icons/twenty-star-filled.svg?react';
+import IconExampleCRMStarFilledRaw from '@assets/icons/twenty-star-filled.svg?react';
 import { IconComponentProps } from '@ui/display/icon/types/IconComponent';
 import { THEME_COMMON } from '@ui/theme';
 
-type IconTwentyStarFilledProps = Pick<IconComponentProps, 'size' | 'stroke'>;
+type IconExampleCRMStarFilledProps = Pick<IconComponentProps, 'size' | 'stroke'>;
 
 const iconStrokeMd = THEME_COMMON.icon.stroke.md;
 
-export const IconTwentyStarFilled = (props: IconTwentyStarFilledProps) => {
+export const IconExampleCRMStarFilled = (props: IconExampleCRMStarFilledProps) => {
   const size = props.size ?? 24;
   const stroke = props.stroke ?? iconStrokeMd;
 
   return (
-    <IconTwentyStarFilledRaw height={size} width={size} strokeWidth={stroke} />
+    <IconExampleCRMStarFilledRaw height={size} width={size} strokeWidth={stroke} />
   );
 };

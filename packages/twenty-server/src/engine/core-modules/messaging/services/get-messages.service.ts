@@ -4,13 +4,13 @@ import { TIMELINE_THREADS_DEFAULT_PAGE_SIZE } from 'src/engine/core-modules/mess
 import { TimelineThreadsWithTotal } from 'src/engine/core-modules/messaging/dtos/timeline-threads-with-total.dto';
 import { TimelineMessagingService } from 'src/engine/core-modules/messaging/services/timeline-messaging.service';
 import { formatThreads } from 'src/engine/core-modules/messaging/utils/format-threads.util';
-import { TwentyORMManager } from 'src/engine/twenty-orm/twenty-orm.manager';
+import { ExampleCRMORMManager } from 'src/engine/twenty-orm/twenty-orm.manager';
 import { PersonWorkspaceEntity } from 'src/modules/person/standard-objects/person.workspace-entity';
 
 @Injectable()
 export class GetMessagesService {
   constructor(
-    private readonly twentyORMManager: TwentyORMManager,
+    private readonly twentyORMManager: ExampleCRMORMManager,
     private readonly timelineMessagingService: TimelineMessagingService,
   ) {}
 

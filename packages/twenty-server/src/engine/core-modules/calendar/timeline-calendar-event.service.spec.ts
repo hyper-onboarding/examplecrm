@@ -3,7 +3,7 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { FIELD_RESTRICTED_ADDITIONAL_PERMISSIONS_REQUIRED } from 'twenty-shared/constants';
 
 import { WorkspaceRepository } from 'src/engine/twenty-orm/repository/workspace.repository';
-import { TwentyORMManager } from 'src/engine/twenty-orm/twenty-orm.manager';
+import { ExampleCRMORMManager } from 'src/engine/twenty-orm/twenty-orm.manager';
 import { CalendarChannelVisibility } from 'src/modules/calendar/common/standard-objects/calendar-channel.workspace-entity';
 import { CalendarEventWorkspaceEntity } from 'src/modules/calendar/common/standard-objects/calendar-event.workspace-entity';
 
@@ -36,7 +36,7 @@ describe('TimelineCalendarEventService', () => {
       findAndCount: jest.fn(),
     };
 
-    const mockTwentyORMManager = {
+    const mockExampleCRMORMManager = {
       getRepository: jest.fn().mockResolvedValue(mockCalendarEventRepository),
     };
 
@@ -44,8 +44,8 @@ describe('TimelineCalendarEventService', () => {
       providers: [
         TimelineCalendarEventService,
         {
-          provide: TwentyORMManager,
-          useValue: mockTwentyORMManager,
+          provide: ExampleCRMORMManager,
+          useValue: mockExampleCRMORMManager,
         },
       ],
     }).compile();

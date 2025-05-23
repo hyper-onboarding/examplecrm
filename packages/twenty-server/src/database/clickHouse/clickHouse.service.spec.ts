@@ -2,7 +2,7 @@ import { Test, TestingModule } from '@nestjs/testing';
 
 import { ClickHouseClient } from '@clickhouse/client';
 
-import { TwentyConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
+import { ExampleCRMConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
 
 import { ClickHouseService } from './clickHouse.service';
 
@@ -21,7 +21,7 @@ jest.mock('@clickhouse/client', () => ({
 
 describe('ClickHouseService', () => {
   let service: ClickHouseService;
-  let twentyConfigService: TwentyConfigService;
+  let twentyConfigService: ExampleCRMConfigService;
   let mockClickHouseClient: jest.Mocked<ClickHouseClient>;
 
   beforeEach(async () => {
@@ -41,7 +41,7 @@ describe('ClickHouseService', () => {
       providers: [
         ClickHouseService,
         {
-          provide: TwentyConfigService,
+          provide: ExampleCRMConfigService,
           useValue: {
             get: jest.fn((key) => {
               if (key === 'CLICKHOUSE_URL') return 'http://localhost:8123';
@@ -54,7 +54,7 @@ describe('ClickHouseService', () => {
     }).compile();
 
     service = module.get<ClickHouseService>(ClickHouseService);
-    twentyConfigService = module.get<TwentyConfigService>(TwentyConfigService);
+    twentyConfigService = module.get<ExampleCRMConfigService>(ExampleCRMConfigService);
 
     // Set the mock client
     (service as any).mainClient = mockClickHouseClient;
@@ -76,7 +76,7 @@ describe('ClickHouseService', () => {
         providers: [
           ClickHouseService,
           {
-            provide: TwentyConfigService,
+            provide: ExampleCRMConfigService,
             useValue: twentyConfigService,
           },
         ],

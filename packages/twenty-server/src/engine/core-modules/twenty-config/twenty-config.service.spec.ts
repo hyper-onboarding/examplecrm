@@ -7,7 +7,7 @@ import { DatabaseConfigDriver } from 'src/engine/core-modules/twenty-config/driv
 import { EnvironmentConfigDriver } from 'src/engine/core-modules/twenty-config/drivers/environment-config.driver';
 import { ConfigSource } from 'src/engine/core-modules/twenty-config/enums/config-source.enum';
 import { ConfigVariablesGroup } from 'src/engine/core-modules/twenty-config/enums/config-variables-group.enum';
-import { TwentyConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
+import { ExampleCRMConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
 import { isEnvOnlyConfigVar } from 'src/engine/core-modules/twenty-config/utils/is-env-only-config-var.util';
 import { TypedReflect } from 'src/utils/typed-reflect';
 
@@ -37,7 +37,7 @@ jest.mock(
   }),
 );
 
-type TwentyConfigServicePrivateProps = {
+type ExampleCRMConfigServicePrivateProps = {
   isDatabaseDriverActive: boolean;
 };
 
@@ -79,7 +79,7 @@ const setupTestModule = async (isDatabaseConfigEnabled = true) => {
 
   const module: TestingModule = await Test.createTestingModule({
     providers: [
-      TwentyConfigService,
+      ExampleCRMConfigService,
       {
         provide: DatabaseConfigDriver,
         useValue: {
@@ -110,7 +110,7 @@ const setupTestModule = async (isDatabaseConfigEnabled = true) => {
   }).compile();
 
   return {
-    service: module.get<TwentyConfigService>(TwentyConfigService),
+    service: module.get<ExampleCRMConfigService>(ExampleCRMConfigService),
     databaseConfigDriver:
       module.get<DatabaseConfigDriver>(DatabaseConfigDriver),
     environmentConfigDriver: module.get<EnvironmentConfigDriver>(
@@ -141,7 +141,7 @@ const setupTestModuleWithoutDb = async () => {
 
   const module: TestingModule = await Test.createTestingModule({
     providers: [
-      TwentyConfigService,
+      ExampleCRMConfigService,
       {
         provide: EnvironmentConfigDriver,
         useValue: {
@@ -162,7 +162,7 @@ const setupTestModuleWithoutDb = async () => {
   }).compile();
 
   return {
-    service: module.get<TwentyConfigService>(TwentyConfigService),
+    service: module.get<ExampleCRMConfigService>(ExampleCRMConfigService),
     environmentConfigDriver: module.get<EnvironmentConfigDriver>(
       EnvironmentConfigDriver,
     ),
@@ -172,8 +172,8 @@ const setupTestModuleWithoutDb = async () => {
 };
 
 const setPrivateProps = (
-  service: TwentyConfigService,
-  props: Partial<TwentyConfigServicePrivateProps>,
+  service: ExampleCRMConfigService,
+  props: Partial<ExampleCRMConfigServicePrivateProps>,
 ) => {
   Object.entries(props).forEach(([key, value]) => {
     Object.defineProperty(service, key, {
@@ -183,8 +183,8 @@ const setPrivateProps = (
   });
 };
 
-describe('TwentyConfigService', () => {
-  let service: TwentyConfigService;
+describe('ExampleCRMConfigService', () => {
+  let service: ExampleCRMConfigService;
   let databaseConfigDriver: DatabaseConfigDriver;
   let environmentConfigDriver: EnvironmentConfigDriver;
 

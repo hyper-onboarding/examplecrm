@@ -1,11 +1,11 @@
 import {
-  CaptchaDriverOptions,
-  CaptchaModuleOptions,
+    CaptchaDriverOptions,
+    CaptchaModuleOptions,
 } from 'src/engine/core-modules/captcha/interfaces';
-import { TwentyConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
+import { ExampleCRMConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
 
 export const captchaModuleFactory = (
-  twentyConfigService: TwentyConfigService,
+  twentyConfigService: ExampleCRMConfigService,
 ): CaptchaModuleOptions | undefined => {
   const driver = twentyConfigService.get('CAPTCHA_DRIVER');
   const siteKey = twentyConfigService.get('CAPTCHA_SITE_KEY');

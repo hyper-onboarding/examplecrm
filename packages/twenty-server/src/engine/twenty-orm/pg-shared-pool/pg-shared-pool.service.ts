@@ -3,7 +3,7 @@ import { Injectable, Logger } from '@nestjs/common';
 import pg, { Pool, PoolConfig } from 'pg';
 import { isDefined } from 'twenty-shared/utils';
 
-import { TwentyConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
+import { ExampleCRMConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
 
 interface PgWithPatchSymbol {
   Pool: typeof Pool;
@@ -50,7 +50,7 @@ export class PgPoolSharedService {
   private capturedOriginalPoolValue: typeof Pool | null = null;
   private originalPgPoolDescriptor: PropertyDescriptor | undefined = undefined;
 
-  constructor(private readonly configService: TwentyConfigService) {
+  constructor(private readonly configService: ExampleCRMConfigService) {
     this.detectDebugMode();
   }
 

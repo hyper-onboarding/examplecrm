@@ -7,27 +7,27 @@ import { EntitySchema } from 'typeorm';
 import { FeatureFlagMap } from 'src/engine/core-modules/feature-flag/interfaces/feature-flag-map.interface';
 import { NodeEnvironment } from 'src/engine/core-modules/twenty-config/interfaces/node-environment.interface';
 
-import { TwentyConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
+import { ExampleCRMConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
 import { DataSourceService } from 'src/engine/metadata-modules/data-source/data-source.service';
 import { WorkspaceFeatureFlagsMapCacheService } from 'src/engine/metadata-modules/workspace-feature-flags-map-cache/workspace-feature-flags-map-cache.service';
 import {
-  WorkspaceMetadataCacheException,
-  WorkspaceMetadataCacheExceptionCode,
+    WorkspaceMetadataCacheException,
+    WorkspaceMetadataCacheExceptionCode,
 } from 'src/engine/metadata-modules/workspace-metadata-cache/exceptions/workspace-metadata-cache.exception';
 import { WorkspaceMetadataCacheService } from 'src/engine/metadata-modules/workspace-metadata-cache/services/workspace-metadata-cache.service';
 import {
-  WorkspaceMetadataVersionException,
-  WorkspaceMetadataVersionExceptionCode,
+    WorkspaceMetadataVersionException,
+    WorkspaceMetadataVersionExceptionCode,
 } from 'src/engine/metadata-modules/workspace-metadata-version/exceptions/workspace-metadata-version.exception';
 import { WorkspacePermissionsCacheStorageService } from 'src/engine/metadata-modules/workspace-permissions-cache/workspace-permissions-cache-storage.service';
 import {
-  ROLES_PERMISSIONS,
-  WorkspacePermissionsCacheService,
+    ROLES_PERMISSIONS,
+    WorkspacePermissionsCacheService,
 } from 'src/engine/metadata-modules/workspace-permissions-cache/workspace-permissions-cache.service';
 import { WorkspaceDataSource } from 'src/engine/twenty-orm/datasource/workspace.datasource';
 import {
-  TwentyORMException,
-  TwentyORMExceptionCode,
+    ExampleCRMORMException,
+    ExampleCRMORMExceptionCode,
 } from 'src/engine/twenty-orm/exceptions/twenty-orm.exception';
 import { EntitySchemaFactory } from 'src/engine/twenty-orm/factories/entity-schema.factory';
 import { PromiseMemoizer } from 'src/engine/twenty-orm/storage/promise-memoizer.storage';
@@ -49,7 +49,7 @@ export class WorkspaceDatasourceFactory {
 
   constructor(
     private readonly dataSourceService: DataSourceService,
-    private readonly twentyConfigService: TwentyConfigService,
+    private readonly twentyConfigService: ExampleCRMConfigService,
     private readonly workspaceCacheStorageService: WorkspaceCacheStorageService,
     private readonly workspaceMetadataCacheService: WorkspaceMetadataCacheService,
     private readonly entitySchemaFactory: EntitySchemaFactory,
@@ -131,9 +131,9 @@ export class WorkspaceDatasourceFactory {
       workspaceMetadataVersion !== null &&
       cachedWorkspaceMetadataVersion !== workspaceMetadataVersion
     ) {
-      throw new TwentyORMException(
+      throw new ExampleCRMORMException(
         `Workspace metadata version mismatch detected for workspace ${workspaceId}. Current version: ${cachedWorkspaceMetadataVersion}. Desired version: ${workspaceMetadataVersion}`,
-        TwentyORMExceptionCode.METADATA_VERSION_MISMATCH,
+        ExampleCRMORMExceptionCode.METADATA_VERSION_MISMATCH,
       );
     }
 
@@ -149,9 +149,9 @@ export class WorkspaceDatasourceFactory {
             );
 
           if (!dataSourceMetadata) {
-            throw new TwentyORMException(
+            throw new ExampleCRMORMException(
               `Workspace Schema not found for workspace ${workspaceId}`,
-              TwentyORMExceptionCode.WORKSPACE_SCHEMA_NOT_FOUND,
+              ExampleCRMORMExceptionCode.WORKSPACE_SCHEMA_NOT_FOUND,
             );
           }
 
@@ -288,7 +288,7 @@ export class WorkspaceDatasourceFactory {
           workspaceId,
         }),
       cachedEntityName: ROLES_PERMISSIONS,
-      exceptionCode: TwentyORMExceptionCode.ROLES_PERMISSIONS_VERSION_NOT_FOUND,
+      exceptionCode: ExampleCRMORMExceptionCode.ROLES_PERMISSIONS_VERSION_NOT_FOUND,
       logger: this.logger,
     });
   }

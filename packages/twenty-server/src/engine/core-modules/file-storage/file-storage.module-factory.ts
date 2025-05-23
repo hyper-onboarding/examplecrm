@@ -1,10 +1,10 @@
 import { fromNodeProviderChain } from '@aws-sdk/credential-providers';
 
 import {
-  FileStorageModuleOptions,
-  StorageDriverType,
+    FileStorageModuleOptions,
+    StorageDriverType,
 } from 'src/engine/core-modules/file-storage/interfaces';
-import { TwentyConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
+import { ExampleCRMConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
 import { resolveAbsolutePath } from 'src/utils/resolve-absolute-path';
 
 /**
@@ -13,7 +13,7 @@ import { resolveAbsolutePath } from 'src/utils/resolve-absolute-path';
  * @param twentyConfigService
  */
 export const fileStorageModuleFactory = async (
-  twentyConfigService: TwentyConfigService,
+  twentyConfigService: ExampleCRMConfigService,
 ): Promise<FileStorageModuleOptions> => {
   const driverType = twentyConfigService.get('STORAGE_TYPE');
 

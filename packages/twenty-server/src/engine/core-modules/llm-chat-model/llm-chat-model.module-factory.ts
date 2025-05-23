@@ -1,9 +1,9 @@
 import { LLMChatModelDriver } from 'src/engine/core-modules/llm-chat-model/interfaces/llm-chat-model.interface';
 
-import { TwentyConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
+import { ExampleCRMConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
 
 export const llmChatModelModuleFactory = (
-  twentyConfigService: TwentyConfigService,
+  twentyConfigService: ExampleCRMConfigService,
 ) => {
   const driver = twentyConfigService.get('LLM_CHAT_MODEL_DRIVER');
 

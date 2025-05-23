@@ -9,7 +9,7 @@ import { rawDataSource } from 'src/database/typeorm/raw/raw.datasource';
 import { InjectCacheStorage } from 'src/engine/core-modules/cache-storage/decorators/cache-storage.decorator';
 import { CacheStorageService } from 'src/engine/core-modules/cache-storage/services/cache-storage.service';
 import { CacheStorageNamespace } from 'src/engine/core-modules/cache-storage/types/cache-storage-namespace.enum';
-import { TwentyConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
+import { ExampleCRMConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
 import { Workspace } from 'src/engine/core-modules/workspace/workspace.entity';
 import { WorkspaceManagerService } from 'src/engine/workspace-manager/workspace-manager.service';
 
@@ -21,7 +21,7 @@ export class DataSeedDemoWorkspaceService {
     protected readonly workspaceRepository: Repository<Workspace>,
     @InjectCacheStorage(CacheStorageNamespace.EngineWorkspace)
     private readonly workspaceSchemaCache: CacheStorageService,
-    private readonly twentyConfigService: TwentyConfigService,
+    private readonly twentyConfigService: ExampleCRMConfigService,
   ) {}
 
   async seedDemo(): Promise<void> {

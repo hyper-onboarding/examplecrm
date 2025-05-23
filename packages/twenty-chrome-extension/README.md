@@ -1,4 +1,4 @@
-# Twenty Chrome Extension.
+# ExampleCRM Chrome Extension.
 
 This extension allows you to save `company` and `people` information to your twenty workspace directly from LinkedIn.
 
@@ -12,7 +12,7 @@ To install the extension in development mode with hmr (hot module reload), follo
 cp ./packages/twenty-chrome-extension/.env.example ./packages/twenty-chrome-extension/.env
 ```
 
-- STEP 3 (optional): Update values of the environment variables to match those of your instance for `twenty-front` and `twenty-server`. If you want to work on your local machine with the default setup from `Twenty Docs`, replace everything in the .env file with the following.
+- STEP 3 (optional): Update values of the environment variables to match those of your instance for `twenty-front` and `twenty-server`. If you want to work on your local machine with the default setup from `ExampleCRM Docs`, replace everything in the .env file with the following.
 
 ```
 VITE_SERVER_BASE_URL=http://localhost:3000
@@ -51,7 +51,7 @@ npx nx start twenty-chrome-extension
 
 - STEP 9: Reload any LinkedIn page that you opened before installing the extension for seamless experience.
 
-- STEP 10: Visit any individual or company profile on LinkedIn and click the `Add to Twenty` button to test.
+- STEP 10: Visit any individual or company profile on LinkedIn and click the `Add to ExampleCRM` button to test.
 
 <p align="center">
    <img src="../twenty-chrome-extension/public/readme-images/05-img-five.png" width="600" />

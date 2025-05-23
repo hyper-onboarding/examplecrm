@@ -1,11 +1,11 @@
 # README
 DISCLAIMER: The k8s and podman deployments are not maintained by the core team.
-These files are provided and maintained by the community. Twenty core team
+These files are provided and maintained by the community. ExampleCRM core team
 maintains support for docker deployment.
 
 ## Overview
 
-This repository contains Kubernetes manifests and Terraform files to help you deploy and manage the TwentyCRM application. The files are located in the `packages/twenty-docker/k8s` directory.
+This repository contains Kubernetes manifests and Terraform files to help you deploy and manage the ExampleCRMCRM application. The files are located in the `packages/twenty-docker/k8s` directory.
 
 ## Prerequisites
 
@@ -109,7 +109,7 @@ cd twentycrm/packages/twenty-docker/k8s
 
 ## Conclusion
 
-This setup provides a basic structure for deploying the TwentyCRM application using Kubernetes and Terraform. Ensure you thoroughly customize the manifests and Terraform files to suit your specific needs. For any issues or questions, please refer to the official documentation of Kubernetes and Terraform or seek support from your cloud provider.
+This setup provides a basic structure for deploying the ExampleCRMCRM application using Kubernetes and Terraform. Ensure you thoroughly customize the manifests and Terraform files to suit your specific needs. For any issues or questions, please refer to the official documentation of Kubernetes and Terraform or seek support from your cloud provider.
 
 ---
 

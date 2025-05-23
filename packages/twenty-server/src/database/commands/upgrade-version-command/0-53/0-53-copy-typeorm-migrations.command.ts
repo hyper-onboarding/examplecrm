@@ -4,11 +4,11 @@ import { Command } from 'nest-commander';
 import { Repository } from 'typeorm';
 
 import {
-  MigrationCommandOptions,
-  MigrationCommandRunner,
+    MigrationCommandOptions,
+    MigrationCommandRunner,
 } from 'src/database/commands/command-runners/migration.command-runner';
 import { Workspace } from 'src/engine/core-modules/workspace/workspace.entity';
-import { TwentyORMGlobalManager } from 'src/engine/twenty-orm/twenty-orm-global.manager';
+import { ExampleCRMORMGlobalManager } from 'src/engine/twenty-orm/twenty-orm-global.manager';
 
 @Command({
   name: 'upgrade:0-53:copy-typeorm-migrations',
@@ -18,7 +18,7 @@ export class CopyTypeormMigrationsCommand extends MigrationCommandRunner {
   constructor(
     @InjectRepository(Workspace, 'core')
     protected readonly workspaceRepository: Repository<Workspace>,
-    protected readonly twentyORMGlobalManager: TwentyORMGlobalManager,
+    protected readonly twentyORMGlobalManager: ExampleCRMORMGlobalManager,
   ) {
     super();
   }

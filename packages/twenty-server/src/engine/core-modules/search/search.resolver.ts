@@ -14,14 +14,14 @@ import { formatSearchTerms } from 'src/engine/core-modules/search/utils/format-s
 import { Workspace } from 'src/engine/core-modules/workspace/workspace.entity';
 import { AuthWorkspace } from 'src/engine/decorators/auth/auth-workspace.decorator';
 import {
-  WorkspaceMetadataCacheException,
-  WorkspaceMetadataCacheExceptionCode,
+    WorkspaceMetadataCacheException,
+    WorkspaceMetadataCacheExceptionCode,
 } from 'src/engine/metadata-modules/workspace-metadata-cache/exceptions/workspace-metadata-cache.exception';
 import {
-  WorkspaceMetadataVersionException,
-  WorkspaceMetadataVersionExceptionCode,
+    WorkspaceMetadataVersionException,
+    WorkspaceMetadataVersionExceptionCode,
 } from 'src/engine/metadata-modules/workspace-metadata-version/exceptions/workspace-metadata-version.exception';
-import { TwentyORMManager } from 'src/engine/twenty-orm/twenty-orm.manager';
+import { ExampleCRMORMManager } from 'src/engine/twenty-orm/twenty-orm.manager';
 import { WorkspaceCacheStorageService } from 'src/engine/workspace-cache-storage/workspace-cache-storage.service';
 
 const OBJECT_METADATA_ITEMS_CHUNK_SIZE = 5;
@@ -31,7 +31,7 @@ const OBJECT_METADATA_ITEMS_CHUNK_SIZE = 5;
 export class SearchResolver {
   constructor(
     private readonly workspaceCacheStorageService: WorkspaceCacheStorageService,
-    private readonly twentyORMManager: TwentyORMManager,
+    private readonly twentyORMManager: ExampleCRMORMManager,
     private readonly searchService: SearchService,
   ) {}
 

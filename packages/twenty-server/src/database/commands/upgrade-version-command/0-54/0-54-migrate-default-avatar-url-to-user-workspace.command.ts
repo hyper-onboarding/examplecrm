@@ -5,12 +5,12 @@ import { Command } from 'nest-commander';
 import { Repository } from 'typeorm';
 
 import {
-  ActiveOrSuspendedWorkspacesMigrationCommandRunner,
-  RunOnWorkspaceArgs,
+    ActiveOrSuspendedWorkspacesMigrationCommandRunner,
+    RunOnWorkspaceArgs,
 } from 'src/database/commands/command-runners/active-or-suspended-workspaces-migration.command-runner';
 import { UserWorkspace } from 'src/engine/core-modules/user-workspace/user-workspace.entity';
 import { Workspace } from 'src/engine/core-modules/workspace/workspace.entity';
-import { TwentyORMGlobalManager } from 'src/engine/twenty-orm/twenty-orm-global.manager';
+import { ExampleCRMORMGlobalManager } from 'src/engine/twenty-orm/twenty-orm-global.manager';
 
 @Command({
   name: 'upgrade:0-54:migrate-default-avatar-url-to-user-workspace',
@@ -22,7 +22,7 @@ export class MigrateDefaultAvatarUrlToUserWorkspaceCommand extends ActiveOrSuspe
     protected readonly workspaceRepository: Repository<Workspace>,
     @InjectRepository(UserWorkspace, 'core')
     protected readonly userWorkspaceRepository: Repository<UserWorkspace>,
-    protected readonly twentyORMGlobalManager: TwentyORMGlobalManager,
+    protected readonly twentyORMGlobalManager: ExampleCRMORMGlobalManager,
   ) {
     super(workspaceRepository, twentyORMGlobalManager);
   }

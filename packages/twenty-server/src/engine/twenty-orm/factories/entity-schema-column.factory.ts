@@ -15,8 +15,8 @@ import { serializeDefaultValue } from 'src/engine/metadata-modules/field-metadat
 import { FieldMetadataMap } from 'src/engine/metadata-modules/types/field-metadata-map';
 import { fieldMetadataTypeToColumnType } from 'src/engine/metadata-modules/workspace-migration/utils/field-metadata-type-to-column-type.util';
 import {
-  TwentyORMException,
-  TwentyORMExceptionCode,
+    ExampleCRMORMException,
+    ExampleCRMORMExceptionCode,
 } from 'src/engine/twenty-orm/exceptions/twenty-orm.exception';
 import { isFieldMetadataInterfaceOfType } from 'src/engine/utils/is-field-metadata-of-type.util';
 
@@ -49,9 +49,9 @@ export class EntitySchemaColumnFactory {
         }
 
         if (!isDefined(joinColumnName)) {
-          throw new TwentyORMException(
+          throw new ExampleCRMORMException(
             `Field ${fieldMetadata.id} of type ${fieldMetadata.type}  is a many to one relation but does not have a join column name`,
-            TwentyORMExceptionCode.MALFORMED_METADATA,
+            ExampleCRMORMExceptionCode.MALFORMED_METADATA,
           );
         }
 

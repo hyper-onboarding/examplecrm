@@ -1,21 +1,21 @@
 'use client';
 
-import { useState } from 'react';
 import { IBM_Plex_Mono } from 'next/font/google';
+import { useState } from 'react';
 
 import { ExternalArrow, GithubIcon } from '@/app/_components/ui/icons/SvgIcons';
 import { CallToAction } from '@/app/_components/ui/layout/header/callToAction';
 import {
-  HamburgerContainer,
-  HamburgerLine1,
-  HamburgerLine2,
-  ListItem,
-  LogoAddon,
-  LogoContainer,
-  MobileLinkList,
-  MobileMenu,
-  MobileNav,
-  NavOpen,
+    HamburgerContainer,
+    HamburgerLine1,
+    HamburgerLine2,
+    ListItem,
+    LogoAddon,
+    LogoContainer,
+    MobileLinkList,
+    MobileMenu,
+    MobileNav,
+    NavOpen,
 } from '@/app/_components/ui/layout/header/styled';
 import { Logo } from '@/app/_components/ui/layout/Logo';
 import { formatNumberOfStars } from '@/shared-utils/formatNumberOfStars';
@@ -31,7 +31,7 @@ type Props = {
 };
 
 export const HeaderMobile = ({ numberOfStars }: Props) => {
-  const isTwentyDev = false;
+  const isExampleCRMDev = false;
 
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -44,7 +44,7 @@ export const HeaderMobile = ({ numberOfStars }: Props) => {
       <MobileNav>
         <LogoContainer>
           <Logo />
-          {isTwentyDev && (
+          {isExampleCRMDev && (
             <LogoAddon className={IBMPlexMono.className}>
               for Developers
             </LogoAddon>

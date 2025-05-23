@@ -1,7 +1,7 @@
 # React Guidelines
 
 ## Core React Principles
-Twenty follows modern React best practices with a focus on functional components and clean, maintainable code. This document outlines our React conventions and best practices.
+ExampleCRM follows modern React best practices with a focus on functional components and clean, maintainable code. This document outlines our React conventions and best practices.
 
 ## Component Structure
 
@@ -217,4 +217,4 @@ Twenty follows modern React best practices with a focus on functional components
 
     return <UserProfileContent user={user} />;
   };
-  ``` 
+  ```

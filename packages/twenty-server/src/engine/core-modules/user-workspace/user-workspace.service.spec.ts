@@ -22,7 +22,7 @@ import { DataSourceService } from 'src/engine/metadata-modules/data-source/data-
 import { ObjectMetadataEntity } from 'src/engine/metadata-modules/object-metadata/object-metadata.entity';
 import { PermissionsException } from 'src/engine/metadata-modules/permissions/permissions.exception';
 import { UserRoleService } from 'src/engine/metadata-modules/user-role/user-role.service';
-import { TwentyORMGlobalManager } from 'src/engine/twenty-orm/twenty-orm-global.manager';
+import { ExampleCRMORMGlobalManager } from 'src/engine/twenty-orm/twenty-orm-global.manager';
 import { WorkspaceEventEmitter } from 'src/engine/workspace-event-emitter/workspace-event-emitter';
 import { WorkspaceMemberWorkspaceEntity } from 'src/modules/workspace-member/standard-objects/workspace-member.workspace-entity';
 
@@ -35,7 +35,7 @@ describe('UserWorkspaceService', () => {
   let workspaceInvitationService: WorkspaceInvitationService;
   let workspaceEventEmitter: WorkspaceEventEmitter;
   let domainManagerService: DomainManagerService;
-  let twentyORMGlobalManager: TwentyORMGlobalManager;
+  let twentyORMGlobalManager: ExampleCRMORMGlobalManager;
   let userRoleService: UserRoleService;
   let fileService: FileService;
   let fileUploadService: FileUploadService;
@@ -100,7 +100,7 @@ describe('UserWorkspaceService', () => {
           },
         },
         {
-          provide: TwentyORMGlobalManager,
+          provide: ExampleCRMORMGlobalManager,
           useValue: {
             getRepositoryForWorkspace: jest.fn(),
           },
@@ -150,8 +150,8 @@ describe('UserWorkspaceService', () => {
     );
     domainManagerService =
       module.get<DomainManagerService>(DomainManagerService);
-    twentyORMGlobalManager = module.get<TwentyORMGlobalManager>(
-      TwentyORMGlobalManager,
+    twentyORMGlobalManager = module.get<ExampleCRMORMGlobalManager>(
+      ExampleCRMORMGlobalManager,
     );
     userRoleService = module.get<UserRoleService>(UserRoleService);
     fileUploadService = module.get<FileUploadService>(FileUploadService);

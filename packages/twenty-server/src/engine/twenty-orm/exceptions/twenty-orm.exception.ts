@@ -1,12 +1,12 @@
 import { CustomException } from 'src/utils/custom-exception';
 
-export class TwentyORMException extends CustomException {
-  constructor(message: string, code: TwentyORMExceptionCode) {
+export class ExampleCRMORMException extends CustomException {
+  constructor(message: string, code: ExampleCRMORMExceptionCode) {
     super(message, code);
   }
 }
 
-export enum TwentyORMExceptionCode {
+export enum ExampleCRMORMExceptionCode {
   METADATA_VERSION_MISMATCH = 'METADATA_VERSION_MISMATCH',
   WORKSPACE_SCHEMA_NOT_FOUND = 'WORKSPACE_SCHEMA_NOT_FOUND',
   ROLES_PERMISSIONS_VERSION_NOT_FOUND = 'ROLES_PERMISSIONS_VERSION_NOT_FOUND',

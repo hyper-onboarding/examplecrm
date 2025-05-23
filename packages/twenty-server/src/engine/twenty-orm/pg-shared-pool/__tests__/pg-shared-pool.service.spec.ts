@@ -3,7 +3,7 @@ import { Test, TestingModule } from '@nestjs/testing';
 
 import { Pool } from 'pg';
 
-import { TwentyConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
+import { ExampleCRMConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
 import { PgPoolSharedService } from 'src/engine/twenty-orm/pg-shared-pool/pg-shared-pool.service';
 
 type ConfigKey =
@@ -42,7 +42,7 @@ jest.mock('pg', () => {
 
 describe('PgPoolSharedService', () => {
   let service: PgPoolSharedService;
-  let configService: TwentyConfigService;
+  let configService: ExampleCRMConfigService;
   let mockLogger: Partial<Logger>;
 
   const configValues: Record<ConfigKey, ConfigValue> = {
@@ -63,7 +63,7 @@ describe('PgPoolSharedService', () => {
       providers: [
         PgPoolSharedService,
         {
-          provide: TwentyConfigService,
+          provide: ExampleCRMConfigService,
           useValue: {
             get: jest
               .fn()
@@ -76,7 +76,7 @@ describe('PgPoolSharedService', () => {
     }).compile();
 
     service = module.get<PgPoolSharedService>(PgPoolSharedService);
-    configService = module.get<TwentyConfigService>(TwentyConfigService);
+    configService = module.get<ExampleCRMConfigService>(ExampleCRMConfigService);
 
     Object.defineProperty(service, 'logger', {
       value: mockLogger,
@@ -258,7 +258,7 @@ describe('PgPoolSharedService', () => {
         providers: [
           PgPoolSharedService,
           {
-            provide: TwentyConfigService,
+            provide: ExampleCRMConfigService,
             useValue: configService,
           },
         ],

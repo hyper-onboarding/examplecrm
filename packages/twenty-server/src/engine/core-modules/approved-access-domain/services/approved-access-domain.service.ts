@@ -10,13 +10,13 @@ import { Repository } from 'typeorm';
 
 import { ApprovedAccessDomain as ApprovedAccessDomainEntity } from 'src/engine/core-modules/approved-access-domain/approved-access-domain.entity';
 import {
-  ApprovedAccessDomainException,
-  ApprovedAccessDomainExceptionCode,
+    ApprovedAccessDomainException,
+    ApprovedAccessDomainExceptionCode,
 } from 'src/engine/core-modules/approved-access-domain/approved-access-domain.exception';
 import { approvedAccessDomainValidator } from 'src/engine/core-modules/approved-access-domain/approved-access-domain.validate';
 import { DomainManagerService } from 'src/engine/core-modules/domain-manager/services/domain-manager.service';
 import { EmailService } from 'src/engine/core-modules/email/email.service';
-import { TwentyConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
+import { ExampleCRMConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
 import { User } from 'src/engine/core-modules/user/user.entity';
 import { Workspace } from 'src/engine/core-modules/workspace/workspace.entity';
 import { isWorkDomain } from 'src/utils/is-work-email';
@@ -28,7 +28,7 @@ export class ApprovedAccessDomainService {
     @InjectRepository(ApprovedAccessDomainEntity, 'core')
     private readonly approvedAccessDomainRepository: Repository<ApprovedAccessDomainEntity>,
     private readonly emailService: EmailService,
-    private readonly twentyConfigService: TwentyConfigService,
+    private readonly twentyConfigService: ExampleCRMConfigService,
     private readonly domainManagerService: DomainManagerService,
   ) {}
 
@@ -79,7 +79,7 @@ export class ApprovedAccessDomainService {
     });
 
     await this.emailService.send({
-      from: `${sender.firstName} ${sender.lastName} (via Twenty) <${this.twentyConfigService.get('EMAIL_FROM_ADDRESS')}>`,
+      from: `${sender.firstName} ${sender.lastName} (via ExampleCRM) <${this.twentyConfigService.get('EMAIL_FROM_ADDRESS')}>`,
       to,
       subject: 'Approve your access domain',
       text,

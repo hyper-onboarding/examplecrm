@@ -1,14 +1,14 @@
 import {
-  registerDecorator,
-  ValidationArguments,
-  ValidationOptions,
-  ValidatorConstraint,
-  ValidatorConstraintInterface,
+    registerDecorator,
+    ValidationArguments,
+    ValidationOptions,
+    ValidatorConstraint,
+    ValidatorConstraintInterface,
 } from 'class-validator';
 import semver from 'semver';
 
 @ValidatorConstraint({ async: false })
-export class IsTwentySemVerValidator implements ValidatorConstraintInterface {
+export class IsExampleCRMSemVerValidator implements ValidatorConstraintInterface {
   validate(version: string) {
     const parsed = semver.parse(version);
 
@@ -20,7 +20,7 @@ export class IsTwentySemVerValidator implements ValidatorConstraintInterface {
   }
 }
 
-export const IsTwentySemVer =
+export const IsExampleCRMSemVer =
   (validationOptions?: ValidationOptions) =>
   (object: object, propertyName: string) => {
     registerDecorator({
@@ -28,6 +28,6 @@ export const IsTwentySemVer =
       propertyName: propertyName,
       options: validationOptions,
       constraints: [],
-      validator: IsTwentySemVerValidator,
+      validator: IsExampleCRMSemVerValidator,
     });
   };

@@ -1,7 +1,7 @@
 
-# Twenty-Website 
+# ExampleCRM-Website
 This  used for the marketing website (twenty.com).
-This is not related in anyway to the main app, which you can find in twenty-front and twenty-server. 
+This is not related in anyway to the main app, which you can find in twenty-front and twenty-server.
 
 
 ## Getting Started

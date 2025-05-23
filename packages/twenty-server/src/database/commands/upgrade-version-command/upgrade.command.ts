@@ -11,9 +11,9 @@ import { In, Repository } from 'typeorm';
 
 import { ActiveOrSuspendedWorkspacesMigrationCommandOptions } from 'src/database/commands/command-runners/active-or-suspended-workspaces-migration.command-runner';
 import {
-  AllCommands,
-  UpgradeCommandRunner,
-  VersionCommands,
+    AllCommands,
+    UpgradeCommandRunner,
+    VersionCommands,
 } from 'src/database/commands/command-runners/upgrade.command-runner';
 import { AddTasksAssignedToMeViewCommand } from 'src/database/commands/upgrade-version-command/0-43/0-43-add-tasks-assigned-to-me-view.command';
 import { MigrateIsSearchableForCustomObjectMetadataCommand } from 'src/database/commands/upgrade-version-command/0-43/0-43-migrate-is-searchable-for-custom-object-metadata.command';
@@ -35,9 +35,9 @@ import { FixCreatedByDefaultValueCommand } from 'src/database/commands/upgrade-v
 import { FixStandardSelectFieldsPositionCommand } from 'src/database/commands/upgrade-version-command/0-54/0-54-fix-standard-select-fields-position.command';
 import { LowercaseUserAndInvitationEmailsCommand } from 'src/database/commands/upgrade-version-command/0-54/0-54-lowercase-user-and-invitation-emails.command';
 import { MigrateDefaultAvatarUrlToUserWorkspaceCommand } from 'src/database/commands/upgrade-version-command/0-54/0-54-migrate-default-avatar-url-to-user-workspace.command';
-import { TwentyConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
+import { ExampleCRMConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
 import { Workspace } from 'src/engine/core-modules/workspace/workspace.entity';
-import { TwentyORMGlobalManager } from 'src/engine/twenty-orm/twenty-orm-global.manager';
+import { ExampleCRMORMGlobalManager } from 'src/engine/twenty-orm/twenty-orm-global.manager';
 import { SyncWorkspaceMetadataCommand } from 'src/engine/workspace-manager/workspace-sync-metadata/commands/sync-workspace-metadata.command';
 import { compareVersionMajorAndMinor } from 'src/utils/version/compare-version-minor-and-major';
 
@@ -146,8 +146,8 @@ export class UpgradeCommand extends UpgradeCommandRunner {
   constructor(
     @InjectRepository(Workspace, 'core')
     protected readonly workspaceRepository: Repository<Workspace>,
-    protected readonly twentyConfigService: TwentyConfigService,
-    protected readonly twentyORMGlobalManager: TwentyORMGlobalManager,
+    protected readonly twentyConfigService: ExampleCRMConfigService,
+    protected readonly twentyORMGlobalManager: ExampleCRMORMGlobalManager,
     protected readonly syncWorkspaceMetadataCommand: SyncWorkspaceMetadataCommand,
 
     private readonly databaseMigrationService: DatabaseMigrationService,

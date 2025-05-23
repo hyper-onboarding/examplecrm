@@ -6,21 +6,21 @@ import crypto from 'crypto';
 import { Repository } from 'typeorm';
 
 import {
-  AppToken,
-  AppTokenType,
+    AppToken,
+    AppTokenType,
 } from 'src/engine/core-modules/app-token/app-token.entity';
 import {
-  EmailVerificationException,
-  EmailVerificationExceptionCode,
+    EmailVerificationException,
+    EmailVerificationExceptionCode,
 } from 'src/engine/core-modules/email-verification/email-verification.exception';
-import { TwentyConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
+import { ExampleCRMConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
 
 import { EmailVerificationTokenService } from './email-verification-token.service';
 
 describe('EmailVerificationTokenService', () => {
   let service: EmailVerificationTokenService;
   let appTokenRepository: Repository<AppToken>;
-  let twentyConfigService: TwentyConfigService;
+  let twentyConfigService: ExampleCRMConfigService;
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
@@ -31,7 +31,7 @@ describe('EmailVerificationTokenService', () => {
           useClass: Repository,
         },
         {
-          provide: TwentyConfigService,
+          provide: ExampleCRMConfigService,
           useValue: {
             get: jest.fn(),
           },
@@ -45,7 +45,7 @@ describe('EmailVerificationTokenService', () => {
     appTokenRepository = module.get<Repository<AppToken>>(
       getRepositoryToken(AppToken, 'core'),
     );
-    twentyConfigService = module.get<TwentyConfigService>(TwentyConfigService);
+    twentyConfigService = module.get<ExampleCRMConfigService>(ExampleCRMConfigService);
   });
 
   describe('generateToken', () => {

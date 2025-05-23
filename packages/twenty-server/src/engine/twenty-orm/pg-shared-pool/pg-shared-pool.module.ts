@@ -1,11 +1,11 @@
 import {
-  Global,
-  Module,
-  OnApplicationShutdown,
-  OnModuleInit,
+    Global,
+    Module,
+    OnApplicationShutdown,
+    OnModuleInit,
 } from '@nestjs/common';
 
-import { TwentyConfigModule } from 'src/engine/core-modules/twenty-config/twenty-config.module';
+import { ExampleCRMConfigModule } from 'src/engine/core-modules/twenty-config/twenty-config.module';
 import { PgPoolSharedService } from 'src/engine/twenty-orm/pg-shared-pool/pg-shared-pool.service';
 
 /**
@@ -13,7 +13,7 @@ import { PgPoolSharedService } from 'src/engine/twenty-orm/pg-shared-pool/pg-sha
  */
 @Global()
 @Module({
-  imports: [TwentyConfigModule],
+  imports: [ExampleCRMConfigModule],
   providers: [PgPoolSharedService],
   exports: [PgPoolSharedService],
 })

@@ -6,11 +6,11 @@ import { Repository } from 'typeorm';
 import { DatabaseEventAction } from 'src/engine/api/graphql/graphql-query-runner/enums/database-event-action';
 import { ObjectMetadataEntity } from 'src/engine/metadata-modules/object-metadata/object-metadata.entity';
 import { WorkspaceEntityManager } from 'src/engine/twenty-orm/entity-manager/workspace-entity-manager';
-import { TwentyORMGlobalManager } from 'src/engine/twenty-orm/twenty-orm-global.manager';
+import { ExampleCRMORMGlobalManager } from 'src/engine/twenty-orm/twenty-orm-global.manager';
 import { WorkspaceEventEmitter } from 'src/engine/workspace-event-emitter/workspace-event-emitter';
 import {
-  MessageChannelSyncStage,
-  MessageChannelWorkspaceEntity,
+    MessageChannelSyncStage,
+    MessageChannelWorkspaceEntity,
 } from 'src/modules/messaging/common/standard-objects/message-channel.workspace-entity';
 
 export type ResetMessageChannelsInput = {
@@ -22,7 +22,7 @@ export type ResetMessageChannelsInput = {
 @Injectable()
 export class ResetMessageChannelService {
   constructor(
-    private readonly twentyORMGlobalManager: TwentyORMGlobalManager,
+    private readonly twentyORMGlobalManager: ExampleCRMORMGlobalManager,
     private readonly workspaceEventEmitter: WorkspaceEventEmitter,
     @InjectRepository(ObjectMetadataEntity, 'metadata')
     private readonly objectMetadataRepository: Repository<ObjectMetadataEntity>,

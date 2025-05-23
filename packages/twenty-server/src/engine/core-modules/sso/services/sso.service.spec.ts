@@ -8,7 +8,7 @@ import { ExceptionHandlerService } from 'src/engine/core-modules/exception-handl
 import { SSOService } from 'src/engine/core-modules/sso/services/sso.service';
 import { SSOException } from 'src/engine/core-modules/sso/sso.exception';
 import { WorkspaceSSOIdentityProvider } from 'src/engine/core-modules/sso/workspace-sso-identity-provider.entity';
-import { TwentyConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
+import { ExampleCRMConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
 
 describe('SSOService', () => {
   let service: SSOService;
@@ -30,7 +30,7 @@ describe('SSOService', () => {
           },
         },
         {
-          provide: TwentyConfigService,
+          provide: ExampleCRMConfigService,
           useValue: {
             get: jest.fn(),
           },

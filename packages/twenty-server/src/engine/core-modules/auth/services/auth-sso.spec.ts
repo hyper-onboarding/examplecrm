@@ -4,13 +4,13 @@ import { getRepositoryToken } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 
 import { AuthSsoService } from 'src/engine/core-modules/auth/services/auth-sso.service';
-import { TwentyConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
+import { ExampleCRMConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
 import { Workspace } from 'src/engine/core-modules/workspace/workspace.entity';
 
 describe('AuthSsoService', () => {
   let authSsoService: AuthSsoService;
   let workspaceRepository: Repository<Workspace>;
-  let twentyConfigService: TwentyConfigService;
+  let twentyConfigService: ExampleCRMConfigService;
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
@@ -23,7 +23,7 @@ describe('AuthSsoService', () => {
           },
         },
         {
-          provide: TwentyConfigService,
+          provide: ExampleCRMConfigService,
           useValue: {
             get: jest.fn(),
           },
@@ -35,7 +35,7 @@ describe('AuthSsoService', () => {
     workspaceRepository = module.get<Repository<Workspace>>(
       getRepositoryToken(Workspace, 'core'),
     );
-    twentyConfigService = module.get<TwentyConfigService>(TwentyConfigService);
+    twentyConfigService = module.get<ExampleCRMConfigService>(ExampleCRMConfigService);
   });
 
   describe('findWorkspaceFromWorkspaceIdOrAuthProvider', () => {

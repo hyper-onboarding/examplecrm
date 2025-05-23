@@ -3,10 +3,10 @@ import { CacheModuleOptions } from '@nestjs/common';
 import { redisStore } from 'cache-manager-redis-yet';
 
 import { CacheStorageType } from 'src/engine/core-modules/cache-storage/types/cache-storage-type.enum';
-import { TwentyConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
+import { ExampleCRMConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
 
 export const cacheStorageModuleFactory = (
-  twentyConfigService: TwentyConfigService,
+  twentyConfigService: ExampleCRMConfigService,
 ): CacheModuleOptions => {
   const cacheStorageType = CacheStorageType.Redis;
   const cacheStorageTtl = twentyConfigService.get('CACHE_STORAGE_TTL');

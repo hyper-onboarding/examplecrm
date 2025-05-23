@@ -4,7 +4,7 @@ import { useContext, useState } from 'react';
 import { useClearField } from '@/object-record/record-field/hooks/useClearField';
 import { RATING_VALUES } from '@/object-record/record-field/meta-types/constants/RatingValues';
 import { FieldRatingValue } from '@/object-record/record-field/types/FieldMetadata';
-import { IconTwentyStarFilled } from 'twenty-ui/display';
+import { IconExampleCRMStarFilled } from 'twenty-ui/display';
 import { THEME_COMMON, ThemeContext } from 'twenty-ui/theme';
 
 const StyledContainer = styled.div`
@@ -77,7 +77,7 @@ export const RatingInput = ({
             onMouseEnter={readonly ? undefined : () => setHoveredValue(value)}
             onMouseLeave={readonly ? undefined : () => setHoveredValue(null)}
           >
-            <IconTwentyStarFilled size={iconSizeMd} />
+            <IconExampleCRMStarFilled size={iconSizeMd} />
           </StyledRatingIconContainer>
         );
       })}

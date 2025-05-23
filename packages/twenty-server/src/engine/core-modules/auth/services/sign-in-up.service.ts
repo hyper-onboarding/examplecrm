@@ -9,26 +9,26 @@ import { v4 } from 'uuid';
 
 import { AppToken } from 'src/engine/core-modules/app-token/app-token.entity';
 import {
-  AuthException,
-  AuthExceptionCode,
+    AuthException,
+    AuthExceptionCode,
 } from 'src/engine/core-modules/auth/auth.exception';
 import {
-  PASSWORD_REGEX,
-  compareHash,
-  hashPassword,
+    PASSWORD_REGEX,
+    compareHash,
+    hashPassword,
 } from 'src/engine/core-modules/auth/auth.util';
 import {
-  AuthProviderWithPasswordType,
-  ExistingUserOrPartialUserWithPicture,
-  PartialUserWithPicture,
-  SignInUpBaseParams,
-  SignInUpNewUserPayload,
+    AuthProviderWithPasswordType,
+    ExistingUserOrPartialUserWithPicture,
+    PartialUserWithPicture,
+    SignInUpBaseParams,
+    SignInUpNewUserPayload,
 } from 'src/engine/core-modules/auth/types/signInUp.type';
 import { DomainManagerService } from 'src/engine/core-modules/domain-manager/services/domain-manager.service';
 import { FeatureFlagService } from 'src/engine/core-modules/feature-flag/services/feature-flag.service';
 import { FileUploadService } from 'src/engine/core-modules/file/file-upload/services/file-upload.service';
 import { OnboardingService } from 'src/engine/core-modules/onboarding/onboarding.service';
-import { TwentyConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
+import { ExampleCRMConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
 import { UserWorkspaceService } from 'src/engine/core-modules/user-workspace/user-workspace.service';
 import { UserService } from 'src/engine/core-modules/user/services/user.service';
 import { User } from 'src/engine/core-modules/user/user.entity';
@@ -51,7 +51,7 @@ export class SignInUpService {
     private readonly userWorkspaceService: UserWorkspaceService,
     private readonly onboardingService: OnboardingService,
     private readonly httpService: HttpService,
-    private readonly twentyConfigService: TwentyConfigService,
+    private readonly twentyConfigService: ExampleCRMConfigService,
     private readonly domainManagerService: DomainManagerService,
     private readonly userService: UserService,
     private readonly userRoleService: UserRoleService,

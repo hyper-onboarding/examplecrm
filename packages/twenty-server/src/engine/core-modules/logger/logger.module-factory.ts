@@ -1,8 +1,8 @@
 import {
-  LoggerDriverType,
-  LoggerModuleOptions,
+    LoggerDriverType,
+    LoggerModuleOptions,
 } from 'src/engine/core-modules/logger/interfaces';
-import { TwentyConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
+import { ExampleCRMConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
 
 /**
  * Logger Module factory
@@ -10,7 +10,7 @@ import { TwentyConfigService } from 'src/engine/core-modules/twenty-config/twent
  * @param twentyConfigService
  */
 export const loggerModuleFactory = async (
-  twentyConfigService: TwentyConfigService,
+  twentyConfigService: ExampleCRMConfigService,
 ): Promise<LoggerModuleOptions> => {
   const driverType = twentyConfigService.get('LOGGER_DRIVER');
   const logLevels = twentyConfigService.get('LOG_LEVELS');

@@ -5,15 +5,15 @@ import { isDefined } from 'twenty-shared/utils';
 
 import { WorkflowTriggerRestApiExceptionFilter } from 'src/engine/core-modules/workflow/filters/workflow-trigger-rest-api-exception.filter';
 import { FieldActorSource } from 'src/engine/metadata-modules/field-metadata/composite-types/actor.composite-type';
-import { TwentyORMManager } from 'src/engine/twenty-orm/twenty-orm.manager';
+import { ExampleCRMORMManager } from 'src/engine/twenty-orm/twenty-orm.manager';
 import {
-  WorkflowVersionStatus,
-  WorkflowVersionWorkspaceEntity,
+    WorkflowVersionStatus,
+    WorkflowVersionWorkspaceEntity,
 } from 'src/modules/workflow/common/standard-objects/workflow-version.workspace-entity';
 import { WorkflowWorkspaceEntity } from 'src/modules/workflow/common/standard-objects/workflow.workspace-entity';
 import {
-  WorkflowTriggerException,
-  WorkflowTriggerExceptionCode,
+    WorkflowTriggerException,
+    WorkflowTriggerExceptionCode,
 } from 'src/modules/workflow/workflow-trigger/exceptions/workflow-trigger.exception';
 import { WorkflowTriggerType } from 'src/modules/workflow/workflow-trigger/types/workflow-trigger.type';
 import { WorkflowTriggerWorkspaceService } from 'src/modules/workflow/workflow-trigger/workspace-services/workflow-trigger.workspace-service';
@@ -22,7 +22,7 @@ import { WorkflowTriggerWorkspaceService } from 'src/modules/workflow/workflow-t
 @UseFilters(WorkflowTriggerRestApiExceptionFilter)
 export class WorkflowTriggerController {
   constructor(
-    private readonly twentyORMManager: TwentyORMManager,
+    private readonly twentyORMManager: ExampleCRMORMManager,
     private readonly workflowTriggerWorkspaceService: WorkflowTriggerWorkspaceService,
   ) {}
 

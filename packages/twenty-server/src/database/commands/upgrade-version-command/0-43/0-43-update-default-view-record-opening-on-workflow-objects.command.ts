@@ -5,12 +5,12 @@ import { Command } from 'nest-commander';
 import { In, Repository } from 'typeorm';
 
 import {
-  ActiveOrSuspendedWorkspacesMigrationCommandRunner,
-  RunOnWorkspaceArgs,
+    ActiveOrSuspendedWorkspacesMigrationCommandRunner,
+    RunOnWorkspaceArgs,
 } from 'src/database/commands/command-runners/active-or-suspended-workspaces-migration.command-runner';
 import { Workspace } from 'src/engine/core-modules/workspace/workspace.entity';
 import { ObjectMetadataEntity } from 'src/engine/metadata-modules/object-metadata/object-metadata.entity';
-import { TwentyORMGlobalManager } from 'src/engine/twenty-orm/twenty-orm-global.manager';
+import { ExampleCRMORMGlobalManager } from 'src/engine/twenty-orm/twenty-orm-global.manager';
 import { STANDARD_OBJECT_IDS } from 'src/engine/workspace-manager/workspace-sync-metadata/constants/standard-object-ids';
 import { ViewOpenRecordInType } from 'src/modules/view/standard-objects/view.workspace-entity';
 
@@ -25,7 +25,7 @@ export class UpdateDefaultViewRecordOpeningOnWorkflowObjectsCommand extends Acti
     protected readonly workspaceRepository: Repository<Workspace>,
     @InjectRepository(ObjectMetadataEntity, 'metadata')
     protected readonly objectMetadataRepository: Repository<ObjectMetadataEntity>,
-    protected readonly twentyORMGlobalManager: TwentyORMGlobalManager,
+    protected readonly twentyORMGlobalManager: ExampleCRMORMGlobalManager,
   ) {
     super(workspaceRepository, twentyORMGlobalManager);
   }

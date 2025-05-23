@@ -1,7 +1,7 @@
 # State Management Guidelines
 
 ## Core State Management Principles
-Twenty uses a combination of Recoil for global state and Apollo Client for server state management. This document outlines our state management conventions and best practices.
+ExampleCRM uses a combination of Recoil for global state and Apollo Client for server state management. This document outlines our state management conventions and best practices.
 
 ## Global State Management
 
@@ -184,7 +184,7 @@ Twenty uses a combination of Recoil for global state and Apollo Client for serve
     get: ({ get }) => {
       const users = get(usersState);
       const filter = get(userFilterState);
-      return users.filter(user => 
+      return users.filter(user =>
         user.name.toLowerCase().includes(filter.toLowerCase())
       );
     },
@@ -216,4 +216,4 @@ Twenty uses a combination of Recoil for global state and Apollo Client for serve
       });
     },
   });
-  ``` 
+  ```

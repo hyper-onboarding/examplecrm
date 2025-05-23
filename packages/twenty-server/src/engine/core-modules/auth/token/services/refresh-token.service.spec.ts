@@ -6,7 +6,7 @@ import { Repository } from 'typeorm';
 import { AppToken } from 'src/engine/core-modules/app-token/app-token.entity';
 import { AuthException } from 'src/engine/core-modules/auth/auth.exception';
 import { JwtWrapperService } from 'src/engine/core-modules/jwt/services/jwt-wrapper.service';
-import { TwentyConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
+import { ExampleCRMConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
 import { User } from 'src/engine/core-modules/user/user.entity';
 
 import { RefreshTokenService } from './refresh-token.service';
@@ -14,7 +14,7 @@ import { RefreshTokenService } from './refresh-token.service';
 describe('RefreshTokenService', () => {
   let service: RefreshTokenService;
   let jwtWrapperService: JwtWrapperService;
-  let twentyConfigService: TwentyConfigService;
+  let twentyConfigService: ExampleCRMConfigService;
   let appTokenRepository: Repository<AppToken>;
   let userRepository: Repository<User>;
 
@@ -32,7 +32,7 @@ describe('RefreshTokenService', () => {
           },
         },
         {
-          provide: TwentyConfigService,
+          provide: ExampleCRMConfigService,
           useValue: {
             get: jest.fn(),
           },
@@ -50,7 +50,7 @@ describe('RefreshTokenService', () => {
 
     service = module.get<RefreshTokenService>(RefreshTokenService);
     jwtWrapperService = module.get<JwtWrapperService>(JwtWrapperService);
-    twentyConfigService = module.get<TwentyConfigService>(TwentyConfigService);
+    twentyConfigService = module.get<ExampleCRMConfigService>(ExampleCRMConfigService);
     appTokenRepository = module.get<Repository<AppToken>>(
       getRepositoryToken(AppToken, 'core'),
     );

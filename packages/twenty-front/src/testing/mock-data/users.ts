@@ -1,16 +1,16 @@
 import { CurrentUserWorkspace } from '@/auth/states/currentUserWorkspaceState';
 import { WorkspaceMember } from '@/workspace-member/types/WorkspaceMember';
 import {
-  FeatureFlagKey,
-  OnboardingStatus,
-  SettingPermissionType,
-  SubscriptionInterval,
-  SubscriptionStatus,
-  User,
-  Workspace,
-  WorkspaceActivationStatus,
-  WorkspaceMemberDateFormatEnum,
-  WorkspaceMemberTimeFormatEnum,
+    FeatureFlagKey,
+    OnboardingStatus,
+    SettingPermissionType,
+    SubscriptionInterval,
+    SubscriptionStatus,
+    User,
+    Workspace,
+    WorkspaceActivationStatus,
+    WorkspaceMemberDateFormatEnum,
+    WorkspaceMemberTimeFormatEnum,
 } from '~/generated/graphql';
 
 type MockedUser = Pick<
@@ -42,7 +42,7 @@ export const workspaceLogoUrl =
 export const mockCurrentWorkspace: Workspace = {
   subdomain: 'acme.twenty.com',
   id: '7dfbc3f7-6e5e-4128-957e-8d86808cdf6w',
-  displayName: 'Twenty',
+  displayName: 'ExampleCRM',
   inviteHash: 'twenty.com-invite-hash',
   logo: workspaceLogoUrl,
   isPublicInviteLinkEnabled: true,

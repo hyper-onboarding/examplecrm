@@ -10,7 +10,7 @@ import { CustomDomainValidRecords } from 'src/engine/core-modules/domain-manager
 import { generateRandomSubdomain } from 'src/engine/core-modules/domain-manager/utils/generate-random-subdomain';
 import { getSubdomainFromEmail } from 'src/engine/core-modules/domain-manager/utils/get-subdomain-from-email';
 import { getSubdomainNameFromDisplayName } from 'src/engine/core-modules/domain-manager/utils/get-subdomain-name-from-display-name';
-import { TwentyConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
+import { ExampleCRMConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
 import { Workspace } from 'src/engine/core-modules/workspace/workspace.entity';
 import { workspaceValidator } from 'src/engine/core-modules/workspace/workspace.validate';
 
@@ -19,7 +19,7 @@ export class DomainManagerService {
   constructor(
     @InjectRepository(Workspace, 'core')
     private readonly workspaceRepository: Repository<Workspace>,
-    private readonly twentyConfigService: TwentyConfigService,
+    private readonly twentyConfigService: ExampleCRMConfigService,
   ) {}
 
   getFrontUrl() {
@@ -219,7 +219,7 @@ export class DomainManagerService {
     return url.toString();
   }
 
-  private getTwentyWorkspaceUrl(subdomain: string) {
+  private getExampleCRMWorkspaceUrl(subdomain: string) {
     const url = this.getFrontUrl();
 
     url.hostname = this.twentyConfigService.get('IS_MULTIWORKSPACE_ENABLED')
@@ -265,7 +265,7 @@ export class DomainManagerService {
         isCustomDomainEnabled && customDomain
           ? this.getCustomWorkspaceUrl(customDomain)
           : undefined,
-      subdomainUrl: this.getTwentyWorkspaceUrl(subdomain),
+      subdomainUrl: this.getExampleCRMWorkspaceUrl(subdomain),
     };
   }
 }

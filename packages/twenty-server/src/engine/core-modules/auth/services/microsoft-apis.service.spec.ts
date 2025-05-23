@@ -14,13 +14,13 @@ import { ResetMessageFolderService } from 'src/engine/core-modules/auth/services
 import { UpdateConnectedAccountOnReconnectService } from 'src/engine/core-modules/auth/services/update-connected-account-on-reconnect.service';
 import { MessageQueue } from 'src/engine/core-modules/message-queue/message-queue.constants';
 import { getQueueToken } from 'src/engine/core-modules/message-queue/utils/get-queue-token.util';
-import { TwentyConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
+import { ExampleCRMConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
 import { ObjectMetadataEntity } from 'src/engine/metadata-modules/object-metadata/object-metadata.entity';
-import { TwentyORMGlobalManager } from 'src/engine/twenty-orm/twenty-orm-global.manager';
+import { ExampleCRMORMGlobalManager } from 'src/engine/twenty-orm/twenty-orm-global.manager';
 import { WorkspaceEventEmitter } from 'src/engine/workspace-event-emitter/workspace-event-emitter';
 import {
-  CalendarChannelSyncStage,
-  CalendarChannelVisibility,
+    CalendarChannelSyncStage,
+    CalendarChannelVisibility,
 } from 'src/modules/calendar/common/standard-objects/calendar-channel.workspace-entity';
 import { AccountsToReconnectService } from 'src/modules/connected-account/services/accounts-to-reconnect.service';
 import { ConnectedAccountWorkspaceEntity } from 'src/modules/connected-account/standard-objects/connected-account.workspace-entity';
@@ -62,7 +62,7 @@ describe('MicrosoftAPIsService', () => {
     transaction: jest.fn((callback) => callback({})),
   };
 
-  const mockTwentyConfigService = {
+  const mockExampleCRMConfigService = {
     get: jest.fn(),
   };
 
@@ -79,7 +79,7 @@ describe('MicrosoftAPIsService', () => {
       providers: [
         MicrosoftAPIsService,
         {
-          provide: TwentyORMGlobalManager,
+          provide: ExampleCRMORMGlobalManager,
           useValue: {
             getRepositoryForWorkspace: jest
               .fn()
@@ -107,8 +107,8 @@ describe('MicrosoftAPIsService', () => {
           },
         },
         {
-          provide: TwentyConfigService,
-          useValue: mockTwentyConfigService,
+          provide: ExampleCRMConfigService,
+          useValue: mockExampleCRMConfigService,
         },
         {
           provide: ResetCalendarChannelService,
@@ -197,7 +197,7 @@ describe('MicrosoftAPIsService', () => {
 
   describe('refreshMicrosoftRefreshToken', () => {
     it('should reset calendar channels and message channels', async () => {
-      mockTwentyConfigService.get.mockImplementation((key) => {
+      mockExampleCRMConfigService.get.mockImplementation((key) => {
         if (key === 'CALENDAR_PROVIDER_MICROSOFT_ENABLED') return true;
         if (key === 'MESSAGING_PROVIDER_MICROSOFT_ENABLED') return true;
 

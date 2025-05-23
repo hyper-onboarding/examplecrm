@@ -11,8 +11,8 @@ import { ConfigVariablesOutput } from 'src/engine/core-modules/admin-panel/dtos/
 import { UserLookup } from 'src/engine/core-modules/admin-panel/dtos/user-lookup.entity';
 import { VersionInfo } from 'src/engine/core-modules/admin-panel/dtos/version-info.dto';
 import {
-  AuthException,
-  AuthExceptionCode,
+    AuthException,
+    AuthExceptionCode,
 } from 'src/engine/core-modules/auth/auth.exception';
 import { LoginTokenService } from 'src/engine/core-modules/auth/token/services/login-token.service';
 import { DomainManagerService } from 'src/engine/core-modules/domain-manager/services/domain-manager.service';
@@ -21,7 +21,7 @@ import { FeatureFlag } from 'src/engine/core-modules/feature-flag/feature-flag.e
 import { ConfigVariables } from 'src/engine/core-modules/twenty-config/config-variables';
 import { CONFIG_VARIABLES_GROUP_METADATA } from 'src/engine/core-modules/twenty-config/constants/config-variables-group-metadata';
 import { ConfigVariablesGroup } from 'src/engine/core-modules/twenty-config/enums/config-variables-group.enum';
-import { TwentyConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
+import { ExampleCRMConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
 import { User } from 'src/engine/core-modules/user/user.entity';
 import { userValidator } from 'src/engine/core-modules/user/user.validate';
 
@@ -29,7 +29,7 @@ import { userValidator } from 'src/engine/core-modules/user/user.validate';
 export class AdminPanelService {
   constructor(
     private readonly loginTokenService: LoginTokenService,
-    private readonly twentyConfigService: TwentyConfigService,
+    private readonly twentyConfigService: ExampleCRMConfigService,
     private readonly domainManagerService: DomainManagerService,
     @InjectRepository(User, 'core')
     private readonly userRepository: Repository<User>,

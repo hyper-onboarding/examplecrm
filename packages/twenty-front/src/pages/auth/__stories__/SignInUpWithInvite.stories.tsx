@@ -6,8 +6,8 @@ import { HttpResponse, graphql } from 'msw';
 import { GET_CURRENT_USER } from '@/users/graphql/queries/getCurrentUser';
 import { GET_WORKSPACE_FROM_INVITE_HASH } from '@/workspace/graphql/queries/getWorkspaceFromInviteHash';
 import {
-  PageDecorator,
-  PageDecoratorArgs,
+    PageDecorator,
+    PageDecoratorArgs,
 } from '~/testing/decorators/PageDecorator';
 import { graphqlMocks } from '~/testing/graphqlMocks';
 
@@ -33,7 +33,7 @@ const meta: Meta<PageDecoratorArgs> = {
                 findWorkspaceFromInviteHash: {
                   __typename: 'Workspace',
                   id: '20202020-91f0-46d0-acab-cb5afef3cc3b',
-                  displayName: 'Twenty dev',
+                  displayName: 'ExampleCRM dev',
                   logo: null,
                   allowImpersonation: false,
                 },
@@ -73,7 +73,7 @@ export const Default: Story = {
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
 
-    await canvas.findByText('Join Twenty dev team', undefined, {
+    await canvas.findByText('Join ExampleCRM dev team', undefined, {
       timeout: 5000,
     });
 

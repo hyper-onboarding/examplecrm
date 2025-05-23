@@ -1,7 +1,7 @@
 # File Structure Guidelines
 
 ## Core File Structure Principles
-Twenty follows a modular and organized file structure that promotes maintainability and scalability. This document outlines our file organization conventions and best practices.
+ExampleCRM follows a modular and organized file structure that promotes maintainability and scalability. This document outlines our file organization conventions and best practices.
 
 ## Component Organization
 
@@ -204,4 +204,4 @@ Twenty follows a modular and organized file structure that promotes maintainabil
   ├── UserProfile.test.tsx
   ├── UserProfile.stories.tsx
   └── types.ts
-  ``` 
+  ```

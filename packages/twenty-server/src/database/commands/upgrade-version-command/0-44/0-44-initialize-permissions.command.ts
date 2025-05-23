@@ -2,13 +2,13 @@ import { InjectRepository } from '@nestjs/typeorm';
 
 import chalk from 'chalk';
 import { Command } from 'nest-commander';
-import { Repository } from 'typeorm';
 import { isDefined } from 'twenty-shared/utils';
+import { Repository } from 'typeorm';
 
 import {
-  ActiveOrSuspendedWorkspacesMigrationCommandOptions,
-  ActiveOrSuspendedWorkspacesMigrationCommandRunner,
-  RunOnWorkspaceArgs,
+    ActiveOrSuspendedWorkspacesMigrationCommandOptions,
+    ActiveOrSuspendedWorkspacesMigrationCommandRunner,
+    RunOnWorkspaceArgs,
 } from 'src/database/commands/command-runners/active-or-suspended-workspaces-migration.command-runner';
 import { UserWorkspace } from 'src/engine/core-modules/user-workspace/user-workspace.entity';
 import { Workspace } from 'src/engine/core-modules/workspace/workspace.entity';
@@ -16,7 +16,7 @@ import { ADMIN_ROLE_LABEL } from 'src/engine/metadata-modules/permissions/consta
 import { MEMBER_ROLE_LABEL } from 'src/engine/metadata-modules/permissions/constants/member-role-label.constants';
 import { RoleService } from 'src/engine/metadata-modules/role/role.service';
 import { UserRoleService } from 'src/engine/metadata-modules/user-role/user-role.service';
-import { TwentyORMGlobalManager } from 'src/engine/twenty-orm/twenty-orm-global.manager';
+import { ExampleCRMORMGlobalManager } from 'src/engine/twenty-orm/twenty-orm-global.manager';
 
 @Command({
   name: 'upgrade:0-44:initialize-permissions',
@@ -28,7 +28,7 @@ export class InitializePermissionsCommand extends ActiveOrSuspendedWorkspacesMig
     protected readonly workspaceRepository: Repository<Workspace>,
     @InjectRepository(UserWorkspace, 'core')
     protected readonly userWorkspaceRepository: Repository<UserWorkspace>,
-    protected readonly twentyORMGlobalManager: TwentyORMGlobalManager,
+    protected readonly twentyORMGlobalManager: ExampleCRMORMGlobalManager,
     private readonly roleService: RoleService,
     private readonly userRoleService: UserRoleService,
   ) {

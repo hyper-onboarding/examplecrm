@@ -3,7 +3,7 @@ import { Injectable } from '@nestjs/common';
 import { In } from 'typeorm';
 
 import { WorkspaceEntityManager } from 'src/engine/twenty-orm/entity-manager/workspace-entity-manager';
-import { TwentyORMGlobalManager } from 'src/engine/twenty-orm/twenty-orm-global.manager';
+import { ExampleCRMORMGlobalManager } from 'src/engine/twenty-orm/twenty-orm-global.manager';
 import { MessageChannelWorkspaceEntity } from 'src/modules/messaging/common/standard-objects/message-channel.workspace-entity';
 import { MessageFolderWorkspaceEntity } from 'src/modules/messaging/common/standard-objects/message-folder.workspace-entity';
 
@@ -16,7 +16,7 @@ export type ResetMessageFoldersInput = {
 @Injectable()
 export class ResetMessageFolderService {
   constructor(
-    private readonly twentyORMGlobalManager: TwentyORMGlobalManager,
+    private readonly twentyORMGlobalManager: ExampleCRMORMGlobalManager,
   ) {}
 
   async resetMessageFolders(input: ResetMessageFoldersInput): Promise<void> {

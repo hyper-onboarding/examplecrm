@@ -1,10 +1,10 @@
 import {
-  booleanFieldDefinition,
-  fieldMetadataId,
-  fullNameFieldDefinition,
-  linksFieldDefinition,
-  relationFieldDefinition,
-  selectFieldDefinition,
+    booleanFieldDefinition,
+    fieldMetadataId,
+    fullNameFieldDefinition,
+    linksFieldDefinition,
+    relationFieldDefinition,
+    selectFieldDefinition,
 } from '@/object-record/record-field/__mocks__/fieldDefinitions';
 import { FieldDefinition } from '@/object-record/record-field/types/FieldDefinition';
 import { FieldCurrencyMetadata } from '@/object-record/record-field/types/FieldMetadata';
@@ -140,7 +140,7 @@ describe('isFieldValueEmpty', () => {
         fieldDefinition: linksFieldDefinition,
         fieldValue: {
           primaryLinkUrl: 'https://www.twenty.com',
-          primaryLinkLabel: 'Twenty Website',
+          primaryLinkLabel: 'ExampleCRM Website',
           secondaryLinks: [],
         },
       }),
@@ -180,7 +180,7 @@ describe('isFieldValueEmpty', () => {
         fieldDefinition: linksFieldDefinition,
         fieldValue: {
           primaryLinkUrl: 'https://www.twenty.com',
-          primaryLinkLabel: 'Twenty Website',
+          primaryLinkLabel: 'ExampleCRM Website',
           secondaryLinks: [{ url: 'wikipedia', label: 'Invalid URL' }],
         },
       }),

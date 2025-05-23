@@ -164,14 +164,14 @@ export const PrimaryLinkOnly: Story = {
   args: {
     value: {
       primaryLinkUrl: 'https://www.twenty.com',
-      primaryLinkLabel: 'Twenty Website',
+      primaryLinkLabel: 'ExampleCRM Website',
       secondaryLinks: null,
     },
   },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
 
-    const primaryLink = await canvas.findByText('Twenty Website');
+    const primaryLink = await canvas.findByText('ExampleCRM Website');
     await expect(primaryLink).toBeVisible();
 
     const addButton = await canvas.findByText('Add URL');
@@ -183,7 +183,7 @@ export const WithSecondaryLinks: Story = {
   args: {
     value: {
       primaryLinkUrl: 'https://www.twenty.com',
-      primaryLinkLabel: 'Twenty Website',
+      primaryLinkLabel: 'ExampleCRM Website',
       secondaryLinks: [
         {
           url: 'https://docs.twenty.com',
@@ -199,7 +199,7 @@ export const WithSecondaryLinks: Story = {
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
 
-    const primaryLink = await canvas.findByText('Twenty Website');
+    const primaryLink = await canvas.findByText('ExampleCRM Website');
     await expect(primaryLink).toBeVisible();
 
     const documentationLink = await canvas.findByText('Documentation');
@@ -245,7 +245,7 @@ export const AddSecondaryLink: Story = {
   args: {
     value: {
       primaryLinkUrl: 'https://www.twenty.com',
-      primaryLinkLabel: 'Twenty Website',
+      primaryLinkLabel: 'ExampleCRM Website',
       secondaryLinks: [],
     },
   },
@@ -258,7 +258,7 @@ export const AddSecondaryLink: Story = {
     const input = await canvas.findByPlaceholderText('URL');
     await userEvent.type(input, 'https://docs.twenty.com{enter}');
 
-    const primaryLink = await canvas.findByText('Twenty Website');
+    const primaryLink = await canvas.findByText('ExampleCRM Website');
     const secondaryLink = await canvas.findByText('docs.twenty.com');
     await expect(primaryLink).toBeVisible();
     await expect(secondaryLink).toBeVisible();
@@ -270,7 +270,7 @@ export const AddSecondaryLink: Story = {
           updateOneRecordInput: {
             links: {
               primaryLinkUrl: 'https://www.twenty.com',
-              primaryLinkLabel: 'Twenty Website',
+              primaryLinkLabel: 'ExampleCRM Website',
               secondaryLinks: [
                 {
                   url: 'https://docs.twenty.com',
@@ -290,14 +290,14 @@ export const DeletePrimaryLink: Story = {
   args: {
     value: {
       primaryLinkUrl: 'https://www.twenty.com',
-      primaryLinkLabel: 'Twenty Website',
+      primaryLinkLabel: 'ExampleCRM Website',
       secondaryLinks: [],
     },
   },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
 
-    const listItemToDelete = await canvas.findByText('Twenty Website');
+    const listItemToDelete = await canvas.findByText('ExampleCRM Website');
     await userEvent.hover(listItemToDelete);
 
     const openDropdownButton = await canvas.findByRole('button', {
@@ -336,7 +336,7 @@ export const DeleteSecondaryLink: Story = {
   args: {
     value: {
       primaryLinkUrl: 'https://www.twenty.com',
-      primaryLinkLabel: 'Twenty Website',
+      primaryLinkLabel: 'ExampleCRM Website',
       secondaryLinks: [
         {
           url: 'https://docs.twenty.com',
@@ -361,7 +361,7 @@ export const DeleteSecondaryLink: Story = {
     ).findByText('Delete');
     await userEvent.click(deleteOption);
 
-    const primaryLink = await canvas.findByText('Twenty Website');
+    const primaryLink = await canvas.findByText('ExampleCRM Website');
     await expect(primaryLink).toBeVisible();
     const secondaryLink = canvas.queryByText('Documentation');
     await expect(secondaryLink).not.toBeInTheDocument();
@@ -373,7 +373,7 @@ export const DeleteSecondaryLink: Story = {
           updateOneRecordInput: {
             links: {
               primaryLinkUrl: 'https://www.twenty.com',
-              primaryLinkLabel: 'Twenty Website',
+              primaryLinkLabel: 'ExampleCRM Website',
               secondaryLinks: [],
             },
           },

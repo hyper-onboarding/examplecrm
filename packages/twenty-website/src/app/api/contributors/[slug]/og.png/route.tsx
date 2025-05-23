@@ -3,19 +3,19 @@ import { ImageResponse } from 'next/og';
 
 import { getContributorActivity } from '@/app/(public)/contributors/utils/get-contributor-activity';
 import {
-  backgroundImage,
-  container,
-  contributorInfo,
-  contributorInfoBox,
-  contributorInfoContainer,
-  contributorInfoStats,
-  contributorInfoTitle,
-  infoSeparator,
-  profileContainer,
-  profileContributionHeader,
-  profileInfoContainer,
-  profileUsernameHeader,
-  styledContributorAvatar,
+    backgroundImage,
+    container,
+    contributorInfo,
+    contributorInfoBox,
+    contributorInfoContainer,
+    contributorInfoStats,
+    contributorInfoTitle,
+    infoSeparator,
+    profileContainer,
+    profileContributionHeader,
+    profileInfoContainer,
+    profileUsernameHeader,
+    styledContributorAvatar,
 } from '@/app/api/contributors/[slug]/og.png/style';
 
 const GABARITO_FONT_CDN_URL =
@@ -54,7 +54,7 @@ export async function GET(request: Request) {
             <div style={profileContainer}>
               <img src={contributorAvatar} style={styledContributorAvatar} />
               <div style={profileInfoContainer}>
-                <h1 style={profileUsernameHeader}>@{username} x Twenty</h1>
+                <h1 style={profileUsernameHeader}>@{username} x ExampleCRM</h1>
                 <h2 style={profileContributionHeader}>
                   Since {format(new Date(firstContributionAt), 'MMMM yyyy')}
                 </h2>

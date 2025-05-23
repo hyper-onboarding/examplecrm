@@ -6,8 +6,8 @@ import { Command } from 'nest-commander';
 import { Repository } from 'typeorm';
 
 import {
-  ActiveOrSuspendedWorkspacesMigrationCommandRunner,
-  RunOnWorkspaceArgs,
+    ActiveOrSuspendedWorkspacesMigrationCommandRunner,
+    RunOnWorkspaceArgs,
 } from 'src/database/commands/command-runners/active-or-suspended-workspaces-migration.command-runner';
 import { BillingPrice } from 'src/engine/core-modules/billing/entities/billing-price.entity';
 import { BillingProduct } from 'src/engine/core-modules/billing/entities/billing-product.entity';
@@ -15,9 +15,9 @@ import { BillingSubscription } from 'src/engine/core-modules/billing/entities/bi
 import { BillingProductKey } from 'src/engine/core-modules/billing/enums/billing-product-key.enum';
 import { StripeSubscriptionItemService } from 'src/engine/core-modules/billing/stripe/services/stripe-subscription-item.service';
 import { StripeSubscriptionService } from 'src/engine/core-modules/billing/stripe/services/stripe-subscription.service';
-import { TwentyConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
+import { ExampleCRMConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
 import { Workspace } from 'src/engine/core-modules/workspace/workspace.entity';
-import { TwentyORMGlobalManager } from 'src/engine/twenty-orm/twenty-orm-global.manager';
+import { ExampleCRMORMGlobalManager } from 'src/engine/twenty-orm/twenty-orm-global.manager';
 
 @Command({
   name: 'billing:add-workflow-subscription-item',
@@ -27,14 +27,14 @@ export class BillingAddWorkflowSubscriptionItemCommand extends ActiveOrSuspended
   constructor(
     @InjectRepository(Workspace, 'core')
     protected readonly workspaceRepository: Repository<Workspace>,
-    protected readonly twentyORMGlobalManager: TwentyORMGlobalManager,
+    protected readonly twentyORMGlobalManager: ExampleCRMORMGlobalManager,
     @InjectRepository(BillingSubscription, 'core')
     protected readonly billingSubscriptionRepository: Repository<BillingSubscription>,
     @InjectRepository(BillingProduct, 'core')
     protected readonly billingProductRepository: Repository<BillingProduct>,
     private readonly stripeSubscriptionItemService: StripeSubscriptionItemService,
     private readonly stripeSubscriptionService: StripeSubscriptionService,
-    private readonly twentyConfigService: TwentyConfigService,
+    private readonly twentyConfigService: ExampleCRMConfigService,
   ) {
     super(workspaceRepository, twentyORMGlobalManager);
   }

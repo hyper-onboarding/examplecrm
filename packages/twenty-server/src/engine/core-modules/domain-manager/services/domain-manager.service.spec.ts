@@ -3,7 +3,7 @@ import { getRepositoryToken } from '@nestjs/typeorm';
 
 import { Repository } from 'typeorm';
 
-import { TwentyConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
+import { ExampleCRMConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
 import { Workspace } from 'src/engine/core-modules/workspace/workspace.entity';
 
 import { DomainManagerService } from './domain-manager.service';
@@ -60,7 +60,7 @@ describe('DomainManagerService', () => {
     });
   });
   let domainManagerService: DomainManagerService;
-  let twentyConfigService: TwentyConfigService;
+  let twentyConfigService: ExampleCRMConfigService;
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
@@ -71,7 +71,7 @@ describe('DomainManagerService', () => {
           useClass: Repository,
         },
         {
-          provide: TwentyConfigService,
+          provide: ExampleCRMConfigService,
           useValue: {
             get: jest.fn(),
           },
@@ -81,7 +81,7 @@ describe('DomainManagerService', () => {
 
     domainManagerService =
       module.get<DomainManagerService>(DomainManagerService);
-    twentyConfigService = module.get<TwentyConfigService>(TwentyConfigService);
+    twentyConfigService = module.get<ExampleCRMConfigService>(ExampleCRMConfigService);
   });
 
   describe('buildBaseUrl', () => {

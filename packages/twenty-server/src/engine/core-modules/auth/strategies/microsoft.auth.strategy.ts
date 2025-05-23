@@ -6,10 +6,10 @@ import { Strategy } from 'passport-microsoft';
 import { APP_LOCALES } from 'twenty-shared/translations';
 
 import {
-  AuthException,
-  AuthExceptionCode,
+    AuthException,
+    AuthExceptionCode,
 } from 'src/engine/core-modules/auth/auth.exception';
-import { TwentyConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
+import { ExampleCRMConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
 
 export type MicrosoftRequest = Omit<
   Request,
@@ -29,7 +29,7 @@ export type MicrosoftRequest = Omit<
 };
 
 export class MicrosoftStrategy extends PassportStrategy(Strategy, 'microsoft') {
-  constructor(twentyConfigService: TwentyConfigService) {
+  constructor(twentyConfigService: ExampleCRMConfigService) {
     super({
       clientID: twentyConfigService.get('AUTH_MICROSOFT_CLIENT_ID'),
       clientSecret: twentyConfigService.get('AUTH_MICROSOFT_CLIENT_SECRET'),

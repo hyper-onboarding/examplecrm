@@ -3,14 +3,14 @@ import { Injectable } from '@nestjs/common';
 import { In, Not } from 'typeorm';
 
 import { TimelineThread } from 'src/engine/core-modules/messaging/dtos/timeline-thread.dto';
-import { TwentyORMManager } from 'src/engine/twenty-orm/twenty-orm.manager';
+import { ExampleCRMORMManager } from 'src/engine/twenty-orm/twenty-orm.manager';
 import { MessageChannelVisibility } from 'src/modules/messaging/common/standard-objects/message-channel.workspace-entity';
 import { MessageParticipantWorkspaceEntity } from 'src/modules/messaging/common/standard-objects/message-participant.workspace-entity';
 import { MessageThreadWorkspaceEntity } from 'src/modules/messaging/common/standard-objects/message-thread.workspace-entity';
 
 @Injectable()
 export class TimelineMessagingService {
-  constructor(private readonly twentyORMManager: TwentyORMManager) {}
+  constructor(private readonly twentyORMManager: ExampleCRMORMManager) {}
 
   public async getAndCountMessageThreads(
     personIds: string[],

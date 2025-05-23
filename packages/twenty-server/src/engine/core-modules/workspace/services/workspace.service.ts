@@ -19,28 +19,28 @@ import { DomainManagerService } from 'src/engine/core-modules/domain-manager/ser
 import { ExceptionHandlerService } from 'src/engine/core-modules/exception-handler/exception-handler.service';
 import { FeatureFlagService } from 'src/engine/core-modules/feature-flag/services/feature-flag.service';
 import {
-  FileWorkspaceFolderDeletionJob,
-  FileWorkspaceFolderDeletionJobData,
+    FileWorkspaceFolderDeletionJob,
+    FileWorkspaceFolderDeletionJobData,
 } from 'src/engine/core-modules/file/jobs/file-workspace-folder-deletion.job';
 import { InjectMessageQueue } from 'src/engine/core-modules/message-queue/decorators/message-queue.decorator';
 import { MessageQueue } from 'src/engine/core-modules/message-queue/message-queue.constants';
 import { MessageQueueService } from 'src/engine/core-modules/message-queue/services/message-queue.service';
-import { TwentyConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
+import { ExampleCRMConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
 import { UserWorkspace } from 'src/engine/core-modules/user-workspace/user-workspace.entity';
 import { UserWorkspaceService } from 'src/engine/core-modules/user-workspace/user-workspace.service';
 import { User } from 'src/engine/core-modules/user/user.entity';
 import { ActivateWorkspaceInput } from 'src/engine/core-modules/workspace/dtos/activate-workspace-input';
 import { Workspace } from 'src/engine/core-modules/workspace/workspace.entity';
 import {
-  WorkspaceException,
-  WorkspaceExceptionCode,
+    WorkspaceException,
+    WorkspaceExceptionCode,
 } from 'src/engine/core-modules/workspace/workspace.exception';
 import { workspaceValidator } from 'src/engine/core-modules/workspace/workspace.validate';
 import { SettingPermissionType } from 'src/engine/metadata-modules/permissions/constants/setting-permission-type.constants';
 import {
-  PermissionsException,
-  PermissionsExceptionCode,
-  PermissionsExceptionMessage,
+    PermissionsException,
+    PermissionsExceptionCode,
+    PermissionsExceptionMessage,
 } from 'src/engine/metadata-modules/permissions/permissions.exception';
 import { PermissionsService } from 'src/engine/metadata-modules/permissions/permissions.service';
 import { WorkspaceCacheStorageService } from 'src/engine/workspace-cache-storage/workspace-cache-storage.service';
@@ -66,7 +66,7 @@ export class WorkspaceService extends TypeOrmQueryService<Workspace> {
     private readonly billingSubscriptionService: BillingSubscriptionService,
     private readonly billingService: BillingService,
     private readonly userWorkspaceService: UserWorkspaceService,
-    private readonly twentyConfigService: TwentyConfigService,
+    private readonly twentyConfigService: ExampleCRMConfigService,
     private readonly domainManagerService: DomainManagerService,
     private readonly exceptionHandlerService: ExceptionHandlerService,
     private readonly permissionsService: PermissionsService,

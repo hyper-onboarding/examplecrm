@@ -4,13 +4,13 @@ import { getRepositoryToken } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 
 import {
-  AppToken,
-  AppTokenType,
+    AppToken,
+    AppTokenType,
 } from 'src/engine/core-modules/app-token/app-token.entity';
 import { DomainManagerService } from 'src/engine/core-modules/domain-manager/services/domain-manager.service';
 import { EmailService } from 'src/engine/core-modules/email/email.service';
 import { OnboardingService } from 'src/engine/core-modules/onboarding/onboarding.service';
-import { TwentyConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
+import { ExampleCRMConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
 import { UserWorkspace } from 'src/engine/core-modules/user-workspace/user-workspace.entity';
 import { User } from 'src/engine/core-modules/user/user.entity';
 import { WorkspaceInvitationException } from 'src/engine/core-modules/workspace-invitation/workspace-invitation.exception';
@@ -26,7 +26,7 @@ describe('WorkspaceInvitationService', () => {
   let service: WorkspaceInvitationService;
   let appTokenRepository: Repository<AppToken>;
   let userWorkspaceRepository: Repository<UserWorkspace>;
-  let twentyConfigService: TwentyConfigService;
+  let twentyConfigService: ExampleCRMConfigService;
   let emailService: EmailService;
   let onboardingService: OnboardingService;
 
@@ -55,7 +55,7 @@ describe('WorkspaceInvitationService', () => {
           },
         },
         {
-          provide: TwentyConfigService,
+          provide: ExampleCRMConfigService,
           useValue: {
             get: jest.fn(),
           },
@@ -94,7 +94,7 @@ describe('WorkspaceInvitationService', () => {
     userWorkspaceRepository = module.get<Repository<UserWorkspace>>(
       getRepositoryToken(UserWorkspace, 'core'),
     );
-    twentyConfigService = module.get<TwentyConfigService>(TwentyConfigService);
+    twentyConfigService = module.get<ExampleCRMConfigService>(ExampleCRMConfigService);
     emailService = module.get<EmailService>(EmailService);
     onboardingService = module.get<OnboardingService>(OnboardingService);
   });

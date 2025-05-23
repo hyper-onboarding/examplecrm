@@ -2,18 +2,18 @@ import { ExecutionContext } from '@nestjs/common';
 
 import * as crypto from 'crypto';
 
-import { TwentyConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
+import { ExampleCRMConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
 
 import { CloudflareSecretMatchGuard } from './cloudflare-secret.guard';
 
 describe('CloudflareSecretMatchGuard.canActivate', () => {
   let guard: CloudflareSecretMatchGuard;
-  let twentyConfigService: TwentyConfigService;
+  let twentyConfigService: ExampleCRMConfigService;
 
   beforeEach(() => {
     twentyConfigService = {
       get: jest.fn(),
-    } as unknown as TwentyConfigService;
+    } as unknown as ExampleCRMConfigService;
     guard = new CloudflareSecretMatchGuard(twentyConfigService);
   });
 

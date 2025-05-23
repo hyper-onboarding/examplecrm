@@ -7,7 +7,7 @@ import { WorkspaceRepository } from 'src/engine/twenty-orm/repository/workspace.
 import { convertClassNameToObjectMetadataName } from 'src/engine/workspace-manager/workspace-sync-metadata/utils/convert-class-to-object-metadata-name.util';
 
 @Injectable()
-export class TwentyORMGlobalManager {
+export class ExampleCRMORMGlobalManager {
   constructor(
     private readonly workspaceDataSourceFactory: WorkspaceDatasourceFactory,
   ) {}

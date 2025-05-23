@@ -6,16 +6,16 @@ import { isDefined } from 'twenty-shared/utils';
 import { Repository } from 'typeorm';
 
 import {
-  ActiveOrSuspendedWorkspacesMigrationCommandRunner,
-  RunOnWorkspaceArgs,
+    ActiveOrSuspendedWorkspacesMigrationCommandRunner,
+    RunOnWorkspaceArgs,
 } from 'src/database/commands/command-runners/active-or-suspended-workspaces-migration.command-runner';
-import { TwentyConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
+import { ExampleCRMConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
 import { Workspace } from 'src/engine/core-modules/workspace/workspace.entity';
-import { TwentyORMGlobalManager } from 'src/engine/twenty-orm/twenty-orm-global.manager';
+import { ExampleCRMORMGlobalManager } from 'src/engine/twenty-orm/twenty-orm-global.manager';
 import { SyncWorkspaceMetadataCommand } from 'src/engine/workspace-manager/workspace-sync-metadata/commands/sync-workspace-metadata.command';
 import {
-  CompareVersionMajorAndMinorReturnType,
-  compareVersionMajorAndMinor,
+    CompareVersionMajorAndMinorReturnType,
+    compareVersionMajorAndMinor,
 } from 'src/utils/version/compare-version-minor-and-major';
 import { getPreviousVersion } from 'src/utils/version/get-previous-version';
 
@@ -34,8 +34,8 @@ export abstract class UpgradeCommandRunner extends ActiveOrSuspendedWorkspacesMi
   constructor(
     @InjectRepository(Workspace, 'core')
     protected readonly workspaceRepository: Repository<Workspace>,
-    protected readonly twentyConfigService: TwentyConfigService,
-    protected readonly twentyORMGlobalManager: TwentyORMGlobalManager,
+    protected readonly twentyConfigService: ExampleCRMConfigService,
+    protected readonly twentyORMGlobalManager: ExampleCRMORMGlobalManager,
     protected readonly syncWorkspaceMetadataCommand: SyncWorkspaceMetadataCommand,
   ) {
     super(workspaceRepository, twentyORMGlobalManager);

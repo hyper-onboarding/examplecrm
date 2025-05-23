@@ -1,7 +1,7 @@
 # Testing Guidelines
 
 ## Core Testing Principles
-Twenty follows a comprehensive testing strategy across all packages, ensuring high-quality, maintainable code. This document outlines our testing conventions and best practices.
+ExampleCRM follows a comprehensive testing strategy across all packages, ensuring high-quality, maintainable code. This document outlines our testing conventions and best practices.
 
 ## Testing Stack
 
@@ -64,11 +64,11 @@ Twenty follows a comprehensive testing strategy across all packages, ensuring hi
   // ✅ Correct
   test('useUser hook manages user state', () => {
     const { result } = renderHook(() => useUser());
-    
+
     act(() => {
       result.current.setUser({ id: '1', name: 'John' });
     });
-    
+
     expect(result.current.user).toEqual({ id: '1', name: 'John' });
   });
   ```
@@ -100,7 +100,7 @@ Twenty follows a comprehensive testing strategy across all packages, ensuring hi
       const response = await request(app)
         .get('/api/users/1')
         .expect(200);
-      
+
       expect(response.body).toEqual({
         id: '1',
         name: 'John Doe',
@@ -222,11 +222,11 @@ Twenty follows a comprehensive testing strategy across all packages, ensuring hi
   // ✅ Correct
   test('form validation', async () => {
     render(<UserForm />);
-    
+
     // Negative case
     await userEvent.click(screen.getByText('Submit'));
     expect(screen.getByText('Name is required')).toBeInTheDocument();
-    
+
     // Positive case
     await userEvent.type(screen.getByLabelText('Name'), 'John Doe');
     await userEvent.click(screen.getByText('Submit'));
@@ -250,4 +250,4 @@ Twenty follows a comprehensive testing strategy across all packages, ensuring hi
       },
     },
   };
-  ``` 
+  ```

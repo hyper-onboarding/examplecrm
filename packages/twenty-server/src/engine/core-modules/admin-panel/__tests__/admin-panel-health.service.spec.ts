@@ -17,7 +17,7 @@ import { RedisHealthIndicator } from 'src/engine/core-modules/health/indicators/
 import { WorkerHealthIndicator } from 'src/engine/core-modules/health/indicators/worker.health';
 import { MessageQueue } from 'src/engine/core-modules/message-queue/message-queue.constants';
 import { RedisClientService } from 'src/engine/core-modules/redis-client/redis-client.service';
-import { TwentyConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
+import { ExampleCRMConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
 
 jest.mock('bullmq');
 
@@ -29,7 +29,7 @@ describe('AdminPanelHealthService', () => {
   let connectedAccountHealth: jest.Mocked<ConnectedAccountHealth>;
   let appHealth: jest.Mocked<AppHealthIndicator>;
   let redisClient: jest.Mocked<RedisClientService>;
-  let twentyConfigService: jest.Mocked<TwentyConfigService>;
+  let twentyConfigService: jest.Mocked<ExampleCRMConfigService>;
   let loggerSpy: jest.SpyInstance;
 
   beforeEach(async () => {
@@ -58,7 +58,7 @@ describe('AdminPanelHealthService', () => {
         { provide: ConnectedAccountHealth, useValue: connectedAccountHealth },
         { provide: AppHealthIndicator, useValue: appHealth },
         { provide: RedisClientService, useValue: redisClient },
-        { provide: TwentyConfigService, useValue: twentyConfigService },
+        { provide: ExampleCRMConfigService, useValue: twentyConfigService },
       ],
     }).compile();
 

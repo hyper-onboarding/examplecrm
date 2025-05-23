@@ -20,25 +20,25 @@ import { DeleteOneFieldInput } from 'src/engine/metadata-modules/field-metadata/
 import { FieldMetadataDTO } from 'src/engine/metadata-modules/field-metadata/dtos/field-metadata.dto';
 import { FieldStandardOverridesDTO } from 'src/engine/metadata-modules/field-metadata/dtos/field-standard-overrides.dto';
 import {
-  FieldMetadataComplexOption,
-  FieldMetadataDefaultOption,
+    FieldMetadataComplexOption,
+    FieldMetadataDefaultOption,
 } from 'src/engine/metadata-modules/field-metadata/dtos/options.input';
 import {
-  RelationDefinitionDTO,
-  RelationDefinitionType,
+    RelationDefinitionDTO,
+    RelationDefinitionType,
 } from 'src/engine/metadata-modules/field-metadata/dtos/relation-definition.dto';
 import { UpdateFieldInput } from 'src/engine/metadata-modules/field-metadata/dtos/update-field.input';
 import {
-  FieldMetadataException,
-  FieldMetadataExceptionCode,
+    FieldMetadataException,
+    FieldMetadataExceptionCode,
 } from 'src/engine/metadata-modules/field-metadata/field-metadata.exception';
 import { FieldMetadataEnumValidationService } from 'src/engine/metadata-modules/field-metadata/services/field-metadata-enum-validation.service';
 import { FieldMetadataRelatedRecordsService } from 'src/engine/metadata-modules/field-metadata/services/field-metadata-related-records.service';
 import { assertDoesNotNullifyDefaultValueForNonNullableField } from 'src/engine/metadata-modules/field-metadata/utils/assert-does-not-nullify-default-value-for-non-nullable-field.util';
 import { checkCanDeactivateFieldOrThrow } from 'src/engine/metadata-modules/field-metadata/utils/check-can-deactivate-field-or-throw';
 import {
-  computeColumnName,
-  computeCompositeColumnName,
+    computeColumnName,
+    computeCompositeColumnName,
 } from 'src/engine/metadata-modules/field-metadata/utils/compute-column-name.util';
 import { generateNullable } from 'src/engine/metadata-modules/field-metadata/utils/generate-nullable';
 import { isCompositeFieldMetadataType } from 'src/engine/metadata-modules/field-metadata/utils/is-composite-field-metadata-type.util';
@@ -46,8 +46,8 @@ import { isSelectFieldMetadataType } from 'src/engine/metadata-modules/field-met
 import { ObjectMetadataEntity } from 'src/engine/metadata-modules/object-metadata/object-metadata.entity';
 import { assertMutationNotOnRemoteObject } from 'src/engine/metadata-modules/object-metadata/utils/assert-mutation-not-on-remote-object.util';
 import {
-  RelationMetadataEntity,
-  RelationMetadataType,
+    RelationMetadataEntity,
+    RelationMetadataType,
 } from 'src/engine/metadata-modules/relation-metadata/relation-metadata.entity';
 import { InvalidMetadataException } from 'src/engine/metadata-modules/utils/exceptions/invalid-metadata.exception';
 import { validateFieldNameAvailabilityOrThrow } from 'src/engine/metadata-modules/utils/validate-field-name-availability.utils';
@@ -56,15 +56,15 @@ import { validateNameAndLabelAreSyncOrThrow } from 'src/engine/metadata-modules/
 import { WorkspaceMetadataVersionService } from 'src/engine/metadata-modules/workspace-metadata-version/services/workspace-metadata-version.service';
 import { generateMigrationName } from 'src/engine/metadata-modules/workspace-migration/utils/generate-migration-name.util';
 import {
-  WorkspaceMigrationColumnActionType,
-  WorkspaceMigrationColumnDrop,
-  WorkspaceMigrationTableAction,
-  WorkspaceMigrationTableActionType,
+    WorkspaceMigrationColumnActionType,
+    WorkspaceMigrationColumnDrop,
+    WorkspaceMigrationTableAction,
+    WorkspaceMigrationTableActionType,
 } from 'src/engine/metadata-modules/workspace-migration/workspace-migration.entity';
 import { WorkspaceMigrationFactory } from 'src/engine/metadata-modules/workspace-migration/workspace-migration.factory';
 import { WorkspaceMigrationService } from 'src/engine/metadata-modules/workspace-migration/workspace-migration.service';
 import { WorkspaceEntityManager } from 'src/engine/twenty-orm/entity-manager/workspace-entity-manager';
-import { TwentyORMGlobalManager } from 'src/engine/twenty-orm/twenty-orm-global.manager';
+import { ExampleCRMORMGlobalManager } from 'src/engine/twenty-orm/twenty-orm-global.manager';
 import { computeObjectTargetTable } from 'src/engine/utils/compute-object-target-table.util';
 import { WorkspaceMigrationRunnerService } from 'src/engine/workspace-manager/workspace-migration-runner/workspace-migration-runner.service';
 import { ViewService } from 'src/modules/view/services/view.service';
@@ -100,7 +100,7 @@ export class FieldMetadataService extends TypeOrmQueryService<FieldMetadataEntit
     private readonly workspaceMigrationRunnerService: WorkspaceMigrationRunnerService,
     private readonly fieldMetadataEnumValidationService: FieldMetadataEnumValidationService,
     private readonly workspaceMetadataVersionService: WorkspaceMetadataVersionService,
-    private readonly twentyORMGlobalManager: TwentyORMGlobalManager,
+    private readonly twentyORMGlobalManager: ExampleCRMORMGlobalManager,
     private readonly fieldMetadataValidationService: FieldMetadataValidationService,
     private readonly fieldMetadataRelatedRecordsService: FieldMetadataRelatedRecordsService,
     private readonly viewService: ViewService,

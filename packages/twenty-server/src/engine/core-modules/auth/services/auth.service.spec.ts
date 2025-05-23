@@ -6,8 +6,8 @@ import { Repository } from 'typeorm';
 
 import { AppToken } from 'src/engine/core-modules/app-token/app-token.entity';
 import {
-  AuthException,
-  AuthExceptionCode,
+    AuthException,
+    AuthExceptionCode,
 } from 'src/engine/core-modules/auth/auth.exception';
 import { AuthSsoService } from 'src/engine/core-modules/auth/services/auth-sso.service';
 import { SignInUpService } from 'src/engine/core-modules/auth/services/sign-in-up.service';
@@ -16,7 +16,7 @@ import { RefreshTokenService } from 'src/engine/core-modules/auth/token/services
 import { ExistingUserOrNewUser } from 'src/engine/core-modules/auth/types/signInUp.type';
 import { DomainManagerService } from 'src/engine/core-modules/domain-manager/services/domain-manager.service';
 import { EmailService } from 'src/engine/core-modules/email/email.service';
-import { TwentyConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
+import { ExampleCRMConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
 import { UserWorkspaceService } from 'src/engine/core-modules/user-workspace/user-workspace.service';
 import { UserService } from 'src/engine/core-modules/user/services/user.service';
 import { User } from 'src/engine/core-modules/user/user.entity';
@@ -75,7 +75,7 @@ describe('AuthService', () => {
           useValue: {},
         },
         {
-          provide: TwentyConfigService,
+          provide: ExampleCRMConfigService,
           useValue: {
             get: twentyConfigServiceGetMock,
           },

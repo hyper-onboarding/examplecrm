@@ -3,8 +3,8 @@ import { Logger } from '@nestjs/common';
 import { isDefined } from 'twenty-shared/utils';
 
 import {
-  TwentyORMException,
-  TwentyORMExceptionCode,
+    ExampleCRMORMException,
+    ExampleCRMORMExceptionCode,
 } from 'src/engine/twenty-orm/exceptions/twenty-orm.exception';
 
 type CacheResult<T, U> = {
@@ -29,7 +29,7 @@ const getFromCacheWithRecompute = async <T, U>({
     ignoreLock?: boolean;
   }) => Promise<void>;
   cachedEntityName: string;
-  exceptionCode: TwentyORMExceptionCode;
+  exceptionCode: ExampleCRMORMExceptionCode;
   logger: Logger;
 }): Promise<CacheResult<T, U>> => {
   let cachedVersion: T | undefined;
@@ -72,7 +72,7 @@ const getFromCacheWithRecompute = async <T, U>({
           cachedData,
         },
       );
-      throw new TwentyORMException(
+      throw new ExampleCRMORMException(
         `${cachedEntityName} not found after recompute for workspace ${workspaceId} (missingData: ${!isDefined(cachedData)}, missingVersion: ${expectCacheVersion && !isDefined(cachedVersion)})`,
         exceptionCode,
       );

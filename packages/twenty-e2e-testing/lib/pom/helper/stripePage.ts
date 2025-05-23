@@ -8,7 +8,7 @@ export class StripePage {
   private readonly startTrialButton: Locator;
   private readonly cancelSubscriptionButton: Locator;
   private readonly confirmButton: Locator;
-  private readonly returnToTwentyLink: Locator;
+  private readonly returnToExampleCRMLink: Locator;
 
   constructor(public readonly page: Page) {
     this.cardNumberInput = page.getByPlaceholder('1234 1234 1234 1234');
@@ -20,7 +20,7 @@ export class StripePage {
       'a[data-test="cancel-subscription"]',
     );
     this.confirmButton = page.getByTestId('confirm');
-    this.returnToTwentyLink = page.getByTestId('return-to-business-link');
+    this.returnToExampleCRMLink = page.getByTestId('return-to-business-link');
   }
 
   async fillCardNumber(number: string) {
@@ -49,7 +49,7 @@ export class StripePage {
     await this.page.getByTestId('cancellation_reason_cancel').click();
   }
 
-  async returnToTwenty() {
-    await this.returnToTwentyLink.click();
+  async returnToExampleCRM() {
+    await this.returnToExampleCRMLink.click();
   }
 }

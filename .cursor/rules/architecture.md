@@ -1,7 +1,7 @@
-# Twenty Project Architecture
+# ExampleCRM Project Architecture
 
 ## Overview
-Twenty is an open-source CRM built with modern technologies, using TypeScript for both frontend and backend development. This document outlines the core architectural decisions and structure of the project.
+ExampleCRM is an open-source CRM built with modern technologies, using TypeScript for both frontend and backend development. This document outlines the core architectural decisions and structure of the project.
 
 ## Monorepo Structure
 The project is organized as a monorepo using nx, with the following main packages:
@@ -48,7 +48,7 @@ The project is organized as a monorepo using nx, with the following main package
   - TypeORM: For core and metadata schemas
     - Purpose: Type-safe database operations for system data
     - Benefits: Strong typing, migration support
-  - TwentyORM: For workspace schemas
+  - ExampleCRMORM: For workspace schemas
     - Purpose: Manages tenant-specific entities and customizations
     - Benefits: Dynamic entity management, per-tenant customization
     - Example: Entities like CompanyWorkspaceEntity are managed per workspace
@@ -94,4 +94,4 @@ The project is organized as a monorepo using nx, with the following main package
 
 - End-to-End Testing:
   - Framework: Playwright
-  - Coverage: Critical user journeys 
+  - Coverage: Critical user journeys

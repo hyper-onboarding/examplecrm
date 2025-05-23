@@ -2,13 +2,13 @@ import { Injectable, OnModuleDestroy } from '@nestjs/common';
 
 import IORedis from 'ioredis';
 
-import { TwentyConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
+import { ExampleCRMConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
 
 @Injectable()
 export class RedisClientService implements OnModuleDestroy {
   private redisClient: IORedis | null = null;
 
-  constructor(private readonly twentyConfigService: TwentyConfigService) {}
+  constructor(private readonly twentyConfigService: ExampleCRMConfigService) {}
 
   getClient() {
     if (!this.redisClient) {

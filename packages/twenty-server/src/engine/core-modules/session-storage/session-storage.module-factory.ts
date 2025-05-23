@@ -5,10 +5,10 @@ import session from 'express-session';
 import { createClient } from 'redis';
 
 import { CacheStorageType } from 'src/engine/core-modules/cache-storage/types/cache-storage-type.enum';
-import { TwentyConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
+import { ExampleCRMConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
 
 export const getSessionStorageOptions = (
-  twentyConfigService: TwentyConfigService,
+  twentyConfigService: ExampleCRMConfigService,
 ): session.SessionOptions => {
   const cacheStorageType = CacheStorageType.Redis;
 

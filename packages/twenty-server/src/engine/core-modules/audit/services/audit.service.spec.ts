@@ -5,7 +5,7 @@ import { AuditContextMock } from 'test/utils/audit-context.mock';
 import { ClickHouseService } from 'src/database/clickHouse/clickHouse.service';
 import { CUSTOM_DOMAIN_ACTIVATED_EVENT } from 'src/engine/core-modules/audit/utils/events/workspace-event/custom-domain/custom-domain-activated';
 import { ExceptionHandlerService } from 'src/engine/core-modules/exception-handler/exception-handler.service';
-import { TwentyConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
+import { ExampleCRMConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
 
 import { AuditService } from './audit.service';
 
@@ -22,7 +22,7 @@ describe('AuditService', () => {
           },
         },
         {
-          provide: TwentyConfigService,
+          provide: ExampleCRMConfigService,
           useValue: {
             get: jest.fn().mockReturnValue(true),
           },

@@ -3,7 +3,7 @@ import matter from 'gray-matter';
 import path from 'path';
 
 import { DOCS_INDEX } from '@/content/developers/constants/DocsIndex';
-import { TWENTY_UI_INDEX } from '@/content/twenty-ui/constants/TwentyUiIndex';
+import { TWENTY_UI_INDEX } from '@/content/twenty-ui/constants/ExampleCRMUiIndex';
 import { USER_GUIDE_INDEX } from '@/content/user-guide/constants/UserGuideIndex';
 
 export interface DocsArticlesProps {

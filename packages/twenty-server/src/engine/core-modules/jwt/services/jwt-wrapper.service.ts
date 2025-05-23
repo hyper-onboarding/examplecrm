@@ -9,10 +9,10 @@ import { ExtractJwt, JwtFromRequestFunction } from 'passport-jwt';
 import { isDefined } from 'twenty-shared/utils';
 
 import {
-  AuthException,
-  AuthExceptionCode,
+    AuthException,
+    AuthExceptionCode,
 } from 'src/engine/core-modules/auth/auth.exception';
-import { TwentyConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
+import { ExampleCRMConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
 
 export type WorkspaceTokenType =
   | 'ACCESS'
@@ -27,7 +27,7 @@ export type WorkspaceTokenType =
 export class JwtWrapperService {
   constructor(
     private readonly jwtService: JwtService,
-    private readonly twentyConfigService: TwentyConfigService,
+    private readonly twentyConfigService: ExampleCRMConfigService,
   ) {}
 
   sign(payload: string | object, options?: JwtSignOptions): string {

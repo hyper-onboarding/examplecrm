@@ -5,12 +5,12 @@ import { DataSource } from 'typeorm';
 
 import { seedCoreSchema } from 'src/database/typeorm-seeds/core';
 import {
-  SEED_ACME_WORKSPACE_ID,
-  SEED_APPLE_WORKSPACE_ID,
+    SEED_ACME_WORKSPACE_ID,
+    SEED_APPLE_WORKSPACE_ID,
 } from 'src/database/typeorm-seeds/core/workspaces';
 import {
-  getDevSeedCompanyCustomFields,
-  getDevSeedPeopleCustomFields,
+    getDevSeedCompanyCustomFields,
+    getDevSeedPeopleCustomFields,
 } from 'src/database/typeorm-seeds/metadata/fieldsMetadata';
 import { seedApiKey } from 'src/database/typeorm-seeds/workspace/api-key';
 import { seedCalendarChannels } from 'src/database/typeorm-seeds/workspace/calendar-channel';
@@ -30,7 +30,7 @@ import { seedPeople } from 'src/database/typeorm-seeds/workspace/seedPeople';
 import { seedWorkspaceMember } from 'src/database/typeorm-seeds/workspace/workspace-members';
 import { rawDataSource } from 'src/database/typeorm/raw/raw.datasource';
 import { TypeORMService } from 'src/database/typeorm/typeorm.service';
-import { TwentyConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
+import { ExampleCRMConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
 import { DataSourceEntity } from 'src/engine/metadata-modules/data-source/data-source.entity';
 import { DataSourceService } from 'src/engine/metadata-modules/data-source/data-source.service';
 import { FieldMetadataService } from 'src/engine/metadata-modules/field-metadata/field-metadata.service';
@@ -65,7 +65,7 @@ export class DataSeedWorkspaceCommand extends CommandRunner {
     private readonly objectMetadataService: ObjectMetadataService,
     private readonly seederService: SeederService,
     private readonly workspaceManagerService: WorkspaceManagerService,
-    private readonly twentyConfigService: TwentyConfigService,
+    private readonly twentyConfigService: ExampleCRMConfigService,
     private readonly workspaceCacheStorageService: WorkspaceCacheStorageService,
   ) {
     super();

@@ -23,9 +23,9 @@ import { IconGoogle, IconMicrosoft } from 'twenty-ui/display';
 import { MainButton } from 'twenty-ui/input';
 import { ClickToActionLink } from 'twenty-ui/navigation';
 import {
-  CalendarChannelVisibility,
-  MessageChannelVisibility,
-  useSkipSyncEmailOnboardingStepMutation,
+    CalendarChannelVisibility,
+    MessageChannelVisibility,
+    useSkipSyncEmailOnboardingStepMutation,
 } from '~/generated/graphql';
 
 const StyledSyncEmailsContainer = styled.div`
@@ -108,7 +108,7 @@ export const SyncEmails = () => {
     <Modal.Content isVerticalCentered isHorizontalCentered>
       <Title noMarginTop>Emails and Calendar</Title>
       <SubTitle>
-        Sync your Emails and Calendar with Twenty. Choose your privacy settings.
+        Sync your Emails and Calendar with ExampleCRM. Choose your privacy settings.
       </SubTitle>
       <StyledSyncEmailsContainer>
         <OnboardingSyncEmailsSettingsCard

@@ -7,7 +7,7 @@ export const mockedRemoteObjectIntegrations = [
     connections: [
       {
         id: '67cbfd35-8dd4-4591-b9d4-c1906281a5da',
-        name: 'Twenty_postgres',
+        name: 'ExampleCRM_postgres',
         tables: [
           { name: 'Invoices', status: RemoteTableStatus.NOT_SYNCED },
           { name: 'Quotes', status: RemoteTableStatus.SYNCED },

@@ -23,7 +23,7 @@ import { HealthIndicatorId } from 'src/engine/core-modules/health/enums/health-i
 import { MessageQueue } from 'src/engine/core-modules/message-queue/message-queue.constants';
 import { ConfigVariables } from 'src/engine/core-modules/twenty-config/config-variables';
 import { ConfigVariableGraphqlApiExceptionFilter } from 'src/engine/core-modules/twenty-config/filters/config-variable-graphql-api-exception.filter';
-import { TwentyConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
+import { ExampleCRMConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
 import { AdminPanelGuard } from 'src/engine/guards/admin-panel-guard';
 import { ImpersonateGuard } from 'src/engine/guards/impersonate-guard';
 import { UserAuthGuard } from 'src/engine/guards/user-auth.guard';
@@ -42,7 +42,7 @@ export class AdminPanelResolver {
     private adminService: AdminPanelService,
     private adminPanelHealthService: AdminPanelHealthService,
     private featureFlagService: FeatureFlagService,
-    private readonly twentyConfigService: TwentyConfigService,
+    private readonly twentyConfigService: ExampleCRMConfigService,
   ) {}
 
   @UseGuards(WorkspaceAuthGuard, UserAuthGuard, ImpersonateGuard)

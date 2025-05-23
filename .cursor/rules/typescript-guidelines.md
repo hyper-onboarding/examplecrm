@@ -1,7 +1,7 @@
 # TypeScript Guidelines
 
 ## Core TypeScript Principles
-Twenty enforces strict TypeScript usage to ensure type safety and maintainable code. This document outlines our TypeScript conventions and best practices.
+ExampleCRM enforces strict TypeScript usage to ensure type safety and maintainable code. This document outlines our TypeScript conventions and best practices.
 
 ## Type Safety
 
@@ -169,4 +169,4 @@ Twenty enforces strict TypeScript usage to ensure type safety and maintainable c
   type NonNullableProperties<T> = {
     [P in keyof T]: NonNullable<T[P]>;
   };
-  ``` 
+  ```

@@ -1,7 +1,7 @@
 # Translation Guidelines
 
 ## Core Translation Principles
-Twenty uses Lingui for internationalization (i18n) and Crowdin for translation management. This document outlines our translation workflow and best practices.
+ExampleCRM uses Lingui for internationalization (i18n) and Crowdin for translation management. This document outlines our translation workflow and best practices.
 
 ## Technology Stack
 
@@ -26,23 +26,23 @@ Translation files are managed in multiple packages:
   ```typescript
   // ✅ Correct - In JSX
   import { Trans } from '@lingui/react/macro';
-  
+
   const WelcomeMessage = () => (
     <h1>
-      <Trans>Welcome to Twenty</Trans>
+      <Trans>Welcome to ExampleCRM</Trans>
     </h1>
   );
 
   // ✅ Correct - Outside JSX
   import { t } from '@lingui/react/macro';
-  
+
   const getMessage = () => {
-    return t`Welcome to Twenty`;
+    return t`Welcome to ExampleCRM`;
   };
 
   // ❌ Incorrect - Don't use raw strings
   const WelcomeMessage = () => (
-    <h1>Welcome to Twenty</h1>
+    <h1>Welcome to ExampleCRM</h1>
   );
   ```
 
@@ -159,4 +159,4 @@ Translation files are managed in multiple packages:
 #### Compilation Errors
 - Addressed before merging
 - PR created for fixing missing translations
-- Automated testing in CI pipeline 
+- Automated testing in CI pipeline

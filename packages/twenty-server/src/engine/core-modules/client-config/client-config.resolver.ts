@@ -4,14 +4,14 @@ import { NodeEnvironment } from 'src/engine/core-modules/twenty-config/interface
 
 import { DomainManagerService } from 'src/engine/core-modules/domain-manager/services/domain-manager.service';
 import { PUBLIC_FEATURE_FLAGS } from 'src/engine/core-modules/feature-flag/constants/public-feature-flag.const';
-import { TwentyConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
+import { ExampleCRMConfigService } from 'src/engine/core-modules/twenty-config/twenty-config.service';
 
 import { ClientConfig } from './client-config.entity';
 
 @Resolver()
 export class ClientConfigResolver {
   constructor(
-    private twentyConfigService: TwentyConfigService,
+    private twentyConfigService: ExampleCRMConfigService,
     private domainManagerService: DomainManagerService,
   ) {}
 

@@ -17,7 +17,7 @@ import { Workspace } from 'src/engine/core-modules/workspace/workspace.entity';
 import { DataSourceModule } from 'src/engine/metadata-modules/data-source/data-source.module';
 import { ObjectMetadataEntity } from 'src/engine/metadata-modules/object-metadata/object-metadata.entity';
 import { UserRoleModule } from 'src/engine/metadata-modules/user-role/user-role.module';
-import { TwentyORMModule } from 'src/engine/twenty-orm/twenty-orm.module';
+import { ExampleCRMORMModule } from 'src/engine/twenty-orm/twenty-orm.module';
 import { WorkspaceDataSourceModule } from 'src/engine/workspace-datasource/workspace-datasource.module';
 
 @Module({
@@ -34,7 +34,7 @@ import { WorkspaceDataSourceModule } from 'src/engine/workspace-datasource/works
         WorkspaceDataSourceModule,
         WorkspaceInvitationModule,
         DomainManagerModule,
-        TwentyORMModule,
+        ExampleCRMORMModule,
         UserRoleModule,
         FileUploadModule,
         FileModule,

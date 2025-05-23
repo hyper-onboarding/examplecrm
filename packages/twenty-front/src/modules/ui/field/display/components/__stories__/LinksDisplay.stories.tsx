@@ -70,7 +70,7 @@ export const SingleLink: Story = {
   args: {
     value: {
       primaryLinkUrl: 'https://www.twenty.com',
-      primaryLinkLabel: 'Twenty Website',
+      primaryLinkLabel: 'ExampleCRM Website',
       secondaryLinks: null,
     },
   },
@@ -80,7 +80,7 @@ export const SingleLink: Story = {
     const link = await canvas.findByRole('link');
     expect(link).toBeVisible();
     expect(link).toHaveAttribute('href', 'https://www.twenty.com');
-    expect(link).toHaveTextContent('Twenty Website');
+    expect(link).toHaveTextContent('ExampleCRM Website');
 
     await waitFor(() => {
       expect(canvas.getAllByRole('link')).toHaveLength(1);
@@ -92,7 +92,7 @@ export const MultipleLinks: Story = {
   args: {
     value: {
       primaryLinkUrl: 'https://www.twenty.com',
-      primaryLinkLabel: 'Twenty Website',
+      primaryLinkLabel: 'ExampleCRM Website',
       secondaryLinks: [
         { url: 'https://docs.twenty.com', label: 'Documentation' },
         { url: 'https://blog.twenty.com', label: 'Blog' },
@@ -107,7 +107,7 @@ export const MultipleLinks: Story = {
       expect(links).toHaveLength(3);
     });
 
-    const primaryLink = await canvas.findByText('Twenty Website');
+    const primaryLink = await canvas.findByText('ExampleCRM Website');
     expect(primaryLink).toBeVisible();
     expect(primaryLink).toHaveAttribute('href', 'https://www.twenty.com');
 
@@ -125,9 +125,9 @@ export const SocialMediaLinks: Story = {
   args: {
     value: {
       primaryLinkUrl: 'https://www.linkedin.com/company/twenty',
-      primaryLinkLabel: 'Twenty on LinkedIn',
+      primaryLinkLabel: 'ExampleCRM on LinkedIn',
       secondaryLinks: [
-        { url: 'https://twitter.com/twentycrm', label: 'Twenty on Twitter' },
+        { url: 'https://twitter.com/twentycrm', label: 'ExampleCRM on Twitter' },
       ],
     },
   },

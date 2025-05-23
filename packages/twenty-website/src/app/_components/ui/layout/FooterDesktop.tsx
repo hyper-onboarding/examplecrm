@@ -3,10 +3,10 @@
 import styled from '@emotion/styled';
 
 import {
-  DiscordIcon,
-  GithubIcon2,
-  LinkedInIcon,
-  XIcon,
+    DiscordIcon,
+    GithubIcon2,
+    LinkedInIcon,
+    XIcon,
 } from '../icons/SvgIcons';
 
 import { Logo } from './Logo';
@@ -128,7 +128,7 @@ export const FooterDesktop = () => {
       >
         <div>
           <span style={{ fontFamily: 'Inter, sans-serif' }}>©</span>
-          {new Date().getFullYear()} Twenty PBC
+          {new Date().getFullYear()} ExampleCRM PBC
         </div>
         <div
           style={{
